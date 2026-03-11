@@ -5,6 +5,7 @@ import Phaser from 'phaser';
 import { Boot } from './scenes/Boot';
 import { Title } from './scenes/Title';
 import { Game } from './scenes/Game';
+import { ManipulativesScene } from './scenes/ManipulativesScene';
 import { LevelComplete } from './scenes/LevelComplete';
 import { SessionEnd } from './scenes/SessionEnd';
 
@@ -27,7 +28,7 @@ export const gameConfig: Phaser.Types.Core.GameConfig = {
       gravity: { x: 0, y: 800 },
     },
   },
-  scene: [Boot, Title, Game, LevelComplete, SessionEnd],
+  scene: [Boot, Title, Game, ManipulativesScene, LevelComplete, SessionEnd],
   input: {
     activePointers: 3,
   },

@@ -8,6 +8,7 @@ import { Character } from '../objects/Character';
 import { Numpad } from '../objects/Numpad';
 import { HintButton } from '../objects/HintButton';
 import { calculateBonusBricks } from '../scoring/bricks';
+import { ManipulativeEvents, MANIP_EVENTS } from '../events/ManipulativeEvents';
 import type { Question } from '../../types';
 import { useGameStore } from '../../stores/game';
 
@@ -24,6 +25,7 @@ export class Game extends Phaser.Scene {
   private questionText!: Phaser.GameObjects.Text;
   private feedbackText!: Phaser.GameObjects.Text;
   private questionCountText!: Phaser.GameObjects.Text;
+  private blocksButtonBg!: Phaser.GameObjects.Arc;
 
   private questions: Question[] = [];
   private currentQuestionIndex: number = 0;
@@ -90,6 +92,10 @@ export class Game extends Phaser.Scene {
 
     EventBus.on(GameEvents.ANSWER_SUBMITTED, this.handleAnswer, this);
     EventBus.on(GameEvents.HINT_REQUESTED, this.handleHint, this);
+    ManipulativeEvents.on(MANIP_EVENTS.CORRECT_TOTAL, this.onManipCorrectTotal, this);
+
+    this.scene.launch('Manipulatives');
+    this.createBlocksButton();
 
     this.showQuestion();
     EventBus.emit(GameEvents.SCENE_READY, this);
@@ -112,6 +118,16 @@ export class Game extends Phaser.Scene {
     this.numpad.clear();
     this.numpad.setEnabled(true);
     this.hintButton.reset();
+
+    ManipulativeEvents.emit(MANIP_EVENTS.RESET);
+
+    if (q.isBuildingUp && q.buildUpSequenceIndex > 0) {
+      ManipulativeEvents.emit(MANIP_EVENTS.START_BUILD_UP, {
+        factorA: q.factorA,
+        factorB: q.factorB,
+        previousGroups: q.buildUpSequenceIndex,
+      });
+    }
 
     this.feedbackText.setAlpha(0);
   }
@@ -181,6 +197,10 @@ export class Game extends Phaser.Scene {
       totalBricks: this.totalBricksThisLevel,
     });
 
+    ManipulativeEvents.emit(MANIP_EVENTS.SHOW_ANSWER, {
+      answer: question.correctAnswer,
+    });
+
     this.time.delayedCall(1200, () => {
       this.currentQuestionIndex++;
       this.showQuestion();
@@ -216,12 +236,61 @@ export class Game extends Phaser.Scene {
   }
 
   private handleHint = (data: { level: number }): void => {
+    if (!this.currentQuestion) return;
+
     EventBus.emit(GameEvents.SHOW_HINT, {
       level: data.level,
-      factorA: this.currentQuestion?.factorA,
-      factorB: this.currentQuestion?.factorB,
+      factorA: this.currentQuestion.factorA,
+      factorB: this.currentQuestion.factorB,
     });
+
+    const payload = {
+      factorA: this.currentQuestion.factorA,
+      factorB: this.currentQuestion.factorB,
+      correctAnswer: this.currentQuestion.correctAnswer,
+    };
+
+    if (data.level === 1) {
+      ManipulativeEvents.emit(MANIP_EVENTS.SHOW_HINT_TIER1, payload);
+    } else if (data.level === 2) {
+      ManipulativeEvents.emit(MANIP_EVENTS.SHOW_HINT_TIER2, payload);
+    }
   };
+
+  private onManipCorrectTotal = (): void => {
+    if (!this.currentQuestion) return;
+    this.handleAnswer(this.currentQuestion.correctAnswer);
+  };
+
+  private createBlocksButton(): void {
+    const x = 50;
+    const y = this.scale.height - 50;
+
+    this.blocksButtonBg = this.add.circle(x, y, 28, 0x2196F3)
+      .setStrokeStyle(2, 0x1976D2);
+
+    const icon = this.add.graphics();
+    icon.fillStyle(0xFFFFFF, 0.9);
+    icon.fillRect(x - 10, y - 8, 8, 8);
+    icon.fillRect(x - 10, y + 2, 8, 8);
+    icon.fillRect(x + 2, y + 2, 8, 8);
+
+    this.add.text(x, y + 32, 'Blocks', {
+      fontSize: '10px',
+      color: '#666666',
+      fontFamily: 'Arial',
+    }).setOrigin(0.5);
+
+    this.blocksButtonBg.setInteractive({ useHandCursor: true });
+    this.blocksButtonBg.on('pointerdown', () => {
+      if (!this.currentQuestion) return;
+      ManipulativeEvents.emit(MANIP_EVENTS.SHOW, {
+        factorA: this.currentQuestion.factorA,
+        factorB: this.currentQuestion.factorB,
+        correctAnswer: this.currentQuestion.correctAnswer,
+      });
+    });
+  }
 
   private showFeedback(
     type: 'correct' | 'tryAgain' | 'showAnswer',
@@ -296,6 +365,7 @@ export class Game extends Phaser.Scene {
   shutdown(): void {
     EventBus.off(GameEvents.ANSWER_SUBMITTED, this.handleAnswer, this);
     EventBus.off(GameEvents.HINT_REQUESTED, this.handleHint, this);
+    ManipulativeEvents.off(MANIP_EVENTS.CORRECT_TOTAL, this.onManipCorrectTotal, this);
 
     this.building.destroy();
     this.character.destroy();
