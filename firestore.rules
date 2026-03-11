@@ -1,0 +1,69 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper: check if the current user owns a given kid
+    function isParentOfKid(kidId) {
+      return get(/databases/$(database)/documents/kids/$(kidId)).data.parent_id == request.auth.uid;
+    }
+
+    // --- parents ---
+    match /parents/{parentId} {
+      allow read: if request.auth != null && request.auth.uid == parentId;
+      allow create: if request.auth != null && request.auth.uid == parentId;
+      allow update: if request.auth != null && request.auth.uid == parentId;
+    }
+
+    // --- kids ---
+    match /kids/{kidId} {
+      allow read: if request.auth != null
+        && resource.data.parent_id == request.auth.uid;
+      allow create: if request.auth != null
+        && request.resource.data.parent_id == request.auth.uid;
+      allow update: if request.auth != null
+        && resource.data.parent_id == request.auth.uid
+        && request.resource.data.parent_id == request.auth.uid;
+      allow delete: if request.auth != null
+        && resource.data.parent_id == request.auth.uid;
+    }
+
+    // --- sessions ---
+    match /sessions/{sessionId} {
+      allow read: if request.auth != null
+        && isParentOfKid(resource.data.kid_id);
+      allow create: if request.auth != null
+        && isParentOfKid(request.resource.data.kid_id);
+      allow update: if request.auth != null
+        && isParentOfKid(resource.data.kid_id);
+    }
+
+    // --- attempts ---
+    match /attempts/{attemptId} {
+      allow read: if request.auth != null
+        && isParentOfKid(resource.data.kid_id);
+      allow create: if request.auth != null
+        && isParentOfKid(request.resource.data.kid_id);
+    }
+
+    // --- mastery ---
+    match /mastery/{masteryId} {
+      allow read: if request.auth != null
+        && isParentOfKid(resource.data.kid_id);
+      allow create: if request.auth != null
+        && isParentOfKid(request.resource.data.kid_id);
+      allow update: if request.auth != null
+        && isParentOfKid(resource.data.kid_id);
+    }
+
+    // --- progress ---
+    match /progress/{progressId} {
+      allow read: if request.auth != null
+        && isParentOfKid(resource.data.kid_id);
+      allow create: if request.auth != null
+        && isParentOfKid(request.resource.data.kid_id);
+      allow update: if request.auth != null
+        && isParentOfKid(resource.data.kid_id);
+    }
+  }
+}

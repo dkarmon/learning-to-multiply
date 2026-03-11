@@ -1,0 +1,55 @@
+{
+  "app": {
+    "title": "בונים כפל"
+  },
+  "auth": {
+    "signIn": "התחברות עם Google",
+    "signOut": "התנתקות",
+    "signingIn": "מתחבר..."
+  },
+  "kids": {
+    "selectTitle": "מי משחק?",
+    "addKid": "הוספת שחקן",
+    "enterName": "הכניסו שם",
+    "cancel": "ביטול",
+    "save": "שמירה",
+    "noKids": "הוסיפו שחקן כדי להתחיל!"
+  },
+  "game": {
+    "howMuch": "כמה זה {{a}} כפול {{b}}?",
+    "correct": "מדהים!",
+    "wrong": "לא בדיוק! נסו שוב.",
+    "showAnswer": "התשובה היא {{answer}}. בואו נראה למה!",
+    "hint": "רמז",
+    "hintCost": "מינוס {{cost}} לבנים בונוס",
+    "bricks": "{{count}} לבנים",
+    "levelComplete": "סיימתם שלב!",
+    "sessionDone": "כל הכבוד להיום!",
+    "continue": "ממשיכים!",
+    "stop": "מספיק להיום"
+  },
+  "dashboard": {
+    "title": "לוח בקרה",
+    "overview": "סקירה",
+    "progress": "התקדמות",
+    "sessions": "משחקים",
+    "settings": "הגדרות",
+    "factsMastered": "עובדות שנלמדו",
+    "currentLevel": "שלב נוכחי",
+    "accuracy": "דיוק",
+    "totalSessions": "סה״כ משחקים"
+  },
+  "settings": {
+    "title": "הגדרות",
+    "language": "שפה",
+    "sound": "אפקטים קוליים",
+    "music": "מוזיקת רקע",
+    "on": "פועל",
+    "off": "כבוי"
+  },
+  "common": {
+    "loading": "טוען...",
+    "error": "משהו השתבש",
+    "back": "חזרה"
+  }
+}

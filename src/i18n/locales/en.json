@@ -1,0 +1,55 @@
+{
+  "app": {
+    "title": "Multiplication Builder"
+  },
+  "auth": {
+    "signIn": "Sign in with Google",
+    "signOut": "Sign Out",
+    "signingIn": "Signing in..."
+  },
+  "kids": {
+    "selectTitle": "Who's playing?",
+    "addKid": "Add Player",
+    "enterName": "Enter name",
+    "cancel": "Cancel",
+    "save": "Save",
+    "noKids": "Add a player to get started!"
+  },
+  "game": {
+    "howMuch": "How much is {{a}} times {{b}}?",
+    "correct": "Amazing!",
+    "wrong": "Not quite! Try again.",
+    "showAnswer": "The answer is {{answer}}. Let's see why!",
+    "hint": "Hint",
+    "hintCost": "-{{cost}} bonus bricks",
+    "bricks": "{{count}} bricks",
+    "levelComplete": "Level Complete!",
+    "sessionDone": "Great job today!",
+    "continue": "Keep Going!",
+    "stop": "Done for now"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "overview": "Overview",
+    "progress": "Progress",
+    "sessions": "Sessions",
+    "settings": "Settings",
+    "factsMastered": "Facts Mastered",
+    "currentLevel": "Current Level",
+    "accuracy": "Accuracy",
+    "totalSessions": "Total Sessions"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "sound": "Sound Effects",
+    "music": "Background Music",
+    "on": "On",
+    "off": "Off"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "back": "Back"
+  }
+}
