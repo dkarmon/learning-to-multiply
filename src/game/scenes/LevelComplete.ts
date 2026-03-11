@@ -5,6 +5,8 @@ import Phaser from 'phaser';
 import { EventBus, GameEvents } from '../EventBus';
 import { emitConfetti } from '../effects/Confetti';
 import { useGameStore } from '../../stores/game';
+import { generateLevelQuestions } from '../../lib/question-generator';
+import type { FactMasteryRecord } from '../../types/learning';
 
 interface LevelCompleteData {
   levelNumber: number;
@@ -110,6 +112,10 @@ export class LevelComplete extends Phaser.Scene {
     nextBg.on('pointerup', () => {
       const store = useGameStore.getState();
       store.advanceLevel();
+      const nextLevel = store.currentLevel + 1;
+      const masteryRecords = new Map<string, FactMasteryRecord>();
+      const questions = generateLevelQuestions(nextLevel, masteryRecords);
+      useGameStore.setState({ currentQuestions: questions, currentQuestionIndex: 0 });
       this.scene.start('Game');
     });
 
