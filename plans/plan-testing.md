@@ -1641,12 +1641,12 @@ Add a lightweight pre-commit check that runs only the fast unit tests:
 **Instructions for implementing agent:** Work through this checklist in order. Mark items `[x]` as you complete them. Mark the current item `[→]`. Do NOT skip items.
 
 ### Phase 1: Framework Setup
-- [ ] Install dev dependencies (vitest, @testing-library/react, @testing-library/jest-dom, @vitest/coverage-v8)
-- [ ] Create `vitest.config.ts` at project root
-- [ ] Create `src/test/setup.ts` with jsdom environment setup
-- [ ] Add test scripts to `package.json` (`test`, `test:watch`, `test:coverage`)
-- [ ] Verify: `npm test` runs with 0 tests found (no errors)
-- [ ] Commit phase 1
+- [x] Install dev dependencies (vitest, @testing-library/react, @testing-library/jest-dom, @vitest/coverage-v8)
+- [x] Create `vitest.config.ts` at project root
+- [x] Create `src/test/setup.ts` with jsdom environment setup
+- [x] Add test scripts to `package.json` (`test`, `test:watch`, `test:coverage`)
+- [x] Verify: `npm test` runs with 0 tests found (no errors)
+- [x] Commit phase 1
 
 ### Phase 2: Learning Engine Unit Tests
 - [ ] Create test files for all 8 learning engine modules (following plan-learning-engine.md phases)
@@ -1655,11 +1655,11 @@ Add a lightweight pre-commit check that runs only the fast unit tests:
 - [ ] Commit phase 2
 
 ### Phase 3: Store Tests
-- [ ] Create `src/stores/__tests__/game.test.ts`
-- [ ] Create `src/stores/__tests__/auth.test.ts` (mock Firebase, test state transitions)
-- [ ] Create `src/stores/__tests__/settings.test.ts` (test locale, volume, persist)
-- [ ] Verify: all store tests pass
-- [ ] Commit phase 3
+- [x] Create `src/stores/__tests__/game.test.ts`
+- [x] Create `src/stores/__tests__/auth.test.ts` (mock Firebase, test state transitions)
+- [x] Create `src/stores/__tests__/settings.test.ts` (test locale, volume, persist)
+- [x] Verify: all store tests pass
+- [x] Commit phase 3
 
 ### Phase 4: Game Engine Pure Function Tests
 - [ ] Create `src/game/__tests__/scoring.test.ts`
@@ -1683,17 +1683,17 @@ Add a lightweight pre-commit check that runs only the fast unit tests:
 - [ ] Commit phase 6
 
 ### Phase 7: i18n Completeness Test
-- [ ] Create `src/test/__tests__/i18n-completeness.test.ts`
-- [ ] Verify: test passes (both locale files have identical key sets)
-- [ ] Commit phase 7
+- [x] Create `src/test/__tests__/i18n-completeness.test.ts`
+- [x] Verify: test passes (both locale files have identical key sets)
+- [x] Commit phase 7
 
 ### Phase 8: Firebase Emulator Setup
-- [ ] Install `@firebase/rules-unit-testing` and `firebase-tools`
-- [ ] Create `firebase.json` with emulator ports
-- [ ] Create `vitest.firebase.config.ts`
-- [ ] Add `test:firebase` and `firebase:emulators` scripts to `package.json`
+- [x] Install `@firebase/rules-unit-testing` and `firebase-tools`
+- [x] Create `firebase.json` with emulator ports
+- [x] Create `vitest.firebase.config.ts`
+- [x] Add `test:firebase` and `firebase:emulators` scripts to `package.json`
 - [ ] Verify: `firebase emulators:start` launches auth + firestore emulators
-- [ ] Commit phase 8
+- [x] Commit phase 8
 
 ### Phase 9: Firebase Security Rules Tests
 - [ ] Create `src/test/firebase/__tests__/firestore.rules.test.ts`

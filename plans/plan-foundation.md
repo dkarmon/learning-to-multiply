@@ -1991,81 +1991,81 @@ With the dev server running:
 ## Implementation Checklist
 
 ### Phase 1: Project Scaffold
-- [ ] 1.1 Run `npm create vite@latest` with React + TypeScript template
-- [ ] 1.2 Install dependencies: `phaser`, `firebase`, `zustand`, `react-router-dom`, `react-i18next`, `i18next`, `i18next-browser-languagedetector`
-- [ ] 1.3 Create `index.html` with `#root` container and game-container div
-- [ ] 1.4 Create `.gitignore` (include `.env.local`, `node_modules`, `dist`)
-- [ ] 1.5a Create `.env.local.template` with Firebase variable names
-- [ ] 1.5b Create `.env.local` with real Firebase config values
-- [ ] 1.6 Create `vite.config.ts` with resolve aliases
-- [ ] 1.7 Create `tsconfig.json` and `tsconfig.app.json`
-- [ ] 1.8 Create asset directory structure with `.gitkeep` files
+- [x] 1.1 Run `npm create vite@latest` with React + TypeScript template
+- [x] 1.2 Install dependencies: `phaser`, `firebase`, `zustand`, `react-router-dom`, `react-i18next`, `i18next`, `i18next-browser-languagedetector`
+- [x] 1.3 Create `index.html` with `#root` container and game-container div
+- [x] 1.4 Create `.gitignore` (include `.env.local`, `node_modules`, `dist`)
+- [x] 1.5a Create `.env.local.template` with Firebase variable names
+- [x] 1.5b Create `.env.local` with real Firebase config values
+- [x] 1.6 Create `vite.config.ts` with resolve aliases
+- [x] 1.7 Create `tsconfig.json` and `tsconfig.app.json`
+- [x] 1.8 Create asset directory structure with `.gitkeep` files
 
 ### Phase 2: Shared Types
-- [ ] 2.1 Create `src/types/index.ts` with all shared interfaces (Locale, KidProfile, SessionRecord, QuestionAttempt, MasteryRecord, LeitnerBox, DifficultyTier, ErrorType, ProgressRecord, AppSettings)
-- [ ] 2.2 Create `src/types/firestore.ts` with Firestore document types
+- [x] 2.1 Create `src/types/index.ts` with all shared interfaces (Locale, KidProfile, SessionRecord, QuestionAttempt, MasteryRecord, LeitnerBox, DifficultyTier, ErrorType, ProgressRecord, AppSettings)
+- [x] 2.2 Create `src/types/firestore.ts` with Firestore document types
 
 ### Phase 3: Firestore Security Rules
-- [ ] 3.1 Create `firestore.rules` with `isParentOfKid()` helper
-- [ ] 3.2 Rules for `parents` collection (read/write own document)
-- [ ] 3.3 Rules for `kids` collection (CRUD by parent, validate parentId on create)
-- [ ] 3.4 Rules for `sessions` collection (read/write by kid's parent)
-- [ ] 3.5 Rules for `attempts` collection (read/write by kid's parent)
-- [ ] 3.6 Rules for `mastery` collection (read/write by kid's parent)
-- [ ] 3.7 Rules for `progress` collection (read/write by kid's parent)
-- [ ] 3.8 Add name length validation (1-50 chars) per security review H3
-- [ ] 3.9 Add parentId == auth.uid validation on kid creation per security review H2
+- [x] 3.1 Create `firestore.rules` with `isParentOfKid()` helper
+- [x] 3.2 Rules for `parents` collection (read/write own document)
+- [x] 3.3 Rules for `kids` collection (CRUD by parent, validate parentId on create)
+- [x] 3.4 Rules for `sessions` collection (read/write by kid's parent)
+- [x] 3.5 Rules for `attempts` collection (read/write by kid's parent)
+- [x] 3.6 Rules for `mastery` collection (read/write by kid's parent)
+- [x] 3.7 Rules for `progress` collection (read/write by kid's parent)
+- [x] 3.8 Add name length validation (1-50 chars) per security review H3
+- [x] 3.9 Add parentId == auth.uid validation on kid creation per security review H2
 
 ### Phase 4: Zustand Stores
-- [ ] 4.1 Create `src/stores/auth.ts` with Firebase auth, Google sign-in, kid management
-- [ ] 4.2 Create `src/stores/game.ts` with session state, question tracking, brick counts
-- [ ] 4.3 Create `src/stores/settings.ts` with locale, sound, music preferences
+- [x] 4.1 Create `src/stores/auth.ts` with Firebase auth, Google sign-in, kid management
+- [x] 4.2 Create `src/stores/game.ts` with session state, question tracking, brick counts
+- [x] 4.3 Create `src/stores/settings.ts` with locale, sound, music preferences
 
 ### Phase 5: i18n Framework
-- [ ] 5.1 Create `src/i18n/index.ts` with react-i18next setup
-- [ ] 5.2 Create `src/i18n/locales/en.json` with all English strings
-- [ ] 5.3 Create `src/i18n/locales/he.json` with all Hebrew strings
-- [ ] Verify RTL direction switching works
+- [x] 5.1 Create `src/i18n/index.ts` with react-i18next setup
+- [x] 5.2 Create `src/i18n/locales/en.json` with all English strings
+- [x] 5.3 Create `src/i18n/locales/he.json` with all Hebrew strings
+- [x] Verify RTL direction switching works
 
 ### Phase 6: Phaser.js Integration
-- [ ] 6.1 Create `src/game/EventBus.ts` with event name constants
-- [ ] 6.2 Create `src/game/config.ts` with Phaser game configuration
-- [ ] 6.3 Create `src/game/scenes/Boot.ts` with loading bar and placeholder
-- [ ] 6.4 Create `src/game/PhaserGame.tsx` React wrapper component
+- [x] 6.1 Create `src/game/EventBus.ts` with event name constants
+- [x] 6.2 Create `src/game/config.ts` with Phaser game configuration
+- [x] 6.3 Create `src/game/scenes/Boot.ts` with loading bar and placeholder
+- [x] 6.4 Create `src/game/PhaserGame.tsx` React wrapper component
 
 ### Phase 7: Event Bus Helpers
-- [ ] 7.1 Create `src/lib/events.ts` with type-safe event emitters/listeners
+- [x] 7.1 Create `src/lib/events.ts` with type-safe event emitters/listeners
 
 ### Phase 8: Routing and Auth Flow
-- [ ] 8.1 Create `src/components/ProtectedRoute.tsx`
-- [ ] 8.2 Create `src/components/LanguageToggle.tsx`
-- [ ] 8.3 Create `src/pages/auth/Login.tsx` with Google sign-in
-- [ ] 8.4 Create `src/pages/play/SelectKid.tsx` with kid profile selection
-- [ ] 8.5 Create `src/pages/play/GamePage.tsx` with Phaser canvas
-- [ ] 8.6 Create `src/pages/dashboard/Overview.tsx` placeholder
-- [ ] 8.7 Create `src/pages/dashboard/Settings.tsx` with toggles
+- [x] 8.1 Create `src/components/ProtectedRoute.tsx`
+- [x] 8.2 Create `src/components/LanguageToggle.tsx`
+- [x] 8.3 Create `src/pages/auth/Login.tsx` with Google sign-in
+- [x] 8.4 Create `src/pages/play/SelectKid.tsx` with kid profile selection
+- [x] 8.5 Create `src/pages/play/GamePage.tsx` with Phaser canvas
+- [x] 8.6 Create `src/pages/dashboard/Overview.tsx` placeholder
+- [x] 8.7 Create `src/pages/dashboard/Settings.tsx` with toggles
 - [ ] Add signInWithRedirect fallback per security review M4
 
 ### Phase 9: App Shell
-- [ ] 9.1 Create `src/App.tsx` with router + auth state listener
-- [ ] 9.2 Create `src/main.tsx` entry point
+- [x] 9.1 Create `src/App.tsx` with router + auth state listener
+- [x] 9.2 Create `src/main.tsx` entry point
 - [ ] Add CSP meta tag to index.html per security review M1
 
 ### Phase 10: Cleanup and Verification
-- [ ] 10.1 Remove default Vite scaffold files (App.css, index.css, react.svg, vite.svg)
-- [ ] 10.2 `npx tsc --noEmit` passes with no errors
-- [ ] 10.3 `npm run dev` starts without errors
+- [x] 10.1 Remove default Vite scaffold files (App.css, index.css, react.svg, vite.svg)
+- [x] 10.2 `npx tsc --noEmit` passes with no errors
+- [x] 10.3 `npm run dev` starts without errors
 - [ ] 10.4 Verify routes: /login renders, protected routes redirect
 - [ ] 10.5 Run `npm audit` and address any critical vulnerabilities
 
 ### Acceptance Criteria
-- [ ] Login page renders with Google sign-in button
-- [ ] Protected routes redirect unauthenticated users
-- [ ] Firebase client initializes without errors
-- [ ] i18n switches between Hebrew (RTL) and English (LTR)
-- [ ] Phaser Boot scene renders inside React
-- [ ] All shared types defined and importable
-- [ ] `.env.local.template` exists (real values NOT committed)
+- [x] Login page renders with Google sign-in button
+- [x] Protected routes redirect unauthenticated users
+- [x] Firebase client initializes without errors
+- [x] i18n switches between Hebrew (RTL) and English (LTR)
+- [x] Phaser Boot scene renders inside React
+- [x] All shared types defined and importable
+- [x] `.env.local.template` exists (real values NOT committed)
 
 ## Estimated Complexity
 

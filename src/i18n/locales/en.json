@@ -1,6 +1,7 @@
 {
   "app": {
-    "title": "Multiplication Builder"
+    "title": "Multiplication Builder",
+    "description": "Help your child master multiplication through play"
   },
   "auth": {
     "signIn": "Sign in with Google",
@@ -13,7 +14,14 @@
     "enterName": "Enter name",
     "cancel": "Cancel",
     "save": "Save",
-    "noKids": "Add a player to get started!"
+    "delete": "Delete",
+    "edit": "Edit",
+    "noKids": "Add a player to get started!",
+    "confirmDelete": "Are you sure you want to delete {{name}}'s profile? All progress will be lost.",
+    "pickAvatar": "Pick an avatar",
+    "manageProfiles": "Manage Profiles",
+    "viewProgress": "View Progress",
+    "startPlaying": "Start Playing"
   },
   "game": {
     "howMuch": "How much is {{a}} times {{b}}?",
@@ -31,25 +39,113 @@
   "dashboard": {
     "title": "Dashboard",
     "overview": "Overview",
-    "progress": "Progress",
-    "sessions": "Sessions",
+    "progress": "Progress Map",
+    "sessions": "Session History",
     "settings": "Settings",
+    "kids": "Kids",
     "factsMastered": "Facts Mastered",
     "currentLevel": "Current Level",
     "accuracy": "Accuracy",
-    "totalSessions": "Total Sessions"
+    "totalSessions": "Total Sessions",
+    "totalPlayTime": "Play Time",
+    "recentSessions": "Recent Sessions",
+    "startPlaying": "Start Playing",
+    "noData": "No data yet. Start playing to see progress!",
+    "selectKid": "Select a kid to view their progress",
+    "refresh": "Refresh",
+    "minutes": "min",
+    "questions": "questions",
+    "date": "Date",
+    "duration": "Duration",
+    "questionsAttempted": "Questions",
+    "avgResponseTime": "Avg Response",
+    "filterByDate": "Filter by date",
+    "allTime": "All time",
+    "lastWeek": "Last 7 days",
+    "lastMonth": "Last 30 days",
+    "lastThreeMonths": "Last 90 days",
+    "sessionDetails": "Session Details",
+    "question": "Question",
+    "answer": "Answer",
+    "correct": "Correct",
+    "time": "Time",
+    "hintUsed": "Hint",
+    "errorType": "Error"
+  },
+  "heatMap": {
+    "title": "Multiplication Map",
+    "mastered": "Mastered",
+    "learning": "Learning",
+    "struggling": "Struggling",
+    "notIntroduced": "Not yet introduced",
+    "legend": "Legend",
+    "accuracy": "Accuracy",
+    "attempts": "Attempts",
+    "avgTime": "Avg time",
+    "leitnerBox": "Box",
+    "nextReview": "Next review",
+    "viewDetail": "View details"
+  },
+  "factDetail": {
+    "title": "{{a}} x {{b}}",
+    "accuracyOverTime": "Accuracy Over Time",
+    "responseTimeTrend": "Response Time Trend",
+    "errorBreakdown": "Error Breakdown",
+    "allAttempts": "All Attempts",
+    "currentBox": "Current Box",
+    "nextReview": "Next Review",
+    "trend": "Trend",
+    "improving": "Improving",
+    "plateau": "Plateau",
+    "declining": "Declining",
+    "noAttempts": "No attempts yet for this fact."
+  },
+  "insights": {
+    "title": "Insights",
+    "strugglingCluster": "{{name}} finds the {{factor}}s hardest -- try skip-counting by {{factor}} together!",
+    "shortSessions": "Sessions under 5 minutes aren't enough for learning. Aim for 10-15.",
+    "hintDependency": "{{name}} uses hints on {{percent}}% of problems. Encourage trying without hints first.",
+    "plateau": "Accuracy on {{a}}x{{b}} hasn't improved in {{weeks}} weeks.",
+    "celebration": "{{name}} mastered all the {{factor}}s this week! {{count}} of 121 facts down!",
+    "errorPattern": "{{name}} often {{errorDescription}}. The visual blocks can help.",
+    "noInsights": "Keep playing to unlock insights!",
+    "addInsteadOfMultiply": "adds instead of multiplying",
+    "offByOne": "gets answers that are off by one factor",
+    "neighborConfusion": "confuses neighboring facts",
+    "zeroOneConfusion": "mixes up the zero and one rules"
   },
   "settings": {
     "title": "Settings",
     "language": "Language",
     "sound": "Sound Effects",
     "music": "Background Music",
+    "sessionLimit": "Session Length Suggestion",
     "on": "On",
-    "off": "Off"
+    "off": "Off",
+    "noLimit": "No limit",
+    "tenMin": "10 minutes",
+    "fifteenMin": "15 minutes",
+    "twentyMin": "20 minutes",
+    "account": "Account",
+    "linkedGoogle": "Linked to Google account",
+    "about": "About",
+    "aboutText": "Multiplication Builder helps children master multiplication facts through visual learning and spaced repetition.",
+    "version": "Version"
   },
   "common": {
     "loading": "Loading...",
     "error": "Something went wrong",
-    "back": "Back"
+    "back": "Back",
+    "retry": "Retry",
+    "seconds": "s",
+    "of": "of"
+  },
+  "errors": {
+    "addition_substitution": "Added instead of multiplied",
+    "off_by_one": "Off by one group",
+    "neighbor_confusion": "Neighbor fact confusion",
+    "zero_one_confusion": "Zero/one rule confusion",
+    "commutative_gap": "Knows reverse but not this order",
+    "other": "Other error"
   }
 }

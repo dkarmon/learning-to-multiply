@@ -7,85 +7,85 @@ Generated: 2026-03-11
 **Instructions for implementing agent:** Work through this checklist in order. Mark items `[x]` as you complete them. Mark the current item `[→]`. Do NOT skip items. After each phase, commit your work. Show Danny all visual outputs for approval.
 
 ### Phase 1: Tailwind CSS Setup + i18n Extensions
-- [ ] Install Tailwind CSS and `@tailwindcss/vite` (`npm install tailwindcss @tailwindcss/vite`)
-- [ ] Add Tailwind Vite plugin to `vite.config.ts`
-- [ ] Create `src/index.css` with Tailwind import, `@theme` custom colors (sky-brand, deep-brand, cream, brick-red, warm-orange, correct, learning, struggling, not-introduced), and base body styles
-- [ ] Import `./index.css` in `src/main.tsx`
-- [ ] Install recharts (`npm install recharts`)
-- [ ] Extend `src/i18n/locales/en.json` with dashboard, heatMap, factDetail, insights, settings, common, and errors keys
-- [ ] Extend `src/i18n/locales/he.json` with corresponding Hebrew translations
-- [ ] Verify: `npm run dev` starts without errors
-- [ ] Commit Phase 1
+- [x] Install Tailwind CSS and `@tailwindcss/vite` (`npm install tailwindcss @tailwindcss/vite`)
+- [x] Add Tailwind Vite plugin to `vite.config.ts`
+- [x] Create `src/index.css` with Tailwind import, `@theme` custom colors (sky-brand, deep-brand, cream, brick-red, warm-orange, correct, learning, struggling, not-introduced), and base body styles
+- [x] Import `./index.css` in `src/main.tsx`
+- [x] Install recharts (`npm install recharts`)
+- [x] Extend `src/i18n/locales/en.json` with dashboard, heatMap, factDetail, insights, settings, common, and errors keys
+- [x] Extend `src/i18n/locales/he.json` with corresponding Hebrew translations
+- [x] Verify: `npm run dev` starts without errors
+- [x] Commit Phase 1
 
 ### Phase 2: Data Fetching Hooks
-- [ ] Create `src/hooks/dashboard/useKids.ts` -- CRUD hook wrapping auth store's fetchKids with addKid, updateKid, deleteKid
-- [ ] Create `src/hooks/dashboard/useFactMastery.ts` -- fetches fact_mastery, builds 11x11 MasteryGrid, computes stats (mastered/learning/struggling/notIntroduced), classifies via Leitner box thresholds
-- [ ] Create `src/hooks/dashboard/useSessions.ts` -- fetches game_sessions with DateFilter (all/week/month/three_months), provides fetchSessionAttempts for drill-down, computes totalPlayTimeMinutes
-- [ ] Create `src/hooks/dashboard/useFactDetail.ts` -- fetches attempts for a single canonical fact (both orderings), computes accuracyOverTime, responseTimeTrend, errorBreakdown, and TrendDirection
-- [ ] Create `src/hooks/dashboard/useInsights.ts` -- generates up to 3 prioritized Insight objects from mastery/session data (struggling clusters, short sessions, hint dependency, plateaus, celebrations, error patterns)
-- [ ] Verify: `npx tsc --noEmit` passes with no type errors on hooks
-- [ ] Commit Phase 2
+- [x] Create `src/hooks/dashboard/useKids.ts` -- CRUD hook wrapping auth store's fetchKids with addKid, updateKid, deleteKid
+- [x] Create `src/hooks/dashboard/useFactMastery.ts` -- fetches fact_mastery, builds 11x11 MasteryGrid, computes stats (mastered/learning/struggling/notIntroduced), classifies via Leitner box thresholds
+- [x] Create `src/hooks/dashboard/useSessions.ts` -- fetches game_sessions with DateFilter (all/week/month/three_months), provides fetchSessionAttempts for drill-down, computes totalPlayTimeMinutes
+- [x] Create `src/hooks/dashboard/useFactDetail.ts` -- fetches attempts for a single canonical fact (both orderings), computes accuracyOverTime, responseTimeTrend, errorBreakdown, and TrendDirection
+- [x] Create `src/hooks/dashboard/useInsights.ts` -- generates up to 3 prioritized Insight objects from mastery/session data (struggling clusters, short sessions, hint dependency, plateaus, celebrations, error patterns)
+- [x] Verify: `npx tsc --noEmit` passes with no type errors on hooks
+- [x] Commit Phase 2
 
 ### Phase 3: Shared Dashboard Components
-- [ ] Create `src/components/dashboard/SummaryCard.tsx` -- reusable metric card (label, value, sublabel, color)
-- [ ] Create `src/components/dashboard/KidSelector.tsx` -- dropdown using useAuthStore kids/activeKid/setActiveKid
-- [ ] Create `src/components/dashboard/InsightCards.tsx` -- renders Insight[] as colored border-left cards with RTL support (`rtl:border-l-0 rtl:border-r-4`)
-- [ ] Create `src/components/dashboard/SessionRow.tsx` -- expandable row with lazy-loaded attempts table, accuracy color coding
-- [ ] Verify: `npx tsc --noEmit` passes with no type errors on components
-- [ ] Commit Phase 3
+- [x] Create `src/components/dashboard/SummaryCard.tsx` -- reusable metric card (label, value, sublabel, color)
+- [x] Create `src/components/dashboard/KidSelector.tsx` -- dropdown using useAuthStore kids/activeKid/setActiveKid
+- [x] Create `src/components/dashboard/InsightCards.tsx` -- renders Insight[] as colored border-left cards with RTL support (`rtl:border-l-0 rtl:border-r-4`)
+- [x] Create `src/components/dashboard/SessionRow.tsx` -- expandable row with lazy-loaded attempts table, accuracy color coding
+- [x] Verify: `npx tsc --noEmit` passes with no type errors on components
+- [x] Commit Phase 3
 
 ### Phase 4: Dashboard Layout and Navigation
-- [ ] Create `src/components/dashboard/DashboardLayout.tsx` -- sidebar nav (Overview, Kids, Progress Map, Session History, Settings), KidSelector in header, hamburger on mobile, LanguageToggle, sign out button
-- [ ] Modify `src/App.tsx` -- nested routes under `/dashboard` with DashboardLayout wrapper; routes: index=Overview, kids=KidProfiles, progress=HeatMap, progress/:factorA/:factorB=FactDetail, sessions=Sessions, settings=Settings
-- [ ] Verify: `npm run dev` starts, `/dashboard` renders layout shell
-- [ ] Verify: RTL works correctly -- sidebar on right side in Hebrew
-- [ ] Commit Phase 4
-- [ ] **APPROVAL GATE: Show Danny the dashboard layout/navigation (desktop + mobile). Wait for approval before proceeding.**
+- [x] Create `src/components/dashboard/DashboardLayout.tsx` -- sidebar nav (Overview, Kids, Progress Map, Session History, Settings), KidSelector in header, hamburger on mobile, LanguageToggle, sign out button
+- [x] Modify `src/App.tsx` -- nested routes under `/dashboard` with DashboardLayout wrapper; routes: index=Overview, kids=KidProfiles, progress=HeatMap, progress/:factorA/:factorB=FactDetail, sessions=Sessions, settings=Settings
+- [x] Verify: `npm run dev` starts, `/dashboard` renders layout shell
+- [x] Verify: RTL works correctly -- sidebar on right side in Hebrew
+- [x] Commit Phase 4
+- [x] **APPROVAL GATE: Show Danny the dashboard layout/navigation (desktop + mobile). Wait for approval before proceeding.**
 
 ### Phase 5: Dashboard Pages -- Login, KidProfiles, Overview
-- [ ] Create `src/pages/dashboard/Login.tsx` -- centered layout with app logo, title, description, Google OAuth button; redirects to /dashboard if already authenticated
-- [ ] Create `src/pages/dashboard/KidProfiles.tsx` -- kid card grid, create/edit modal with name input + emoji avatar picker (20 animal emojis), delete with confirmation, "View Progress" and "Start Playing" actions
-- [ ] Create `src/pages/dashboard/Overview.tsx` -- 4 SummaryCards (facts mastered, current level, accuracy, play time), InsightCards panel, 5 most recent SessionRows, "Start Playing" button, empty/loading/error states
-- [ ] Verify: `/login` renders correctly in both LTR and RTL
-- [ ] Verify: `/dashboard/kids` shows kid management with all CRUD operations
-- [ ] Verify: `/dashboard` overview shows summary cards, insights, recent sessions
-- [ ] Verify: RTL works correctly on all three pages
-- [ ] Commit Phase 5
-- [ ] **APPROVAL GATE: Show Danny login flow, kid profiles page, overview page. Wait for approval before proceeding.**
+- [x] Create `src/pages/dashboard/Login.tsx` -- centered layout with app logo, title, description, Google OAuth button; redirects to /dashboard if already authenticated
+- [x] Create `src/pages/dashboard/KidProfiles.tsx` -- kid card grid, create/edit modal with name input + emoji avatar picker (20 animal emojis), delete with confirmation, "View Progress" and "Start Playing" actions
+- [x] Create `src/pages/dashboard/Overview.tsx` -- 4 SummaryCards (facts mastered, current level, accuracy, play time), InsightCards panel, 5 most recent SessionRows, "Start Playing" button, empty/loading/error states
+- [x] Verify: `/login` renders correctly in both LTR and RTL
+- [x] Verify: `/dashboard/kids` shows kid management with all CRUD operations
+- [x] Verify: `/dashboard` overview shows summary cards, insights, recent sessions
+- [x] Verify: RTL works correctly on all three pages
+- [x] Commit Phase 5
+- [x] **APPROVAL GATE: Show Danny login flow, kid profiles page, overview page. Wait for approval before proceeding.**
 
 ### Phase 6: Heat Map and Fact Detail Pages
-- [ ] Create `src/pages/dashboard/HeatMap.tsx` -- 11x11 grid with color-coded cells (STATUS_COLORS: mastered=#4CAF50, learning=#FFC107, struggling=#EF5350, not_introduced=#E0E0E0), hover popup (accuracy, attempts, avg time, Leitner box, next review), click to navigate to `/dashboard/progress/:a/:b`, legend, stats bar, refresh button
-- [ ] Create `src/pages/dashboard/FactDetail.tsx` -- back link to progress, summary cards (accuracy, attempts, current box, trend), accuracy-over-time LineChart, response-time-trend LineChart, error breakdown horizontal BarChart, full attempt history table
-- [ ] Verify: Heat map renders correct 11x11 grid with products in cells
-- [ ] Verify: Commutative facts (e.g., 3x5 and 5x3) show same status
-- [ ] Verify: Hover popup displays all stats
-- [ ] Verify: Click navigates to `/dashboard/progress/3/5` etc.
-- [ ] Verify: Fact detail charts render (accuracy, response time, error breakdown)
-- [ ] Verify: RTL works correctly -- heat map scrolls, charts remain LTR
-- [ ] Commit Phase 6
-- [ ] **APPROVAL GATE: Show Danny the heat map visualization (this is the hero feature). Wait for approval before proceeding.**
+- [x] Create `src/pages/dashboard/HeatMap.tsx` -- 11x11 grid with color-coded cells (STATUS_COLORS: mastered=#4CAF50, learning=#FFC107, struggling=#EF5350, not_introduced=#E0E0E0), hover popup (accuracy, attempts, avg time, Leitner box, next review), click to navigate to `/dashboard/progress/:a/:b`, legend, stats bar, refresh button
+- [x] Create `src/pages/dashboard/FactDetail.tsx` -- back link to progress, summary cards (accuracy, attempts, current box, trend), accuracy-over-time LineChart, response-time-trend LineChart, error breakdown horizontal BarChart, full attempt history table
+- [x] Verify: Heat map renders correct 11x11 grid with products in cells
+- [x] Verify: Commutative facts (e.g., 3x5 and 5x3) show same status
+- [x] Verify: Hover popup displays all stats
+- [x] Verify: Click navigates to `/dashboard/progress/3/5` etc.
+- [x] Verify: Fact detail charts render (accuracy, response time, error breakdown)
+- [x] Verify: RTL works correctly -- heat map scrolls, charts remain LTR
+- [x] Commit Phase 6
+- [x] **APPROVAL GATE: Show Danny the heat map visualization (this is the hero feature). Wait for approval before proceeding.**
 
 ### Phase 7: Sessions and Settings Pages
-- [ ] Create `src/pages/dashboard/Sessions.tsx` -- session list with DateFilter dropdown (all/week/month/three_months), summary line (count + total play time), expandable SessionRows, empty/loading/error states
-- [ ] Create `src/pages/dashboard/Settings.tsx` -- language toggle (LanguageToggle component), sound/music toggle buttons, session length suggestion buttons (no limit/10/15/20 min), account section (linked Google email), about section with version
-- [ ] Verify: Sessions page date filter works correctly
-- [ ] Verify: Expanding a session row loads and shows individual attempts
-- [ ] Verify: Settings toggles update the settings store
-- [ ] Verify: RTL works correctly on both pages
-- [ ] Commit Phase 7
-- [ ] **APPROVAL GATE: Show Danny sessions page and settings page. Wait for approval before proceeding.**
+- [x] Create `src/pages/dashboard/Sessions.tsx` -- session list with DateFilter dropdown (all/week/month/three_months), summary line (count + total play time), expandable SessionRows, empty/loading/error states
+- [x] Create `src/pages/dashboard/Settings.tsx` -- language toggle (LanguageToggle component), sound/music toggle buttons, session length suggestion buttons (no limit/10/15/20 min), account section (linked Google email), about section with version
+- [x] Verify: Sessions page date filter works correctly
+- [x] Verify: Expanding a session row loads and shows individual attempts
+- [x] Verify: Settings toggles update the settings store
+- [x] Verify: RTL works correctly on both pages
+- [x] Commit Phase 7
+- [x] **APPROVAL GATE: Show Danny sessions page and settings page. Wait for approval before proceeding.**
 
 ### Phase 8: Verification and Acceptance Criteria
-- [ ] Run `npx tsc --noEmit` -- fix all TypeScript errors
-- [ ] Run `npm run dev` -- verify clean startup
-- [ ] Route verification: `/login`, `/dashboard`, `/dashboard/kids`, `/dashboard/progress`, `/dashboard/progress/3/5`, `/dashboard/sessions`, `/dashboard/settings`
-- [ ] RTL verification: toggle to Hebrew, confirm sidebar on right, text right-aligned, insight card borders on right, charts remain LTR
-- [ ] Mobile responsiveness: Pixel 7 device in DevTools -- sidebar collapses to hamburger, heat map scrolls horizontally, summary cards stack 2-col, session rows readable, modals fit screen
-- [ ] Empty states: all pages show appropriate messages when no data exists
-- [ ] Loading states: all pages show loading indicators during data fetch
-- [ ] Error states: all pages show error messages when queries fail
-- [ ] All text uses i18n keys (no hardcoded English strings in UI)
-- [ ] Commit Phase 8 (final)
+- [x] Run `npx tsc --noEmit` -- fix all TypeScript errors
+- [x] Run `npm run dev` -- verify clean startup
+- [x] Route verification: `/login`, `/dashboard`, `/dashboard/kids`, `/dashboard/progress`, `/dashboard/progress/3/5`, `/dashboard/sessions`, `/dashboard/settings`
+- [x] RTL verification: toggle to Hebrew, confirm sidebar on right, text right-aligned, insight card borders on right, charts remain LTR
+- [x] Mobile responsiveness: Pixel 7 device in DevTools -- sidebar collapses to hamburger, heat map scrolls horizontally, summary cards stack 2-col, session rows readable, modals fit screen
+- [x] Empty states: all pages show appropriate messages when no data exists
+- [x] Loading states: all pages show loading indicators during data fetch
+- [x] Error states: all pages show error messages when queries fail
+- [x] All text uses i18n keys (no hardcoded English strings in UI)
+- [x] Commit Phase 8 (final)
 
 ## Goal
 

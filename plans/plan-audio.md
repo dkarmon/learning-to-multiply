@@ -8,14 +8,14 @@ Generated: 2026-03-11
 
 ### Phase 1: TTS Script Generator (`scripts/generate-tts-scripts.ts`)
 
-- [ ] Create `scripts/generate-tts-scripts.ts` with the Hebrew number lookup table (feminine + masculine, 0-100)
-- [ ] Implement English number word lookup table (0-100)
-- [ ] Define feedback, instruction, and level/session phrase arrays (Hebrew + English)
-- [ ] Implement `generateManifest()` producing entries for all 66 canonical multiplication facts (0x0 through 10x10, a <= b) in both locales
-- [ ] Generate number word entries (0-100, both genders for Hebrew, single form for English)
-- [ ] Generate manifest entries for all feedback, instruction, and level message phrases in both locales
-- [ ] Each manifest entry includes: `id`, `text`, `locale`, `category`, `filePath`, `metadata`
-- [ ] Script writes `scripts/tts-manifest.json` on execution
+- [x] Create `scripts/generate-tts-scripts.ts` with the Hebrew number lookup table (feminine + masculine, 0-100)
+- [x] Implement English number word lookup table (0-100)
+- [x] Define feedback, instruction, and level/session phrase arrays (Hebrew + English)
+- [x] Implement `generateManifest()` producing entries for all 66 canonical multiplication facts (0x0 through 10x10, a <= b) in both locales
+- [x] Generate number word entries (0-100, both genders for Hebrew, single form for English)
+- [x] Generate manifest entries for all feedback, instruction, and level message phrases in both locales
+- [x] Each manifest entry includes: `id`, `text`, `locale`, `category`, `filePath`, `metadata`
+- [x] Script writes `scripts/tts-manifest.json` on execution
 - [ ] Write unit tests: manifest has ~550-650 entries, all 66 facts present in both locales, no duplicate IDs, no duplicate file paths, Hebrew questions contain "פעמים", English questions contain "times"
 - [ ] Run tests green
 
@@ -37,42 +37,42 @@ Generated: 2026-03-11
 
 ### Phase 3: TTS Map (`src/lib/audio/tts-map.ts`)
 
-- [ ] Create `src/lib/audio/tts-map.ts` with typed path lookup functions
-- [ ] `getQuestionAudioPath(factorA, factorB, locale)` with canonical ordering (min, max)
-- [ ] `getFeedbackAudioPath(feedbackId, locale)`
-- [ ] `getInstructionAudioPath(instructionId, locale)`
-- [ ] `getLevelAudioPath(messageId, locale)`
-- [ ] `getNumberAudioPath(num, locale, gender?)` -- Hebrew gets gender suffix, English does not
-- [ ] `getSfxPath(name)` and `getMusicPath()` utility functions
-- [ ] `randomCorrectFeedbackId()` and `randomWrongFeedbackId()` helper functions
-- [ ] Export type unions: `FeedbackId`, `InstructionId`, `LevelMessageId`, `SfxName`, `Locale`, `Gender`
+- [x] Create `src/lib/audio/tts-map.ts` with typed path lookup functions
+- [x] `getQuestionAudioPath(factorA, factorB, locale)` with canonical ordering (min, max)
+- [x] `getFeedbackAudioPath(feedbackId, locale)`
+- [x] `getInstructionAudioPath(instructionId, locale)`
+- [x] `getLevelAudioPath(messageId, locale)`
+- [x] `getNumberAudioPath(num, locale, gender?)` -- Hebrew gets gender suffix, English does not
+- [x] `getSfxPath(name)` and `getMusicPath()` utility functions
+- [x] `randomCorrectFeedbackId()` and `randomWrongFeedbackId()` helper functions
+- [x] Export type unions: `FeedbackId`, `InstructionId`, `LevelMessageId`, `SfxName`, `Locale`, `Gender`
 - [ ] Write unit tests: canonical ordering (3x5 == 5x3), all path functions return valid paths matching manifest structure, Hebrew number paths include gender suffix, English number paths do not
 - [ ] Run tests green
 
 ### Phase 4: Audio Manager (`src/lib/audio/manager.ts`)
 
-- [ ] Create `src/lib/audio/manager.ts` as a singleton class using Web Audio API
-- [ ] Implement AudioContext initialization with gain node graph (master -> voice/sfx/music channels)
-- [ ] `resumeContext()` for browser autoplay policy compliance (call on user gesture)
-- [ ] Audio buffer loading and caching (`loadBuffer`) with deduplication of in-flight requests
-- [ ] `preload(filePaths)` and `preloadForLevel(facts, locale)` for warming the cache
-- [ ] Voice playback: `playQuestion`, `playFeedback`, `playCorrectFeedback`, `playWrongFeedback`, `playInstruction`, `playLevelMessage` -- all duck music and interrupt current voice
-- [ ] SFX playback: `playSFX(name)` -- multiple SFX can play simultaneously (fire-and-forget)
-- [ ] Music playback: `playMusic()` (looped), `stopMusic()`
-- [ ] Music ducking: `duckMusic()` lowers to 0.03 over 300ms, `unduckMusic()` restores to normal over 500ms, triggered by voice playback
-- [ ] Volume controls: `setMusicVolume`, `setSfxVolume`, `setVoiceVolume` (clamped 0-1)
-- [ ] Mute controls: `mute()`, `unmute()`, `toggleMute()`, `isMuted()`
-- [ ] `stopAll()` and `dispose()` for cleanup
+- [x] Create `src/lib/audio/manager.ts` as a singleton class using Web Audio API
+- [x] Implement AudioContext initialization with gain node graph (master -> voice/sfx/music channels)
+- [x] `resumeContext()` for browser autoplay policy compliance (call on user gesture)
+- [x] Audio buffer loading and caching (`loadBuffer`) with deduplication of in-flight requests
+- [x] `preload(filePaths)` and `preloadForLevel(facts, locale)` for warming the cache
+- [x] Voice playback: `playQuestion`, `playFeedback`, `playCorrectFeedback`, `playWrongFeedback`, `playInstruction`, `playLevelMessage` -- all duck music and interrupt current voice
+- [x] SFX playback: `playSFX(name)` -- multiple SFX can play simultaneously (fire-and-forget)
+- [x] Music playback: `playMusic()` (looped), `stopMusic()`
+- [x] Music ducking: `duckMusic()` lowers to 0.03 over 300ms, `unduckMusic()` restores to normal over 500ms, triggered by voice playback
+- [x] Volume controls: `setMusicVolume`, `setSfxVolume`, `setVoiceVolume` (clamped 0-1)
+- [x] Mute controls: `mute()`, `unmute()`, `toggleMute()`, `isMuted()`
+- [x] `stopAll()` and `dispose()` for cleanup
 - [ ] Write unit tests (with mocked Web Audio API): init creates context and gain nodes, mute/unmute toggles master gain, volume setters clamp to 0-1, preload caches buffers, stopAll stops voice and music
 - [ ] Run tests green
 
 ### Phase 5: Phaser Audio Bridge (`src/game/audio-bridge.ts`)
 
-- [ ] Create `src/game/audio-bridge.ts` with `AudioEvent` interface matching orchestrator plan
-- [ ] `initAudioBridge(game)` -- registers `pointerdown` listener for context resume + event listener
-- [ ] `destroyAudioBridge(game)` -- removes event listener
-- [ ] `emitAudio(scene, event)` -- convenience for emitting from Phaser scenes
-- [ ] Event-to-audio mapping: `question_read` -> `playQuestion`, `correct` -> `playSFX('correct')` + `playCorrectFeedback`, `wrong` -> `playSFX('wrong')` + `playWrongFeedback`, `hint` -> `playSFX('hint-reveal')` + optional instruction, `level_complete` -> SFX + level message, `brick_place`/`brick_crumble`/`celebration`/`button_tap`/`drag_pickup`/`drag_drop` -> corresponding SFX, `session_end` -> stop music + SFX + level message
+- [x] Create `src/game/audio-bridge.ts` with `AudioEvent` interface matching orchestrator plan
+- [x] `initAudioBridge(game)` -- registers `pointerdown` listener for context resume + event listener
+- [x] `destroyAudioBridge(game)` -- removes event listener
+- [x] `emitAudio(scene, event)` -- convenience for emitting from Phaser scenes
+- [x] Event-to-audio mapping: `question_read` -> `playQuestion`, `correct` -> `playSFX('correct')` + `playCorrectFeedback`, `wrong` -> `playSFX('wrong')` + `playWrongFeedback`, `hint` -> `playSFX('hint-reveal')` + optional instruction, `level_complete` -> SFX + level message, `brick_place`/`brick_crumble`/`celebration`/`button_tap`/`drag_pickup`/`drag_drop` -> corresponding SFX, `session_end` -> stop music + SFX + level message
 - [ ] Write integration tests: emitting events triggers correct AudioManager calls
 - [ ] Run tests green
 

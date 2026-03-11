@@ -75,7 +75,10 @@ export interface AudioEvent {
     | 'brick_place'
     | 'brick_crumble'
     | 'celebration'
-    | 'button_tap';
+    | 'button_tap'
+    | 'drag_pickup'
+    | 'drag_drop'
+    | 'session_end';
   locale: 'he' | 'en';
   factorA?: number;
   factorB?: number;

@@ -8,10 +8,15 @@ import { auth } from './lib/firebase';
 import { useAuthStore } from './stores/auth';
 import { useSettingsStore } from './stores/settings';
 import { ProtectedRoute } from './components/ProtectedRoute';
-import { Login } from './pages/auth/Login';
+import { Login } from './pages/dashboard/Login';
 import { SelectKid } from './pages/play/SelectKid';
 import { GamePage } from './pages/play/GamePage';
+import { DashboardLayout } from './components/dashboard/DashboardLayout';
 import { Overview } from './pages/dashboard/Overview';
+import { KidProfiles } from './pages/dashboard/KidProfiles';
+import { HeatMap } from './pages/dashboard/HeatMap';
+import { FactDetail } from './pages/dashboard/FactDetail';
+import { Sessions } from './pages/dashboard/Sessions';
 import { Settings } from './pages/dashboard/Settings';
 
 export default function App() {
@@ -40,38 +45,25 @@ export default function App() {
         {/* Play routes (kid-facing) */}
         <Route
           path="/play/select-kid"
-          element={
-            <ProtectedRoute>
-              <SelectKid />
-            </ProtectedRoute>
-          }
+          element={<ProtectedRoute><SelectKid /></ProtectedRoute>}
         />
         <Route
           path="/play/game"
-          element={
-            <ProtectedRoute>
-              <GamePage />
-            </ProtectedRoute>
-          }
+          element={<ProtectedRoute><GamePage /></ProtectedRoute>}
         />
 
-        {/* Dashboard routes (parent-facing) */}
+        {/* Dashboard routes (parent-facing, nested under layout) */}
         <Route
           path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Overview />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/dashboard/settings"
-          element={
-            <ProtectedRoute>
-              <Settings />
-            </ProtectedRoute>
-          }
-        />
+          element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}
+        >
+          <Route index element={<Overview />} />
+          <Route path="kids" element={<KidProfiles />} />
+          <Route path="progress" element={<HeatMap />} />
+          <Route path="progress/:factorA/:factorB" element={<FactDetail />} />
+          <Route path="sessions" element={<Sessions />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
 
         {/* Default redirect */}
         <Route path="/" element={<Navigate to="/login" replace />} />

@@ -55,6 +55,6 @@ export const PhaserGame = forwardRef<PhaserGameRef, PhaserGameProps>(
       };
     }, [ref, onSceneReady]);
 
-    return <div id="game-container" style={{ width: '100%', height: '100%' }} />;
+    return <div id="phaser-container" style={{ width: '100%', height: '100%' }} />;
   }
 );

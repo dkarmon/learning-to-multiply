@@ -5,71 +5,71 @@
 **Instructions for implementing agent:** Work through this checklist in order. Mark items `[x]` as you complete them. Mark the current item `[→]`. Do NOT skip items. After each phase, commit your work.
 
 ### Phase 1: Phaser Config + React Bridge
-- [ ] Create `src/game/EventBus.ts` -- Phaser.Events.EventEmitter singleton for React-Phaser communication
-- [ ] Create `src/game/config.ts` -- Phaser.AUTO renderer, 1024x768, FIT scaling, Arcade physics (gravity y:800), pixelArt:true, all 5 scenes registered
-- [ ] Create `src/components/GameWrapper.tsx` -- React component with useEffect lifecycle, creates/destroys Phaser.Game, bridges EventBus events (`answer-result`, `level-complete`, `brick-placed`) to Zustand store, `touch-action: none` on container div
+- [x] Create `src/game/EventBus.ts` -- Phaser.Events.EventEmitter singleton for React-Phaser communication
+- [x] Create `src/game/config.ts` -- Phaser.AUTO renderer, 1024x768, FIT scaling, Arcade physics (gravity y:800), pixelArt:true, all 5 scenes registered
+- [x] Create `src/components/GameWrapper.tsx` -- React component with useEffect lifecycle, creates/destroys Phaser.Game, bridges EventBus events (`answer-result`, `level-complete`, `brick-placed`) to Zustand store, `touch-action: none` on container div
 - [ ] Verify: Phaser renders a blank scene inside the React component, scales with FIT mode, touch input works without scroll interference
-- [ ] Commit phase 1
+- [x] Commit phase 1
 
 ### Phase 2: Boot + Title Scenes
-- [ ] Create `src/game/scenes/Boot.ts` -- loading bar (60% width, 32px height), preloads all assets (3 sprite sheets: wrecker/sidekick/fixer, building tiles, particles, UI buttons, backgrounds, manipulatives), registers all sprite animations globally in `createAnimations()`
-- [ ] Create `src/game/scenes/Title.ts` -- sky+ground background, "Build It Up!" title with float tween, "A Multiplication Adventure" subtitle, wrecker-idle sprite at 3x scale, 240x80 green Play button with press feedback, transitions to Game scene on tap
+- [x] Create `src/game/scenes/Boot.ts` -- loading bar (60% width, 32px height), preloads all assets (3 sprite sheets: wrecker/sidekick/fixer, building tiles, particles, UI buttons, backgrounds, manipulatives), registers all sprite animations globally in `createAnimations()`
+- [x] Create `src/game/scenes/Title.ts` -- sky+ground background, "Build It Up!" title with float tween, "A Multiplication Adventure" subtitle, wrecker-idle sprite at 3x scale, 240x80 green Play button with press feedback, transitions to Game scene on tap
 - [ ] Verify: Boot shows loading bar that fills, transitions to Title; Play button is tappable and transitions to Game; title text floats gently
-- [ ] Commit phase 2
+- [x] Commit phase 2
 
 ### Phase 3: Building + BrickRow Objects
-- [ ] Create `src/game/objects/BrickRow.ts` -- 16x12px bricks, alternating brick/brick-alt textures, `animateStacking()` with staggered drop-in (80ms duration, 30ms delay per brick, Bounce.easeOut), `animateCrumble()` removes 2-3 bricks with physics velocity + angular rotation + fade, `emitDebris()` particle burst
-- [ ] Create `src/game/objects/Building.ts` -- container at x:280 y:620, foundation rectangle (200x40, brown), door sprite, `addRow(brickCount)` stacks BrickRows with 2px gap, `addBonusRow(bonusBricks)` for accent rows, `wobble(crumble)` shakes container 6px for 5 repeats, window character configs at floors 2/4/6/8 (fixer-waving, sidekick-silly, fixer-idle, sidekick-idle), `addRoofDecoration()` places waving flag, `adjustCamera()` scrolls container when building exceeds 500px visible area
+- [x] Create `src/game/objects/BrickRow.ts` -- 16x12px bricks, alternating brick/brick-alt textures, `animateStacking()` with staggered drop-in (80ms duration, 30ms delay per brick, Bounce.easeOut), `animateCrumble()` removes 2-3 bricks with physics velocity + angular rotation + fade, `emitDebris()` particle burst
+- [x] Create `src/game/objects/Building.ts` -- container at x:280 y:620, foundation rectangle (200x40, brown), door sprite, `addRow(brickCount)` stacks BrickRows with 2px gap, `addBonusRow(bonusBricks)` for accent rows, `wobble(crumble)` shakes container 6px for 5 repeats, window character configs at floors 2/4/6/8 (fixer-waving, sidekick-silly, fixer-idle, sidekick-idle), `addRoofDecoration()` places waving flag, `adjustCamera()` scrolls container when building exceeds 500px visible area
 - [ ] Verify: Building stacks bricks with drop animation, wobbles on wrong answer, crumbles bricks on 2nd wrong, window characters pop in at floor thresholds, camera adjusts for tall buildings
 - [ ] **APPROVAL GATE: Show Danny the building mechanic in action**
-- [ ] Commit phase 3
+- [x] Commit phase 3
 
 ### Phase 4: Character Object
-- [ ] Create `src/game/objects/Character.ts` -- sprite at x:140 y:580, 2x scale, state machine with states: idle/happy/sad/climbing/waving, maps to `wrecker-{state}` animations, happy+sad auto-return to idle on animationcomplete, `climbTo(buildingTopY)` tweens y with 600ms Sine.easeInOut, `celebrate()` chains happy->waving->idle (3s wave), `reactToWrong()` plays sad once
+- [x] Create `src/game/objects/Character.ts` -- sprite at x:140 y:580, 2x scale, state machine with states: idle/happy/sad/climbing/waving, maps to `wrecker-{state}` animations, happy+sad auto-return to idle on animationcomplete, `climbTo(buildingTopY)` tweens y with 600ms Sine.easeInOut, `celebrate()` chains happy->waving->idle (3s wave), `reactToWrong()` plays sad once
 - [ ] Verify: Character renders beside building with idle breathing, reacts happy on correct, reacts sad on wrong, climbs up as building grows, celebrate sequence plays correctly
 - [ ] **APPROVAL GATE: Show Danny the character animations**
-- [ ] Commit phase 4
+- [x] Commit phase 4
 
 ### Phase 5: Numpad + HintButton Objects
-- [ ] Create `src/game/objects/Numpad.ts` -- positioned at x:780 y:380, 3x4 grid of 64px buttons with 8px gap, layout: 1-9/backspace/0/submit, answer display area (white bg, blue border, 32px text), color-coded buttons (blue digits, red backspace, green submit), max 3 digits, emits `answer-submitted` with numeric value, `showCorrectFlash()`/`showWrongFlash()` change display bg color, `setEnabled(false)` dims to 0.5 alpha
-- [ ] Create `src/game/objects/HintButton.ts` -- positioned at x:780 y:260, 180x56 orange button, shows cost text ("−2 bonus bricks"), level 1 tap: emits `hint-requested {level:1}`, updates cost to "−1 bonus brick", level 2 tap: emits `hint-requested {level:2}`, shows "no bonus", disables button, `reset()` restores to level 0
+- [x] Create `src/game/objects/Numpad.ts` -- positioned at x:780 y:380, 3x4 grid of 64px buttons with 8px gap, layout: 1-9/backspace/0/submit, answer display area (white bg, blue border, 32px text), color-coded buttons (blue digits, red backspace, green submit), max 3 digits, emits `answer-submitted` with numeric value, `showCorrectFlash()`/`showWrongFlash()` change display bg color, `setEnabled(false)` dims to 0.5 alpha
+- [x] Create `src/game/objects/HintButton.ts` -- positioned at x:780 y:260, 180x56 orange button, shows cost text ("−2 bonus bricks"), level 1 tap: emits `hint-requested {level:1}`, updates cost to "−1 bonus brick", level 2 tap: emits `hint-requested {level:2}`, shows "no bonus", disables button, `reset()` restores to level 0
 - [ ] Verify: Numpad accepts multi-digit input, backspace works, submit emits event, display flashes green/red, hint button shows cost, tapping hint updates cost and emits events, both are touch-friendly (64px+ targets)
 - [ ] **APPROVAL GATE: Show Danny the numpad and hint button layout**
-- [ ] Commit phase 5
+- [x] Commit phase 5
 
 ### Phase 6: Game Scene (Main Gameplay Loop)
-- [ ] Create `src/game/scenes/Game.ts` -- reads `currentQuestions` and `currentLevel` from Zustand on create, renders sky+ground+scrolling clouds, instantiates Building, Character, Numpad, HintButton, question text at top center (48px), feedback text below (24px), question counter at top-left
-- [ ] Wire up answer flow: `answer-submitted` event -> `handleAnswer()` validates against `currentQuestion.correctAnswer`, emits `answer-result` with full attempt data (factorA, factorB, correctAnswer, givenAnswer, isCorrect, responseTimeMs, hintLevel, attemptNumber)
-- [ ] Implement correct answer flow: flash green, show answer in question text, random encouragement feedback, character happy, `building.addRow(answerValue)`, `building.addBonusRow(bonusBricks)` based on hint level (3/1/0), character climbs, emit `bricks-earned`, 1200ms delay then next question
-- [ ] Implement wrong answer flow: 1st attempt -- "Not quite! Try again.", character sad, building wobble (no crumble), re-enable numpad after 600ms; 2nd attempt -- show correct answer, character sad, building wobble+crumble, 2500ms delay then move on
-- [ ] Implement hint relay: `hint-requested` -> emit `show-hint` with level, factorA, factorB for Manipulatives agent
-- [ ] Implement `endLevel()`: add roof decoration, character celebrate, compute accuracy, 2s delay then transition to LevelComplete with stats, emit `level-complete`
-- [ ] Implement `shutdown()`: remove EventBus listeners, destroy all game objects
+- [x] Create `src/game/scenes/Game.ts` -- reads `currentQuestions` and `currentLevel` from Zustand on create, renders sky+ground+scrolling clouds, instantiates Building, Character, Numpad, HintButton, question text at top center (48px), feedback text below (24px), question counter at top-left
+- [x] Wire up answer flow: `answer-submitted` event -> `handleAnswer()` validates against `currentQuestion.correctAnswer`, emits `answer-result` with full attempt data (factorA, factorB, correctAnswer, givenAnswer, isCorrect, responseTimeMs, hintLevel, attemptNumber)
+- [x] Implement correct answer flow: flash green, show answer in question text, random encouragement feedback, character happy, `building.addRow(answerValue)`, `building.addBonusRow(bonusBricks)` based on hint level (3/1/0), character climbs, emit `bricks-earned`, 1200ms delay then next question
+- [x] Implement wrong answer flow: 1st attempt -- "Not quite! Try again.", character sad, building wobble (no crumble), re-enable numpad after 600ms; 2nd attempt -- show correct answer, character sad, building wobble+crumble, 2500ms delay then move on
+- [x] Implement hint relay: `hint-requested` -> emit `show-hint` with level, factorA, factorB for Manipulatives agent
+- [x] Implement `endLevel()`: add roof decoration, character celebrate, compute accuracy, 2s delay then transition to LevelComplete with stats, emit `level-complete`
+- [x] Implement `shutdown()`: remove EventBus listeners, destroy all game objects
 - [ ] Verify: Full game loop works end-to-end -- question display, numpad input, correct/wrong flows, hint usage, building grows, transitions to LevelComplete after all questions
 - [ ] **APPROVAL GATE: Show Danny the full game loop**
-- [ ] Commit phase 6
+- [x] Commit phase 6
 
 ### Phase 7: Particle Effects
-- [ ] Create `src/game/effects/Confetti.ts` -- `emitConfetti(scene)` function, 4 colors (red/blue/yellow/green), spawns across full width, drifts down (speedY 100-300, speedX -80 to 80), emits for 3s then stops, particles self-destruct after 4s fade
-- [ ] Create `src/game/effects/BrickDebris.ts` -- `emitBrickDebris(scene, x, y)` function, 12 particles, burst from point (angle 200-340), gravityY 500, scale 0.6->0, lifespan 400-800ms, self-destructs after 1.2s
+- [x] Create `src/game/effects/Confetti.ts` -- `emitConfetti(scene)` function, 4 colors (red/blue/yellow/green), spawns across full width, drifts down (speedY 100-300, speedX -80 to 80), emits for 3s then stops, particles self-destruct after 4s fade
+- [x] Create `src/game/effects/BrickDebris.ts` -- `emitBrickDebris(scene, x, y)` function, 12 particles, burst from point (angle 200-340), gravityY 500, scale 0.6->0, lifespan 400-800ms, self-destructs after 1.2s
 - [ ] Verify: Confetti plays on level complete, debris bursts on wrong answer crumble, all particle managers clean themselves up
-- [ ] Commit phase 7
+- [x] Commit phase 7
 
 ### Phase 8: LevelComplete + SessionEnd Scenes
-- [ ] Create `src/game/scenes/LevelComplete.ts` -- warm background, confetti via `emitConfetti()`, "Level Complete!" title with Back.easeOut pop-in, wrecker happy->waving at 3x, score summary (level number, correct/total, bricks earned, accuracy %), "Next Level" green button and "Take a Break" blue button appear after 1.5s delay with fade-in, Next calls `store.advanceLevel()` + starts Game scene, Break starts SessionEnd scene
-- [ ] Create `src/game/scenes/SessionEnd.ts` -- "Great Practice!" title, wrecker waving at 3x, session stats table (Questions Answered, Correct Answers, Accuracy, Bricks Earned, Levels Completed) read from `useGameStore`, divider lines, "Play Again" green button calls `store.startNewSession()` + starts Game, "Go Home" blue button emits `go-home` for React Router, emits `session-ended` with session totals
+- [x] Create `src/game/scenes/LevelComplete.ts` -- warm background, confetti via `emitConfetti()`, "Level Complete!" title with Back.easeOut pop-in, wrecker happy->waving at 3x, score summary (level number, correct/total, bricks earned, accuracy %), "Next Level" green button and "Take a Break" blue button appear after 1.5s delay with fade-in, Next calls `store.advanceLevel()` + starts Game scene, Break starts SessionEnd scene
+- [x] Create `src/game/scenes/SessionEnd.ts` -- "Great Practice!" title, wrecker waving at 3x, session stats table (Questions Answered, Correct Answers, Accuracy, Bricks Earned, Levels Completed) read from `useGameStore`, divider lines, "Play Again" green button calls `store.startNewSession()` + starts Game, "Go Home" blue button emits `go-home` for React Router, emits `session-ended` with session totals
 - [ ] Verify: LevelComplete shows correct stats and confetti, Next Level advances properly, Take a Break shows SessionEnd, Play Again resets session, Go Home emits event
-- [ ] Commit phase 8
+- [x] Commit phase 8
 
 ### Phase 9: Scoring System + Zustand Integration
-- [ ] Implement bonus brick calculation: no hint = 3 bonus, hint level 1 = 1 bonus, hint level 2 = 0 bonus, wrong answer = 0 bricks total
-- [ ] Implement/verify `src/stores/game.ts` Zustand store: `recordResult()` updates totalQuestions/correctAnswers/totalBricks, `completeLevel()` increments levelsCompleted, `advanceLevel()` increments currentLevel, `startNewSession()` resets session counters
-- [ ] Extract and unit test pure scoring functions: `calculateBonusBricks(hintLevel)`, `calculateBricksEarned(answer, hintLevel)`
+- [x] Implement bonus brick calculation: no hint = 3 bonus, hint level 1 = 1 bonus, hint level 2 = 0 bonus, wrong answer = 0 bricks total
+- [x] Implement/verify `src/stores/game.ts` Zustand store: `recordResult()` updates totalQuestions/correctAnswers/totalBricks, `completeLevel()` increments levelsCompleted, `advanceLevel()` increments currentLevel, `startNewSession()` resets session counters
+- [x] Extract and unit test pure scoring functions: `calculateBonusBricks(hintLevel)`, `calculateBricksEarned(answer, hintLevel)`
 - [ ] Verify: Scores persist across questions within a level, Zustand state reflects game state correctly, session stats accumulate across levels
-- [ ] Commit phase 9
+- [x] Commit phase 9
 
 ### Final
-- [ ] All TypeScript compiles without errors
+- [x] All TypeScript compiles without errors
 - [ ] Run unit tests for scoring logic and Zustand store actions
 - [ ] Run through full game loop manually: 5 questions all correct, mix of wrong answers, hint usage at both levels
 - [ ] Verify event catalog: all 13 emitted events fire correctly, all 2 consumed events are handled

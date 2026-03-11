@@ -1,6 +1,7 @@
 {
   "app": {
-    "title": "בונים כפל"
+    "title": "בונים כפל",
+    "description": "עזרו לילד שלכם לשלוט בלוח הכפל דרך משחק"
   },
   "auth": {
     "signIn": "התחברות עם Google",
@@ -13,7 +14,14 @@
     "enterName": "הכניסו שם",
     "cancel": "ביטול",
     "save": "שמירה",
-    "noKids": "הוסיפו שחקן כדי להתחיל!"
+    "delete": "מחיקה",
+    "edit": "עריכה",
+    "noKids": "הוסיפו שחקן כדי להתחיל!",
+    "confirmDelete": "בטוחים שרוצים למחוק את הפרופיל של {{name}}? כל ההתקדמות תימחק.",
+    "pickAvatar": "בחרו אווטאר",
+    "manageProfiles": "ניהול פרופילים",
+    "viewProgress": "צפייה בהתקדמות",
+    "startPlaying": "התחילו לשחק"
   },
   "game": {
     "howMuch": "כמה זה {{a}} כפול {{b}}?",
@@ -31,25 +39,113 @@
   "dashboard": {
     "title": "לוח בקרה",
     "overview": "סקירה",
-    "progress": "התקדמות",
-    "sessions": "משחקים",
+    "progress": "מפת התקדמות",
+    "sessions": "היסטוריית משחקים",
     "settings": "הגדרות",
+    "kids": "ילדים",
     "factsMastered": "עובדות שנלמדו",
     "currentLevel": "שלב נוכחי",
     "accuracy": "דיוק",
-    "totalSessions": "סה״כ משחקים"
+    "totalSessions": "סה״כ משחקים",
+    "totalPlayTime": "זמן משחק",
+    "recentSessions": "משחקים אחרונים",
+    "startPlaying": "התחילו לשחק",
+    "noData": "אין נתונים עדיין. התחילו לשחק כדי לראות התקדמות!",
+    "selectKid": "בחרו ילד כדי לראות את ההתקדמות שלו",
+    "refresh": "רענון",
+    "minutes": "דק׳",
+    "questions": "שאלות",
+    "date": "תאריך",
+    "duration": "משך",
+    "questionsAttempted": "שאלות",
+    "avgResponseTime": "זמן תגובה ממוצע",
+    "filterByDate": "סינון לפי תאריך",
+    "allTime": "כל הזמן",
+    "lastWeek": "7 ימים אחרונים",
+    "lastMonth": "30 ימים אחרונים",
+    "lastThreeMonths": "90 ימים אחרונים",
+    "sessionDetails": "פרטי משחק",
+    "question": "שאלה",
+    "answer": "תשובה",
+    "correct": "נכון",
+    "time": "זמן",
+    "hintUsed": "רמז",
+    "errorType": "סוג שגיאה"
+  },
+  "heatMap": {
+    "title": "מפת הכפל",
+    "mastered": "נלמד",
+    "learning": "בלמידה",
+    "struggling": "מתקשה",
+    "notIntroduced": "טרם הוצג",
+    "legend": "מקרא",
+    "accuracy": "דיוק",
+    "attempts": "נסיונות",
+    "avgTime": "זמן ממוצע",
+    "leitnerBox": "קופסה",
+    "nextReview": "חזרה הבאה",
+    "viewDetail": "לפרטים"
+  },
+  "factDetail": {
+    "title": "{{a}} x {{b}}",
+    "accuracyOverTime": "דיוק לאורך זמן",
+    "responseTimeTrend": "מגמת זמן תגובה",
+    "errorBreakdown": "פילוח שגיאות",
+    "allAttempts": "כל הניסיונות",
+    "currentBox": "קופסה נוכחית",
+    "nextReview": "חזרה הבאה",
+    "trend": "מגמה",
+    "improving": "משתפר",
+    "plateau": "יציב",
+    "declining": "יורד",
+    "noAttempts": "אין ניסיונות עדיין לעובדה הזו."
+  },
+  "insights": {
+    "title": "תובנות",
+    "strugglingCluster": "{{name}} מתקשה בכפולות של {{factor}} -- נסו לספור יחד קפיצות של {{factor}}!",
+    "shortSessions": "משחקים של פחות מ-5 דקות לא מספיקים ללמידה. כדאי לכוון ל-10-15 דקות.",
+    "hintDependency": "{{name}} משתמש/ת ברמזים ב-{{percent}}% מהשאלות. עודדו ניסיון בלי רמזים.",
+    "plateau": "הדיוק ב-{{a}}x{{b}} לא השתפר כבר {{weeks}} שבועות.",
+    "celebration": "{{name}} שלט/ה בכל הכפולות של {{factor}} השבוע! {{count}} מתוך 121 עובדות!",
+    "errorPattern": "{{name}} נוטה {{errorDescription}}. הקוביות הויזואליות יכולות לעזור.",
+    "noInsights": "המשיכו לשחק כדי לפתוח תובנות!",
+    "addInsteadOfMultiply": "לחבר במקום לכפול",
+    "offByOne": "לטעות בקבוצה אחת",
+    "neighborConfusion": "להתבלבל בין עובדות שכנות",
+    "zeroOneConfusion": "להתבלבל בין כלל האפס לכלל האחד"
   },
   "settings": {
     "title": "הגדרות",
     "language": "שפה",
     "sound": "אפקטים קוליים",
     "music": "מוזיקת רקע",
+    "sessionLimit": "המלצת אורך משחק",
     "on": "פועל",
-    "off": "כבוי"
+    "off": "כבוי",
+    "noLimit": "ללא הגבלה",
+    "tenMin": "10 דקות",
+    "fifteenMin": "15 דקות",
+    "twentyMin": "20 דקות",
+    "account": "חשבון",
+    "linkedGoogle": "מקושר לחשבון Google",
+    "about": "אודות",
+    "aboutText": "בונים כפל עוזר לילדים לשלוט בלוח הכפל דרך למידה חזותית וחזרות מרווחות.",
+    "version": "גרסה"
   },
   "common": {
     "loading": "טוען...",
     "error": "משהו השתבש",
-    "back": "חזרה"
+    "back": "חזרה",
+    "retry": "נסו שוב",
+    "seconds": "שנ׳",
+    "of": "מתוך"
+  },
+  "errors": {
+    "addition_substitution": "חיבר במקום לכפול",
+    "off_by_one": "טעות בקבוצה אחת",
+    "neighbor_confusion": "בלבול עם עובדה שכנה",
+    "zero_one_confusion": "בלבול כלל אפס/אחד",
+    "commutative_gap": "יודע להפך אבל לא בסדר הזה",
+    "other": "שגיאה אחרת"
   }
 }

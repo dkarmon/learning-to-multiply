@@ -5,23 +5,15 @@ import { EventBus, GameEvents } from '../game/EventBus';
 import type { Question, QuestionAttempt } from '../types';
 
 export function emitShowQuestion(question: Question): void {
-  EventBus.emit(GameEvents.SHOW_QUESTION, question);
+  EventBus.emit(GameEvents.SHOW_HINT, question);
 }
 
 export function emitShowResult(attempt: QuestionAttempt): void {
-  EventBus.emit(GameEvents.SHOW_RESULT, attempt);
+  EventBus.emit(GameEvents.ANSWER_RESULT, attempt);
 }
 
 export function emitAddBricks(count: number): void {
-  EventBus.emit(GameEvents.ADD_BRICKS, count);
-}
-
-export function emitCrumbleBricks(): void {
-  EventBus.emit(GameEvents.CRUMBLE_BRICKS);
-}
-
-export function emitStartLevel(levelNumber: number): void {
-  EventBus.emit(GameEvents.START_LEVEL, levelNumber);
+  EventBus.emit(GameEvents.BRICKS_EARNED, count);
 }
 
 export function onAnswerSubmitted(

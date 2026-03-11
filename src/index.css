@@ -1,0 +1,22 @@
+/* ABOUTME: Global stylesheet that imports Tailwind CSS utilities. */
+/* ABOUTME: Sets base font and RTL-aware layout defaults. */
+
+@import "tailwindcss";
+
+@theme {
+  --color-sky-brand: #2aa7c9;
+  --color-deep-brand: #06628d;
+  --color-cream: #FFF8E1;
+  --color-brick-red: #3c0f0f;
+  --color-warm-orange: #e46b43;
+  --color-correct: #4CAF50;
+  --color-learning: #FFC107;
+  --color-struggling: #EF5350;
+  --color-not-introduced: #E0E0E0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cream);
+  color: #333;
+}
