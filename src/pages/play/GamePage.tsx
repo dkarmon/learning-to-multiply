@@ -1,28 +1,40 @@
-// ABOUTME: Main game page that hosts the Phaser canvas.
-// ABOUTME: Redirects to kid selection if no active kid is set.
+// ABOUTME: Main game page that hosts the Phaser canvas via GameWrapper.
+// ABOUTME: Generates questions from the learning engine and starts the game session.
 
-import { useRef, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { PhaserGame } from '../../game/PhaserGame';
-import type { PhaserGameRef } from '../../game/PhaserGame';
 import { useAuthStore } from '../../stores/auth';
+import { useGameStore } from '../../stores/game';
+import { GameWrapper } from '../../components/GameWrapper';
+import { generateLevelQuestions } from '../../lib/question-generator';
+import type { FactMasteryRecord } from '../../types/learning';
 
 export function GamePage() {
   const navigate = useNavigate();
   const { activeKid } = useAuthStore();
-  const phaserRef = useRef<PhaserGameRef>({ game: null, scene: null });
+  const { currentLevel, startSession, isActive } = useGameStore();
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     if (!activeKid) {
       navigate('/play/select-kid', { replace: true });
+      return;
     }
-  }, [activeKid, navigate]);
 
-  if (!activeKid) return null;
+    if (!isActive) {
+      const masteryRecords = new Map<string, FactMasteryRecord>();
+      const questions = generateLevelQuestions(currentLevel, masteryRecords);
+      startSession(activeKid.id, currentLevel, questions);
+    }
+
+    setReady(true);
+  }, [activeKid, navigate, currentLevel, startSession, isActive]);
+
+  if (!activeKid || !ready) return null;
 
   return (
-    <div style={{ width: '100vw', height: '100vh' }}>
-      <PhaserGame ref={phaserRef} />
+    <div style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
+      <GameWrapper />
     </div>
   );
 }
