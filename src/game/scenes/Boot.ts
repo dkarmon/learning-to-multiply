@@ -1,5 +1,5 @@
 // ABOUTME: Preloads all game assets and displays a loading progress bar.
-// ABOUTME: Generates placeholder textures until art assets are available.
+// ABOUTME: Loads sprite atlases, images, and tileset; creates character animations.
 
 import Phaser from 'phaser';
 import { EventBus, GameEvents } from '../EventBus';
@@ -42,38 +42,37 @@ export class Boot extends Phaser.Scene {
       bgBar.destroy();
       fillBar.destroy();
     });
+
+    this.load.atlas('wrecker', 'assets/sprites/wrecker.png', 'assets/sprites/wrecker.json');
+    this.load.atlas('sidekick', 'assets/sprites/sidekick.png', 'assets/sprites/sidekick.json');
+    this.load.atlas('fixer', 'assets/sprites/fixer.png', 'assets/sprites/fixer.json');
+    this.load.atlas('manipulatives', 'assets/sprites/manipulatives.png', 'assets/sprites/manipulatives.json');
+    this.load.atlas('ui', 'assets/sprites/ui.png', 'assets/sprites/ui.json');
+    this.load.atlas('particles', 'assets/sprites/particles.png', 'assets/sprites/particles.json');
+
+    this.load.image('sky', 'assets/sprites/sky.png');
+    this.load.image('ground', 'assets/sprites/ground.png');
+
+    this.load.spritesheet('bricks', 'assets/tiles/bricks.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
   }
 
   create(): void {
-    this.generatePlaceholderTextures();
+    this.generateBuildingTextures();
     this.createAnimations();
 
     EventBus.emit(GameEvents.ASSETS_LOADED);
     this.scene.start('Title');
   }
 
-  private generatePlaceholderTextures(): void {
-    this.generateRect('brick', 16, 12, 0xc0392b);
-    this.generateRect('brick-alt', 16, 12, 0xe74c3c);
+  private generateBuildingTextures(): void {
+    this.generateRect('clouds', 1024, 120, 0xeceff1);
     this.generateRect('door', 24, 32, 0x5d4037);
     this.generateRect('window-empty', 32, 32, 0x90caf9);
     this.generateRect('flag', 32, 32, 0xff5722);
     this.generateRect('roof', 200, 16, 0x795548);
-
-    this.generateRect('sky', 1024, 768, 0x87ceeb);
-    this.generateRect('ground', 1024, 80, 0x8bc34a);
-    this.generateRect('clouds', 1024, 120, 0xeceff1);
-
-    this.generateRect('brick-debris', 6, 6, 0xbf360c);
-
-    this.generateRect('confetti-red', 8, 8, 0xf44336);
-    this.generateRect('confetti-blue', 8, 8, 0x2196f3);
-    this.generateRect('confetti-yellow', 8, 8, 0xffeb3b);
-    this.generateRect('confetti-green', 8, 8, 0x4caf50);
-
-    this.generateSpritesheet('wrecker', 64, 64, 0x6a1b9a, 26);
-    this.generateSpritesheet('fixer', 48, 48, 0x1565c0, 8);
-    this.generateSpritesheet('sidekick', 48, 48, 0x2e7d32, 10);
   }
 
   private generateRect(
@@ -89,98 +88,96 @@ export class Boot extends Phaser.Scene {
     g.destroy();
   }
 
-  private generateSpritesheet(
-    key: string,
-    frameW: number,
-    frameH: number,
-    color: number,
-    frameCount: number,
-  ): void {
-    const cols = Math.ceil(Math.sqrt(frameCount));
-    const rows = Math.ceil(frameCount / cols);
-    const totalW = cols * frameW;
-    const totalH = rows * frameH;
-
-    const g = this.make.graphics({ add: false });
-
-    for (let i = 0; i < frameCount; i++) {
-      const col = i % cols;
-      const row = Math.floor(i / cols);
-      const shade = color + (i * 0x040404);
-      g.fillStyle(shade);
-      g.fillRect(col * frameW + 2, row * frameH + 2, frameW - 4, frameH - 4);
-      g.lineStyle(1, 0xffffff, 0.5);
-      g.strokeRect(col * frameW + 2, row * frameH + 2, frameW - 4, frameH - 4);
-    }
-
-    g.generateTexture(key, totalW, totalH);
-    g.destroy();
-
-    const texture = this.textures.get(key);
-    const source = texture.source[0];
-    texture.add('__BASE', 0, 0, 0, source.width, source.height);
-
-    for (let i = 0; i < frameCount; i++) {
-      const col = i % cols;
-      const row = Math.floor(i / cols);
-      texture.add(i, 0, col * frameW, row * frameH, frameW, frameH);
-    }
-  }
-
   private createAnimations(): void {
     this.anims.create({
       key: 'wrecker-idle',
-      frames: this.anims.generateFrameNumbers('wrecker', { start: 0, end: 3 }),
+      frames: this.anims.generateFrameNames('wrecker', {
+        prefix: 'wrecker-idle-',
+        start: 0,
+        end: 3,
+      }),
       frameRate: 4,
       repeat: -1,
     });
     this.anims.create({
       key: 'wrecker-happy',
-      frames: this.anims.generateFrameNumbers('wrecker', { start: 4, end: 9 }),
+      frames: this.anims.generateFrameNames('wrecker', {
+        prefix: 'wrecker-happy-',
+        start: 0,
+        end: 5,
+      }),
       frameRate: 8,
       repeat: 0,
     });
     this.anims.create({
       key: 'wrecker-sad',
-      frames: this.anims.generateFrameNumbers('wrecker', { start: 10, end: 15 }),
+      frames: this.anims.generateFrameNames('wrecker', {
+        prefix: 'wrecker-frustrated-',
+        start: 0,
+        end: 5,
+      }),
       frameRate: 6,
       repeat: 0,
     });
     this.anims.create({
       key: 'wrecker-climbing',
-      frames: this.anims.generateFrameNumbers('wrecker', { start: 16, end: 21 }),
+      frames: this.anims.generateFrameNames('wrecker', {
+        prefix: 'wrecker-climbing-',
+        start: 0,
+        end: 5,
+      }),
       frameRate: 8,
       repeat: -1,
     });
     this.anims.create({
       key: 'wrecker-waving',
-      frames: this.anims.generateFrameNumbers('wrecker', { start: 22, end: 25 }),
+      frames: this.anims.generateFrameNames('wrecker', {
+        prefix: 'wrecker-waving-',
+        start: 0,
+        end: 3,
+      }),
       frameRate: 6,
       repeat: -1,
     });
 
     this.anims.create({
       key: 'fixer-waving',
-      frames: this.anims.generateFrameNumbers('fixer', { start: 0, end: 3 }),
+      frames: this.anims.generateFrameNames('fixer', {
+        prefix: 'fixer-waving-',
+        start: 0,
+        end: 3,
+      }),
       frameRate: 4,
       repeat: -1,
     });
     this.anims.create({
       key: 'fixer-idle',
-      frames: this.anims.generateFrameNumbers('fixer', { start: 4, end: 7 }),
+      frames: this.anims.generateFrameNames('fixer', {
+        prefix: 'fixer-idle-',
+        start: 0,
+        end: 3,
+      }),
       frameRate: 3,
       repeat: -1,
     });
 
     this.anims.create({
       key: 'sidekick-silly',
-      frames: this.anims.generateFrameNumbers('sidekick', { start: 0, end: 5 }),
+      frames: this.anims.generateFrameNames('sidekick', {
+        prefix: 'sidekick-cheering-',
+        start: 0,
+        end: 3,
+      }),
       frameRate: 6,
       repeat: -1,
     });
     this.anims.create({
       key: 'sidekick-idle',
-      frames: this.anims.generateFrameNumbers('sidekick', { start: 6, end: 9 }),
+      frames: this.anims.generateFrameNames('sidekick', {
+        prefix: 'sidekick-idle-',
+        start: 0,
+        end: 3,
+      }),
       frameRate: 3,
       repeat: -1,
     });

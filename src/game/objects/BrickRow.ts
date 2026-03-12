@@ -31,11 +31,12 @@ export class BrickRow {
     const startX = -totalWidth / 2;
 
     for (let i = 0; i < visualCount; i++) {
-      const brickKey = i % 3 === 0 ? 'brick-alt' : 'brick';
+      const frameIndex = i % 3 === 0 ? 1 : 0;
       const brick = this.scene.add.image(
         startX + i * BRICK_WIDTH + BRICK_WIDTH / 2,
         -20,
-        brickKey,
+        'bricks',
+        frameIndex,
       );
       brick.setDisplaySize(BRICK_WIDTH, BRICK_HEIGHT);
       brick.setAlpha(0);
@@ -107,8 +108,9 @@ export class BrickRow {
     const worldPos = this.container.getWorldTransformMatrix();
 
     const particles = this.scene.add.particles(
-      worldPos.tx, worldPos.ty, 'brick-debris',
+      worldPos.tx, worldPos.ty, 'particles',
       {
+        frame: ['debris-0', 'debris-1', 'debris-2', 'debris-3', 'debris-4'],
         speed: { min: 50, max: 150 },
         angle: { min: 220, max: 320 },
         lifespan: 600,

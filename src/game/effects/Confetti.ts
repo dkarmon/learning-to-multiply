@@ -3,18 +3,19 @@
 
 import Phaser from 'phaser';
 
-const CONFETTI_COLORS = [
-  'confetti-red',
-  'confetti-blue',
-  'confetti-yellow',
-  'confetti-green',
+const CONFETTI_FRAMES = [
+  'confetti-0',
+  'confetti-1',
+  'confetti-2',
+  'confetti-3',
 ];
 
 export function emitConfetti(scene: Phaser.Scene): void {
   const { width } = scene.cameras.main;
 
-  for (const color of CONFETTI_COLORS) {
-    const particles = scene.add.particles(0, 0, color, {
+  for (const frame of CONFETTI_FRAMES) {
+    const particles = scene.add.particles(0, 0, 'particles', {
+      frame,
       x: { min: 0, max: width },
       y: -20,
       speedX: { min: -80, max: 80 },

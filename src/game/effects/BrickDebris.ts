@@ -8,7 +8,8 @@ export function emitBrickDebris(
   x: number,
   y: number,
 ): void {
-  const particles = scene.add.particles(x, y, 'brick-debris', {
+  const particles = scene.add.particles(x, y, 'particles', {
+    frame: ['debris-0', 'debris-1', 'debris-2', 'debris-3', 'debris-4'],
     speed: { min: 50, max: 200 },
     angle: { min: 200, max: 340 },
     lifespan: { min: 400, max: 800 },
