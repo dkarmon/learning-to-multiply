@@ -1,0 +1,5429 @@
+{
+  "generatedAt": "2026-03-11T17:57:39.310Z",
+  "totalEntries": 518,
+  "entries": [
+    {
+      "id": "q-0x0-he",
+      "text": "כמה זה אפס פעמים אפס?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-0x0.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 0,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x0-en",
+      "text": "How much is zero times zero?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-0x0.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 0,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x1-he",
+      "text": "כמה זה אפס פעמים אחת?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-0x1.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 1,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x1-en",
+      "text": "How much is zero times one?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-0x1.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 1,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x2-he",
+      "text": "כמה זה אפס פעמים שתיים?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-0x2.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 2,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x2-en",
+      "text": "How much is zero times two?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-0x2.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 2,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x3-he",
+      "text": "כמה זה אפס פעמים שלוש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-0x3.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 3,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x3-en",
+      "text": "How much is zero times three?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-0x3.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 3,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x4-he",
+      "text": "כמה זה אפס פעמים ארבע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-0x4.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 4,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x4-en",
+      "text": "How much is zero times four?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-0x4.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 4,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x5-he",
+      "text": "כמה זה אפס פעמים חמש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-0x5.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 5,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x5-en",
+      "text": "How much is zero times five?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-0x5.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 5,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x6-he",
+      "text": "כמה זה אפס פעמים שש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-0x6.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 6,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x6-en",
+      "text": "How much is zero times six?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-0x6.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 6,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x7-he",
+      "text": "כמה זה אפס פעמים שבע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-0x7.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 7,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x7-en",
+      "text": "How much is zero times seven?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-0x7.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 7,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x8-he",
+      "text": "כמה זה אפס פעמים שמונה?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-0x8.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 8,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x8-en",
+      "text": "How much is zero times eight?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-0x8.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 8,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x9-he",
+      "text": "כמה זה אפס פעמים תשע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-0x9.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 9,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x9-en",
+      "text": "How much is zero times nine?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-0x9.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 9,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x10-he",
+      "text": "כמה זה אפס פעמים עשר?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-0x10.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 10,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-0x10-en",
+      "text": "How much is zero times ten?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-0x10.mp3",
+      "metadata": {
+        "factorA": 0,
+        "factorB": 10,
+        "answer": 0
+      }
+    },
+    {
+      "id": "q-1x1-he",
+      "text": "כמה זה אחת פעמים אחת?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-1x1.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 1,
+        "answer": 1
+      }
+    },
+    {
+      "id": "q-1x1-en",
+      "text": "How much is one times one?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-1x1.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 1,
+        "answer": 1
+      }
+    },
+    {
+      "id": "q-1x2-he",
+      "text": "כמה זה אחת פעמים שתיים?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-1x2.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 2,
+        "answer": 2
+      }
+    },
+    {
+      "id": "q-1x2-en",
+      "text": "How much is one times two?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-1x2.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 2,
+        "answer": 2
+      }
+    },
+    {
+      "id": "q-1x3-he",
+      "text": "כמה זה אחת פעמים שלוש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-1x3.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 3,
+        "answer": 3
+      }
+    },
+    {
+      "id": "q-1x3-en",
+      "text": "How much is one times three?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-1x3.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 3,
+        "answer": 3
+      }
+    },
+    {
+      "id": "q-1x4-he",
+      "text": "כמה זה אחת פעמים ארבע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-1x4.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 4,
+        "answer": 4
+      }
+    },
+    {
+      "id": "q-1x4-en",
+      "text": "How much is one times four?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-1x4.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 4,
+        "answer": 4
+      }
+    },
+    {
+      "id": "q-1x5-he",
+      "text": "כמה זה אחת פעמים חמש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-1x5.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 5,
+        "answer": 5
+      }
+    },
+    {
+      "id": "q-1x5-en",
+      "text": "How much is one times five?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-1x5.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 5,
+        "answer": 5
+      }
+    },
+    {
+      "id": "q-1x6-he",
+      "text": "כמה זה אחת פעמים שש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-1x6.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 6,
+        "answer": 6
+      }
+    },
+    {
+      "id": "q-1x6-en",
+      "text": "How much is one times six?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-1x6.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 6,
+        "answer": 6
+      }
+    },
+    {
+      "id": "q-1x7-he",
+      "text": "כמה זה אחת פעמים שבע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-1x7.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 7,
+        "answer": 7
+      }
+    },
+    {
+      "id": "q-1x7-en",
+      "text": "How much is one times seven?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-1x7.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 7,
+        "answer": 7
+      }
+    },
+    {
+      "id": "q-1x8-he",
+      "text": "כמה זה אחת פעמים שמונה?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-1x8.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 8,
+        "answer": 8
+      }
+    },
+    {
+      "id": "q-1x8-en",
+      "text": "How much is one times eight?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-1x8.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 8,
+        "answer": 8
+      }
+    },
+    {
+      "id": "q-1x9-he",
+      "text": "כמה זה אחת פעמים תשע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-1x9.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 9,
+        "answer": 9
+      }
+    },
+    {
+      "id": "q-1x9-en",
+      "text": "How much is one times nine?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-1x9.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 9,
+        "answer": 9
+      }
+    },
+    {
+      "id": "q-1x10-he",
+      "text": "כמה זה אחת פעמים עשר?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-1x10.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 10,
+        "answer": 10
+      }
+    },
+    {
+      "id": "q-1x10-en",
+      "text": "How much is one times ten?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-1x10.mp3",
+      "metadata": {
+        "factorA": 1,
+        "factorB": 10,
+        "answer": 10
+      }
+    },
+    {
+      "id": "q-2x2-he",
+      "text": "כמה זה שתיים פעמים שתיים?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-2x2.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 2,
+        "answer": 4
+      }
+    },
+    {
+      "id": "q-2x2-en",
+      "text": "How much is two times two?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-2x2.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 2,
+        "answer": 4
+      }
+    },
+    {
+      "id": "q-2x3-he",
+      "text": "כמה זה שתיים פעמים שלוש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-2x3.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 3,
+        "answer": 6
+      }
+    },
+    {
+      "id": "q-2x3-en",
+      "text": "How much is two times three?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-2x3.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 3,
+        "answer": 6
+      }
+    },
+    {
+      "id": "q-2x4-he",
+      "text": "כמה זה שתיים פעמים ארבע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-2x4.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 4,
+        "answer": 8
+      }
+    },
+    {
+      "id": "q-2x4-en",
+      "text": "How much is two times four?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-2x4.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 4,
+        "answer": 8
+      }
+    },
+    {
+      "id": "q-2x5-he",
+      "text": "כמה זה שתיים פעמים חמש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-2x5.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 5,
+        "answer": 10
+      }
+    },
+    {
+      "id": "q-2x5-en",
+      "text": "How much is two times five?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-2x5.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 5,
+        "answer": 10
+      }
+    },
+    {
+      "id": "q-2x6-he",
+      "text": "כמה זה שתיים פעמים שש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-2x6.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 6,
+        "answer": 12
+      }
+    },
+    {
+      "id": "q-2x6-en",
+      "text": "How much is two times six?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-2x6.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 6,
+        "answer": 12
+      }
+    },
+    {
+      "id": "q-2x7-he",
+      "text": "כמה זה שתיים פעמים שבע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-2x7.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 7,
+        "answer": 14
+      }
+    },
+    {
+      "id": "q-2x7-en",
+      "text": "How much is two times seven?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-2x7.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 7,
+        "answer": 14
+      }
+    },
+    {
+      "id": "q-2x8-he",
+      "text": "כמה זה שתיים פעמים שמונה?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-2x8.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 8,
+        "answer": 16
+      }
+    },
+    {
+      "id": "q-2x8-en",
+      "text": "How much is two times eight?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-2x8.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 8,
+        "answer": 16
+      }
+    },
+    {
+      "id": "q-2x9-he",
+      "text": "כמה זה שתיים פעמים תשע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-2x9.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 9,
+        "answer": 18
+      }
+    },
+    {
+      "id": "q-2x9-en",
+      "text": "How much is two times nine?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-2x9.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 9,
+        "answer": 18
+      }
+    },
+    {
+      "id": "q-2x10-he",
+      "text": "כמה זה שתיים פעמים עשר?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-2x10.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 10,
+        "answer": 20
+      }
+    },
+    {
+      "id": "q-2x10-en",
+      "text": "How much is two times ten?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-2x10.mp3",
+      "metadata": {
+        "factorA": 2,
+        "factorB": 10,
+        "answer": 20
+      }
+    },
+    {
+      "id": "q-3x3-he",
+      "text": "כמה זה שלוש פעמים שלוש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-3x3.mp3",
+      "metadata": {
+        "factorA": 3,
+        "factorB": 3,
+        "answer": 9
+      }
+    },
+    {
+      "id": "q-3x3-en",
+      "text": "How much is three times three?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-3x3.mp3",
+      "metadata": {
+        "factorA": 3,
+        "factorB": 3,
+        "answer": 9
+      }
+    },
+    {
+      "id": "q-3x4-he",
+      "text": "כמה זה שלוש פעמים ארבע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-3x4.mp3",
+      "metadata": {
+        "factorA": 3,
+        "factorB": 4,
+        "answer": 12
+      }
+    },
+    {
+      "id": "q-3x4-en",
+      "text": "How much is three times four?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-3x4.mp3",
+      "metadata": {
+        "factorA": 3,
+        "factorB": 4,
+        "answer": 12
+      }
+    },
+    {
+      "id": "q-3x5-he",
+      "text": "כמה זה שלוש פעמים חמש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-3x5.mp3",
+      "metadata": {
+        "factorA": 3,
+        "factorB": 5,
+        "answer": 15
+      }
+    },
+    {
+      "id": "q-3x5-en",
+      "text": "How much is three times five?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-3x5.mp3",
+      "metadata": {
+        "factorA": 3,
+        "factorB": 5,
+        "answer": 15
+      }
+    },
+    {
+      "id": "q-3x6-he",
+      "text": "כמה זה שלוש פעמים שש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-3x6.mp3",
+      "metadata": {
+        "factorA": 3,
+        "factorB": 6,
+        "answer": 18
+      }
+    },
+    {
+      "id": "q-3x6-en",
+      "text": "How much is three times six?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-3x6.mp3",
+      "metadata": {
+        "factorA": 3,
+        "factorB": 6,
+        "answer": 18
+      }
+    },
+    {
+      "id": "q-3x7-he",
+      "text": "כמה זה שלוש פעמים שבע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-3x7.mp3",
+      "metadata": {
+        "factorA": 3,
+        "factorB": 7,
+        "answer": 21
+      }
+    },
+    {
+      "id": "q-3x7-en",
+      "text": "How much is three times seven?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-3x7.mp3",
+      "metadata": {
+        "factorA": 3,
+        "factorB": 7,
+        "answer": 21
+      }
+    },
+    {
+      "id": "q-3x8-he",
+      "text": "כמה זה שלוש פעמים שמונה?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-3x8.mp3",
+      "metadata": {
+        "factorA": 3,
+        "factorB": 8,
+        "answer": 24
+      }
+    },
+    {
+      "id": "q-3x8-en",
+      "text": "How much is three times eight?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-3x8.mp3",
+      "metadata": {
+        "factorA": 3,
+        "factorB": 8,
+        "answer": 24
+      }
+    },
+    {
+      "id": "q-3x9-he",
+      "text": "כמה זה שלוש פעמים תשע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-3x9.mp3",
+      "metadata": {
+        "factorA": 3,
+        "factorB": 9,
+        "answer": 27
+      }
+    },
+    {
+      "id": "q-3x9-en",
+      "text": "How much is three times nine?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-3x9.mp3",
+      "metadata": {
+        "factorA": 3,
+        "factorB": 9,
+        "answer": 27
+      }
+    },
+    {
+      "id": "q-3x10-he",
+      "text": "כמה זה שלוש פעמים עשר?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-3x10.mp3",
+      "metadata": {
+        "factorA": 3,
+        "factorB": 10,
+        "answer": 30
+      }
+    },
+    {
+      "id": "q-3x10-en",
+      "text": "How much is three times ten?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-3x10.mp3",
+      "metadata": {
+        "factorA": 3,
+        "factorB": 10,
+        "answer": 30
+      }
+    },
+    {
+      "id": "q-4x4-he",
+      "text": "כמה זה ארבע פעמים ארבע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-4x4.mp3",
+      "metadata": {
+        "factorA": 4,
+        "factorB": 4,
+        "answer": 16
+      }
+    },
+    {
+      "id": "q-4x4-en",
+      "text": "How much is four times four?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-4x4.mp3",
+      "metadata": {
+        "factorA": 4,
+        "factorB": 4,
+        "answer": 16
+      }
+    },
+    {
+      "id": "q-4x5-he",
+      "text": "כמה זה ארבע פעמים חמש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-4x5.mp3",
+      "metadata": {
+        "factorA": 4,
+        "factorB": 5,
+        "answer": 20
+      }
+    },
+    {
+      "id": "q-4x5-en",
+      "text": "How much is four times five?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-4x5.mp3",
+      "metadata": {
+        "factorA": 4,
+        "factorB": 5,
+        "answer": 20
+      }
+    },
+    {
+      "id": "q-4x6-he",
+      "text": "כמה זה ארבע פעמים שש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-4x6.mp3",
+      "metadata": {
+        "factorA": 4,
+        "factorB": 6,
+        "answer": 24
+      }
+    },
+    {
+      "id": "q-4x6-en",
+      "text": "How much is four times six?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-4x6.mp3",
+      "metadata": {
+        "factorA": 4,
+        "factorB": 6,
+        "answer": 24
+      }
+    },
+    {
+      "id": "q-4x7-he",
+      "text": "כמה זה ארבע פעמים שבע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-4x7.mp3",
+      "metadata": {
+        "factorA": 4,
+        "factorB": 7,
+        "answer": 28
+      }
+    },
+    {
+      "id": "q-4x7-en",
+      "text": "How much is four times seven?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-4x7.mp3",
+      "metadata": {
+        "factorA": 4,
+        "factorB": 7,
+        "answer": 28
+      }
+    },
+    {
+      "id": "q-4x8-he",
+      "text": "כמה זה ארבע פעמים שמונה?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-4x8.mp3",
+      "metadata": {
+        "factorA": 4,
+        "factorB": 8,
+        "answer": 32
+      }
+    },
+    {
+      "id": "q-4x8-en",
+      "text": "How much is four times eight?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-4x8.mp3",
+      "metadata": {
+        "factorA": 4,
+        "factorB": 8,
+        "answer": 32
+      }
+    },
+    {
+      "id": "q-4x9-he",
+      "text": "כמה זה ארבע פעמים תשע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-4x9.mp3",
+      "metadata": {
+        "factorA": 4,
+        "factorB": 9,
+        "answer": 36
+      }
+    },
+    {
+      "id": "q-4x9-en",
+      "text": "How much is four times nine?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-4x9.mp3",
+      "metadata": {
+        "factorA": 4,
+        "factorB": 9,
+        "answer": 36
+      }
+    },
+    {
+      "id": "q-4x10-he",
+      "text": "כמה זה ארבע פעמים עשר?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-4x10.mp3",
+      "metadata": {
+        "factorA": 4,
+        "factorB": 10,
+        "answer": 40
+      }
+    },
+    {
+      "id": "q-4x10-en",
+      "text": "How much is four times ten?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-4x10.mp3",
+      "metadata": {
+        "factorA": 4,
+        "factorB": 10,
+        "answer": 40
+      }
+    },
+    {
+      "id": "q-5x5-he",
+      "text": "כמה זה חמש פעמים חמש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-5x5.mp3",
+      "metadata": {
+        "factorA": 5,
+        "factorB": 5,
+        "answer": 25
+      }
+    },
+    {
+      "id": "q-5x5-en",
+      "text": "How much is five times five?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-5x5.mp3",
+      "metadata": {
+        "factorA": 5,
+        "factorB": 5,
+        "answer": 25
+      }
+    },
+    {
+      "id": "q-5x6-he",
+      "text": "כמה זה חמש פעמים שש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-5x6.mp3",
+      "metadata": {
+        "factorA": 5,
+        "factorB": 6,
+        "answer": 30
+      }
+    },
+    {
+      "id": "q-5x6-en",
+      "text": "How much is five times six?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-5x6.mp3",
+      "metadata": {
+        "factorA": 5,
+        "factorB": 6,
+        "answer": 30
+      }
+    },
+    {
+      "id": "q-5x7-he",
+      "text": "כמה זה חמש פעמים שבע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-5x7.mp3",
+      "metadata": {
+        "factorA": 5,
+        "factorB": 7,
+        "answer": 35
+      }
+    },
+    {
+      "id": "q-5x7-en",
+      "text": "How much is five times seven?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-5x7.mp3",
+      "metadata": {
+        "factorA": 5,
+        "factorB": 7,
+        "answer": 35
+      }
+    },
+    {
+      "id": "q-5x8-he",
+      "text": "כמה זה חמש פעמים שמונה?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-5x8.mp3",
+      "metadata": {
+        "factorA": 5,
+        "factorB": 8,
+        "answer": 40
+      }
+    },
+    {
+      "id": "q-5x8-en",
+      "text": "How much is five times eight?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-5x8.mp3",
+      "metadata": {
+        "factorA": 5,
+        "factorB": 8,
+        "answer": 40
+      }
+    },
+    {
+      "id": "q-5x9-he",
+      "text": "כמה זה חמש פעמים תשע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-5x9.mp3",
+      "metadata": {
+        "factorA": 5,
+        "factorB": 9,
+        "answer": 45
+      }
+    },
+    {
+      "id": "q-5x9-en",
+      "text": "How much is five times nine?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-5x9.mp3",
+      "metadata": {
+        "factorA": 5,
+        "factorB": 9,
+        "answer": 45
+      }
+    },
+    {
+      "id": "q-5x10-he",
+      "text": "כמה זה חמש פעמים עשר?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-5x10.mp3",
+      "metadata": {
+        "factorA": 5,
+        "factorB": 10,
+        "answer": 50
+      }
+    },
+    {
+      "id": "q-5x10-en",
+      "text": "How much is five times ten?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-5x10.mp3",
+      "metadata": {
+        "factorA": 5,
+        "factorB": 10,
+        "answer": 50
+      }
+    },
+    {
+      "id": "q-6x6-he",
+      "text": "כמה זה שש פעמים שש?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-6x6.mp3",
+      "metadata": {
+        "factorA": 6,
+        "factorB": 6,
+        "answer": 36
+      }
+    },
+    {
+      "id": "q-6x6-en",
+      "text": "How much is six times six?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-6x6.mp3",
+      "metadata": {
+        "factorA": 6,
+        "factorB": 6,
+        "answer": 36
+      }
+    },
+    {
+      "id": "q-6x7-he",
+      "text": "כמה זה שש פעמים שבע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-6x7.mp3",
+      "metadata": {
+        "factorA": 6,
+        "factorB": 7,
+        "answer": 42
+      }
+    },
+    {
+      "id": "q-6x7-en",
+      "text": "How much is six times seven?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-6x7.mp3",
+      "metadata": {
+        "factorA": 6,
+        "factorB": 7,
+        "answer": 42
+      }
+    },
+    {
+      "id": "q-6x8-he",
+      "text": "כמה זה שש פעמים שמונה?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-6x8.mp3",
+      "metadata": {
+        "factorA": 6,
+        "factorB": 8,
+        "answer": 48
+      }
+    },
+    {
+      "id": "q-6x8-en",
+      "text": "How much is six times eight?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-6x8.mp3",
+      "metadata": {
+        "factorA": 6,
+        "factorB": 8,
+        "answer": 48
+      }
+    },
+    {
+      "id": "q-6x9-he",
+      "text": "כמה זה שש פעמים תשע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-6x9.mp3",
+      "metadata": {
+        "factorA": 6,
+        "factorB": 9,
+        "answer": 54
+      }
+    },
+    {
+      "id": "q-6x9-en",
+      "text": "How much is six times nine?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-6x9.mp3",
+      "metadata": {
+        "factorA": 6,
+        "factorB": 9,
+        "answer": 54
+      }
+    },
+    {
+      "id": "q-6x10-he",
+      "text": "כמה זה שש פעמים עשר?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-6x10.mp3",
+      "metadata": {
+        "factorA": 6,
+        "factorB": 10,
+        "answer": 60
+      }
+    },
+    {
+      "id": "q-6x10-en",
+      "text": "How much is six times ten?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-6x10.mp3",
+      "metadata": {
+        "factorA": 6,
+        "factorB": 10,
+        "answer": 60
+      }
+    },
+    {
+      "id": "q-7x7-he",
+      "text": "כמה זה שבע פעמים שבע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-7x7.mp3",
+      "metadata": {
+        "factorA": 7,
+        "factorB": 7,
+        "answer": 49
+      }
+    },
+    {
+      "id": "q-7x7-en",
+      "text": "How much is seven times seven?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-7x7.mp3",
+      "metadata": {
+        "factorA": 7,
+        "factorB": 7,
+        "answer": 49
+      }
+    },
+    {
+      "id": "q-7x8-he",
+      "text": "כמה זה שבע פעמים שמונה?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-7x8.mp3",
+      "metadata": {
+        "factorA": 7,
+        "factorB": 8,
+        "answer": 56
+      }
+    },
+    {
+      "id": "q-7x8-en",
+      "text": "How much is seven times eight?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-7x8.mp3",
+      "metadata": {
+        "factorA": 7,
+        "factorB": 8,
+        "answer": 56
+      }
+    },
+    {
+      "id": "q-7x9-he",
+      "text": "כמה זה שבע פעמים תשע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-7x9.mp3",
+      "metadata": {
+        "factorA": 7,
+        "factorB": 9,
+        "answer": 63
+      }
+    },
+    {
+      "id": "q-7x9-en",
+      "text": "How much is seven times nine?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-7x9.mp3",
+      "metadata": {
+        "factorA": 7,
+        "factorB": 9,
+        "answer": 63
+      }
+    },
+    {
+      "id": "q-7x10-he",
+      "text": "כמה זה שבע פעמים עשר?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-7x10.mp3",
+      "metadata": {
+        "factorA": 7,
+        "factorB": 10,
+        "answer": 70
+      }
+    },
+    {
+      "id": "q-7x10-en",
+      "text": "How much is seven times ten?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-7x10.mp3",
+      "metadata": {
+        "factorA": 7,
+        "factorB": 10,
+        "answer": 70
+      }
+    },
+    {
+      "id": "q-8x8-he",
+      "text": "כמה זה שמונה פעמים שמונה?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-8x8.mp3",
+      "metadata": {
+        "factorA": 8,
+        "factorB": 8,
+        "answer": 64
+      }
+    },
+    {
+      "id": "q-8x8-en",
+      "text": "How much is eight times eight?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-8x8.mp3",
+      "metadata": {
+        "factorA": 8,
+        "factorB": 8,
+        "answer": 64
+      }
+    },
+    {
+      "id": "q-8x9-he",
+      "text": "כמה זה שמונה פעמים תשע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-8x9.mp3",
+      "metadata": {
+        "factorA": 8,
+        "factorB": 9,
+        "answer": 72
+      }
+    },
+    {
+      "id": "q-8x9-en",
+      "text": "How much is eight times nine?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-8x9.mp3",
+      "metadata": {
+        "factorA": 8,
+        "factorB": 9,
+        "answer": 72
+      }
+    },
+    {
+      "id": "q-8x10-he",
+      "text": "כמה זה שמונה פעמים עשר?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-8x10.mp3",
+      "metadata": {
+        "factorA": 8,
+        "factorB": 10,
+        "answer": 80
+      }
+    },
+    {
+      "id": "q-8x10-en",
+      "text": "How much is eight times ten?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-8x10.mp3",
+      "metadata": {
+        "factorA": 8,
+        "factorB": 10,
+        "answer": 80
+      }
+    },
+    {
+      "id": "q-9x9-he",
+      "text": "כמה זה תשע פעמים תשע?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-9x9.mp3",
+      "metadata": {
+        "factorA": 9,
+        "factorB": 9,
+        "answer": 81
+      }
+    },
+    {
+      "id": "q-9x9-en",
+      "text": "How much is nine times nine?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-9x9.mp3",
+      "metadata": {
+        "factorA": 9,
+        "factorB": 9,
+        "answer": 81
+      }
+    },
+    {
+      "id": "q-9x10-he",
+      "text": "כמה זה תשע פעמים עשר?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-9x10.mp3",
+      "metadata": {
+        "factorA": 9,
+        "factorB": 10,
+        "answer": 90
+      }
+    },
+    {
+      "id": "q-9x10-en",
+      "text": "How much is nine times ten?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-9x10.mp3",
+      "metadata": {
+        "factorA": 9,
+        "factorB": 10,
+        "answer": 90
+      }
+    },
+    {
+      "id": "q-10x10-he",
+      "text": "כמה זה עשר פעמים עשר?",
+      "locale": "he",
+      "category": "question",
+      "filePath": "tts/he/questions/q-10x10.mp3",
+      "metadata": {
+        "factorA": 10,
+        "factorB": 10,
+        "answer": 100
+      }
+    },
+    {
+      "id": "q-10x10-en",
+      "text": "How much is ten times ten?",
+      "locale": "en",
+      "category": "question",
+      "filePath": "tts/en/questions/q-10x10.mp3",
+      "metadata": {
+        "factorA": 10,
+        "factorB": 10,
+        "answer": 100
+      }
+    },
+    {
+      "id": "num-0-he-f",
+      "text": "אפס",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-0-f.mp3",
+      "metadata": {
+        "number": 0,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-0-en",
+      "text": "zero",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-0.mp3",
+      "metadata": {
+        "number": 0
+      }
+    },
+    {
+      "id": "num-1-he-f",
+      "text": "אחת",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-1-f.mp3",
+      "metadata": {
+        "number": 1,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-1-he-m",
+      "text": "אחד",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-1-m.mp3",
+      "metadata": {
+        "number": 1,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-1-en",
+      "text": "one",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-1.mp3",
+      "metadata": {
+        "number": 1
+      }
+    },
+    {
+      "id": "num-2-he-f",
+      "text": "שתיים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-2-f.mp3",
+      "metadata": {
+        "number": 2,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-2-he-m",
+      "text": "שניים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-2-m.mp3",
+      "metadata": {
+        "number": 2,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-2-en",
+      "text": "two",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-2.mp3",
+      "metadata": {
+        "number": 2
+      }
+    },
+    {
+      "id": "num-3-he-f",
+      "text": "שלוש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-3-f.mp3",
+      "metadata": {
+        "number": 3,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-3-he-m",
+      "text": "שלושה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-3-m.mp3",
+      "metadata": {
+        "number": 3,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-3-en",
+      "text": "three",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-3.mp3",
+      "metadata": {
+        "number": 3
+      }
+    },
+    {
+      "id": "num-4-he-f",
+      "text": "ארבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-4-f.mp3",
+      "metadata": {
+        "number": 4,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-4-he-m",
+      "text": "ארבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-4-m.mp3",
+      "metadata": {
+        "number": 4,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-4-en",
+      "text": "four",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-4.mp3",
+      "metadata": {
+        "number": 4
+      }
+    },
+    {
+      "id": "num-5-he-f",
+      "text": "חמש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-5-f.mp3",
+      "metadata": {
+        "number": 5,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-5-he-m",
+      "text": "חמישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-5-m.mp3",
+      "metadata": {
+        "number": 5,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-5-en",
+      "text": "five",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-5.mp3",
+      "metadata": {
+        "number": 5
+      }
+    },
+    {
+      "id": "num-6-he-f",
+      "text": "שש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-6-f.mp3",
+      "metadata": {
+        "number": 6,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-6-he-m",
+      "text": "שישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-6-m.mp3",
+      "metadata": {
+        "number": 6,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-6-en",
+      "text": "six",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-6.mp3",
+      "metadata": {
+        "number": 6
+      }
+    },
+    {
+      "id": "num-7-he-f",
+      "text": "שבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-7-f.mp3",
+      "metadata": {
+        "number": 7,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-7-he-m",
+      "text": "שבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-7-m.mp3",
+      "metadata": {
+        "number": 7,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-7-en",
+      "text": "seven",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-7.mp3",
+      "metadata": {
+        "number": 7
+      }
+    },
+    {
+      "id": "num-8-he-f",
+      "text": "שמונה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-8-f.mp3",
+      "metadata": {
+        "number": 8,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-8-en",
+      "text": "eight",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-8.mp3",
+      "metadata": {
+        "number": 8
+      }
+    },
+    {
+      "id": "num-9-he-f",
+      "text": "תשע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-9-f.mp3",
+      "metadata": {
+        "number": 9,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-9-he-m",
+      "text": "תשעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-9-m.mp3",
+      "metadata": {
+        "number": 9,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-9-en",
+      "text": "nine",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-9.mp3",
+      "metadata": {
+        "number": 9
+      }
+    },
+    {
+      "id": "num-10-he-f",
+      "text": "עשר",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-10-f.mp3",
+      "metadata": {
+        "number": 10,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-10-he-m",
+      "text": "עשרה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-10-m.mp3",
+      "metadata": {
+        "number": 10,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-10-en",
+      "text": "ten",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-10.mp3",
+      "metadata": {
+        "number": 10
+      }
+    },
+    {
+      "id": "num-11-he-f",
+      "text": "אחת עשרה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-11-f.mp3",
+      "metadata": {
+        "number": 11,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-11-he-m",
+      "text": "אחד עשר",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-11-m.mp3",
+      "metadata": {
+        "number": 11,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-11-en",
+      "text": "eleven",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-11.mp3",
+      "metadata": {
+        "number": 11
+      }
+    },
+    {
+      "id": "num-12-he-f",
+      "text": "שתים עשרה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-12-f.mp3",
+      "metadata": {
+        "number": 12,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-12-he-m",
+      "text": "שנים עשר",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-12-m.mp3",
+      "metadata": {
+        "number": 12,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-12-en",
+      "text": "twelve",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-12.mp3",
+      "metadata": {
+        "number": 12
+      }
+    },
+    {
+      "id": "num-13-he-f",
+      "text": "שלוש עשרה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-13-f.mp3",
+      "metadata": {
+        "number": 13,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-13-he-m",
+      "text": "שלושה עשר",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-13-m.mp3",
+      "metadata": {
+        "number": 13,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-13-en",
+      "text": "thirteen",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-13.mp3",
+      "metadata": {
+        "number": 13
+      }
+    },
+    {
+      "id": "num-14-he-f",
+      "text": "ארבע עשרה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-14-f.mp3",
+      "metadata": {
+        "number": 14,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-14-he-m",
+      "text": "ארבעה עשר",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-14-m.mp3",
+      "metadata": {
+        "number": 14,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-14-en",
+      "text": "fourteen",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-14.mp3",
+      "metadata": {
+        "number": 14
+      }
+    },
+    {
+      "id": "num-15-he-f",
+      "text": "חמש עשרה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-15-f.mp3",
+      "metadata": {
+        "number": 15,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-15-he-m",
+      "text": "חמישה עשר",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-15-m.mp3",
+      "metadata": {
+        "number": 15,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-15-en",
+      "text": "fifteen",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-15.mp3",
+      "metadata": {
+        "number": 15
+      }
+    },
+    {
+      "id": "num-16-he-f",
+      "text": "שש עשרה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-16-f.mp3",
+      "metadata": {
+        "number": 16,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-16-he-m",
+      "text": "שישה עשר",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-16-m.mp3",
+      "metadata": {
+        "number": 16,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-16-en",
+      "text": "sixteen",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-16.mp3",
+      "metadata": {
+        "number": 16
+      }
+    },
+    {
+      "id": "num-17-he-f",
+      "text": "שבע עשרה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-17-f.mp3",
+      "metadata": {
+        "number": 17,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-17-he-m",
+      "text": "שבעה עשר",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-17-m.mp3",
+      "metadata": {
+        "number": 17,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-17-en",
+      "text": "seventeen",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-17.mp3",
+      "metadata": {
+        "number": 17
+      }
+    },
+    {
+      "id": "num-18-he-f",
+      "text": "שמונה עשרה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-18-f.mp3",
+      "metadata": {
+        "number": 18,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-18-he-m",
+      "text": "שמונה עשר",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-18-m.mp3",
+      "metadata": {
+        "number": 18,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-18-en",
+      "text": "eighteen",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-18.mp3",
+      "metadata": {
+        "number": 18
+      }
+    },
+    {
+      "id": "num-19-he-f",
+      "text": "תשע עשרה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-19-f.mp3",
+      "metadata": {
+        "number": 19,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-19-he-m",
+      "text": "תשעה עשר",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-19-m.mp3",
+      "metadata": {
+        "number": 19,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-19-en",
+      "text": "nineteen",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-19.mp3",
+      "metadata": {
+        "number": 19
+      }
+    },
+    {
+      "id": "num-20-he-f",
+      "text": "עשרים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-20-f.mp3",
+      "metadata": {
+        "number": 20,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-20-en",
+      "text": "twenty",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-20.mp3",
+      "metadata": {
+        "number": 20
+      }
+    },
+    {
+      "id": "num-21-he-f",
+      "text": "עשרים ואחת",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-21-f.mp3",
+      "metadata": {
+        "number": 21,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-21-he-m",
+      "text": "עשרים ואחד",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-21-m.mp3",
+      "metadata": {
+        "number": 21,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-21-en",
+      "text": "twenty-one",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-21.mp3",
+      "metadata": {
+        "number": 21
+      }
+    },
+    {
+      "id": "num-22-he-f",
+      "text": "עשרים ושתיים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-22-f.mp3",
+      "metadata": {
+        "number": 22,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-22-he-m",
+      "text": "עשרים ושניים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-22-m.mp3",
+      "metadata": {
+        "number": 22,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-22-en",
+      "text": "twenty-two",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-22.mp3",
+      "metadata": {
+        "number": 22
+      }
+    },
+    {
+      "id": "num-23-he-f",
+      "text": "עשרים ושלוש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-23-f.mp3",
+      "metadata": {
+        "number": 23,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-23-he-m",
+      "text": "עשרים ושלושה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-23-m.mp3",
+      "metadata": {
+        "number": 23,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-23-en",
+      "text": "twenty-three",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-23.mp3",
+      "metadata": {
+        "number": 23
+      }
+    },
+    {
+      "id": "num-24-he-f",
+      "text": "עשרים וארבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-24-f.mp3",
+      "metadata": {
+        "number": 24,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-24-he-m",
+      "text": "עשרים וארבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-24-m.mp3",
+      "metadata": {
+        "number": 24,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-24-en",
+      "text": "twenty-four",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-24.mp3",
+      "metadata": {
+        "number": 24
+      }
+    },
+    {
+      "id": "num-25-he-f",
+      "text": "עשרים וחמש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-25-f.mp3",
+      "metadata": {
+        "number": 25,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-25-he-m",
+      "text": "עשרים וחמישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-25-m.mp3",
+      "metadata": {
+        "number": 25,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-25-en",
+      "text": "twenty-five",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-25.mp3",
+      "metadata": {
+        "number": 25
+      }
+    },
+    {
+      "id": "num-26-he-f",
+      "text": "עשרים ושש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-26-f.mp3",
+      "metadata": {
+        "number": 26,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-26-he-m",
+      "text": "עשרים ושישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-26-m.mp3",
+      "metadata": {
+        "number": 26,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-26-en",
+      "text": "twenty-six",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-26.mp3",
+      "metadata": {
+        "number": 26
+      }
+    },
+    {
+      "id": "num-27-he-f",
+      "text": "עשרים ושבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-27-f.mp3",
+      "metadata": {
+        "number": 27,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-27-he-m",
+      "text": "עשרים ושבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-27-m.mp3",
+      "metadata": {
+        "number": 27,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-27-en",
+      "text": "twenty-seven",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-27.mp3",
+      "metadata": {
+        "number": 27
+      }
+    },
+    {
+      "id": "num-28-he-f",
+      "text": "עשרים ושמונה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-28-f.mp3",
+      "metadata": {
+        "number": 28,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-28-en",
+      "text": "twenty-eight",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-28.mp3",
+      "metadata": {
+        "number": 28
+      }
+    },
+    {
+      "id": "num-29-he-f",
+      "text": "עשרים ותשע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-29-f.mp3",
+      "metadata": {
+        "number": 29,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-29-he-m",
+      "text": "עשרים ותשעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-29-m.mp3",
+      "metadata": {
+        "number": 29,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-29-en",
+      "text": "twenty-nine",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-29.mp3",
+      "metadata": {
+        "number": 29
+      }
+    },
+    {
+      "id": "num-30-he-f",
+      "text": "שלושים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-30-f.mp3",
+      "metadata": {
+        "number": 30,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-30-en",
+      "text": "thirty",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-30.mp3",
+      "metadata": {
+        "number": 30
+      }
+    },
+    {
+      "id": "num-31-he-f",
+      "text": "שלושים ואחת",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-31-f.mp3",
+      "metadata": {
+        "number": 31,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-31-he-m",
+      "text": "שלושים ואחד",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-31-m.mp3",
+      "metadata": {
+        "number": 31,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-31-en",
+      "text": "thirty-one",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-31.mp3",
+      "metadata": {
+        "number": 31
+      }
+    },
+    {
+      "id": "num-32-he-f",
+      "text": "שלושים ושתיים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-32-f.mp3",
+      "metadata": {
+        "number": 32,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-32-he-m",
+      "text": "שלושים ושניים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-32-m.mp3",
+      "metadata": {
+        "number": 32,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-32-en",
+      "text": "thirty-two",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-32.mp3",
+      "metadata": {
+        "number": 32
+      }
+    },
+    {
+      "id": "num-33-he-f",
+      "text": "שלושים ושלוש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-33-f.mp3",
+      "metadata": {
+        "number": 33,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-33-he-m",
+      "text": "שלושים ושלושה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-33-m.mp3",
+      "metadata": {
+        "number": 33,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-33-en",
+      "text": "thirty-three",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-33.mp3",
+      "metadata": {
+        "number": 33
+      }
+    },
+    {
+      "id": "num-34-he-f",
+      "text": "שלושים וארבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-34-f.mp3",
+      "metadata": {
+        "number": 34,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-34-he-m",
+      "text": "שלושים וארבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-34-m.mp3",
+      "metadata": {
+        "number": 34,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-34-en",
+      "text": "thirty-four",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-34.mp3",
+      "metadata": {
+        "number": 34
+      }
+    },
+    {
+      "id": "num-35-he-f",
+      "text": "שלושים וחמש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-35-f.mp3",
+      "metadata": {
+        "number": 35,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-35-he-m",
+      "text": "שלושים וחמישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-35-m.mp3",
+      "metadata": {
+        "number": 35,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-35-en",
+      "text": "thirty-five",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-35.mp3",
+      "metadata": {
+        "number": 35
+      }
+    },
+    {
+      "id": "num-36-he-f",
+      "text": "שלושים ושש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-36-f.mp3",
+      "metadata": {
+        "number": 36,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-36-he-m",
+      "text": "שלושים ושישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-36-m.mp3",
+      "metadata": {
+        "number": 36,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-36-en",
+      "text": "thirty-six",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-36.mp3",
+      "metadata": {
+        "number": 36
+      }
+    },
+    {
+      "id": "num-37-he-f",
+      "text": "שלושים ושבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-37-f.mp3",
+      "metadata": {
+        "number": 37,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-37-he-m",
+      "text": "שלושים ושבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-37-m.mp3",
+      "metadata": {
+        "number": 37,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-37-en",
+      "text": "thirty-seven",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-37.mp3",
+      "metadata": {
+        "number": 37
+      }
+    },
+    {
+      "id": "num-38-he-f",
+      "text": "שלושים ושמונה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-38-f.mp3",
+      "metadata": {
+        "number": 38,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-38-en",
+      "text": "thirty-eight",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-38.mp3",
+      "metadata": {
+        "number": 38
+      }
+    },
+    {
+      "id": "num-39-he-f",
+      "text": "שלושים ותשע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-39-f.mp3",
+      "metadata": {
+        "number": 39,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-39-he-m",
+      "text": "שלושים ותשעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-39-m.mp3",
+      "metadata": {
+        "number": 39,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-39-en",
+      "text": "thirty-nine",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-39.mp3",
+      "metadata": {
+        "number": 39
+      }
+    },
+    {
+      "id": "num-40-he-f",
+      "text": "ארבעים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-40-f.mp3",
+      "metadata": {
+        "number": 40,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-40-en",
+      "text": "forty",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-40.mp3",
+      "metadata": {
+        "number": 40
+      }
+    },
+    {
+      "id": "num-41-he-f",
+      "text": "ארבעים ואחת",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-41-f.mp3",
+      "metadata": {
+        "number": 41,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-41-he-m",
+      "text": "ארבעים ואחד",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-41-m.mp3",
+      "metadata": {
+        "number": 41,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-41-en",
+      "text": "forty-one",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-41.mp3",
+      "metadata": {
+        "number": 41
+      }
+    },
+    {
+      "id": "num-42-he-f",
+      "text": "ארבעים ושתיים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-42-f.mp3",
+      "metadata": {
+        "number": 42,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-42-he-m",
+      "text": "ארבעים ושניים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-42-m.mp3",
+      "metadata": {
+        "number": 42,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-42-en",
+      "text": "forty-two",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-42.mp3",
+      "metadata": {
+        "number": 42
+      }
+    },
+    {
+      "id": "num-43-he-f",
+      "text": "ארבעים ושלוש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-43-f.mp3",
+      "metadata": {
+        "number": 43,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-43-he-m",
+      "text": "ארבעים ושלושה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-43-m.mp3",
+      "metadata": {
+        "number": 43,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-43-en",
+      "text": "forty-three",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-43.mp3",
+      "metadata": {
+        "number": 43
+      }
+    },
+    {
+      "id": "num-44-he-f",
+      "text": "ארבעים וארבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-44-f.mp3",
+      "metadata": {
+        "number": 44,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-44-he-m",
+      "text": "ארבעים וארבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-44-m.mp3",
+      "metadata": {
+        "number": 44,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-44-en",
+      "text": "forty-four",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-44.mp3",
+      "metadata": {
+        "number": 44
+      }
+    },
+    {
+      "id": "num-45-he-f",
+      "text": "ארבעים וחמש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-45-f.mp3",
+      "metadata": {
+        "number": 45,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-45-he-m",
+      "text": "ארבעים וחמישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-45-m.mp3",
+      "metadata": {
+        "number": 45,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-45-en",
+      "text": "forty-five",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-45.mp3",
+      "metadata": {
+        "number": 45
+      }
+    },
+    {
+      "id": "num-46-he-f",
+      "text": "ארבעים ושש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-46-f.mp3",
+      "metadata": {
+        "number": 46,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-46-he-m",
+      "text": "ארבעים ושישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-46-m.mp3",
+      "metadata": {
+        "number": 46,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-46-en",
+      "text": "forty-six",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-46.mp3",
+      "metadata": {
+        "number": 46
+      }
+    },
+    {
+      "id": "num-47-he-f",
+      "text": "ארבעים ושבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-47-f.mp3",
+      "metadata": {
+        "number": 47,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-47-he-m",
+      "text": "ארבעים ושבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-47-m.mp3",
+      "metadata": {
+        "number": 47,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-47-en",
+      "text": "forty-seven",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-47.mp3",
+      "metadata": {
+        "number": 47
+      }
+    },
+    {
+      "id": "num-48-he-f",
+      "text": "ארבעים ושמונה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-48-f.mp3",
+      "metadata": {
+        "number": 48,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-48-en",
+      "text": "forty-eight",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-48.mp3",
+      "metadata": {
+        "number": 48
+      }
+    },
+    {
+      "id": "num-49-he-f",
+      "text": "ארבעים ותשע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-49-f.mp3",
+      "metadata": {
+        "number": 49,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-49-he-m",
+      "text": "ארבעים ותשעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-49-m.mp3",
+      "metadata": {
+        "number": 49,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-49-en",
+      "text": "forty-nine",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-49.mp3",
+      "metadata": {
+        "number": 49
+      }
+    },
+    {
+      "id": "num-50-he-f",
+      "text": "חמישים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-50-f.mp3",
+      "metadata": {
+        "number": 50,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-50-en",
+      "text": "fifty",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-50.mp3",
+      "metadata": {
+        "number": 50
+      }
+    },
+    {
+      "id": "num-51-he-f",
+      "text": "חמישים ואחת",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-51-f.mp3",
+      "metadata": {
+        "number": 51,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-51-he-m",
+      "text": "חמישים ואחד",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-51-m.mp3",
+      "metadata": {
+        "number": 51,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-51-en",
+      "text": "fifty-one",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-51.mp3",
+      "metadata": {
+        "number": 51
+      }
+    },
+    {
+      "id": "num-52-he-f",
+      "text": "חמישים ושתיים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-52-f.mp3",
+      "metadata": {
+        "number": 52,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-52-he-m",
+      "text": "חמישים ושניים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-52-m.mp3",
+      "metadata": {
+        "number": 52,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-52-en",
+      "text": "fifty-two",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-52.mp3",
+      "metadata": {
+        "number": 52
+      }
+    },
+    {
+      "id": "num-53-he-f",
+      "text": "חמישים ושלוש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-53-f.mp3",
+      "metadata": {
+        "number": 53,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-53-he-m",
+      "text": "חמישים ושלושה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-53-m.mp3",
+      "metadata": {
+        "number": 53,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-53-en",
+      "text": "fifty-three",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-53.mp3",
+      "metadata": {
+        "number": 53
+      }
+    },
+    {
+      "id": "num-54-he-f",
+      "text": "חמישים וארבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-54-f.mp3",
+      "metadata": {
+        "number": 54,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-54-he-m",
+      "text": "חמישים וארבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-54-m.mp3",
+      "metadata": {
+        "number": 54,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-54-en",
+      "text": "fifty-four",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-54.mp3",
+      "metadata": {
+        "number": 54
+      }
+    },
+    {
+      "id": "num-55-he-f",
+      "text": "חמישים וחמש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-55-f.mp3",
+      "metadata": {
+        "number": 55,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-55-he-m",
+      "text": "חמישים וחמישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-55-m.mp3",
+      "metadata": {
+        "number": 55,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-55-en",
+      "text": "fifty-five",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-55.mp3",
+      "metadata": {
+        "number": 55
+      }
+    },
+    {
+      "id": "num-56-he-f",
+      "text": "חמישים ושש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-56-f.mp3",
+      "metadata": {
+        "number": 56,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-56-he-m",
+      "text": "חמישים ושישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-56-m.mp3",
+      "metadata": {
+        "number": 56,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-56-en",
+      "text": "fifty-six",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-56.mp3",
+      "metadata": {
+        "number": 56
+      }
+    },
+    {
+      "id": "num-57-he-f",
+      "text": "חמישים ושבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-57-f.mp3",
+      "metadata": {
+        "number": 57,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-57-he-m",
+      "text": "חמישים ושבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-57-m.mp3",
+      "metadata": {
+        "number": 57,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-57-en",
+      "text": "fifty-seven",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-57.mp3",
+      "metadata": {
+        "number": 57
+      }
+    },
+    {
+      "id": "num-58-he-f",
+      "text": "חמישים ושמונה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-58-f.mp3",
+      "metadata": {
+        "number": 58,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-58-en",
+      "text": "fifty-eight",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-58.mp3",
+      "metadata": {
+        "number": 58
+      }
+    },
+    {
+      "id": "num-59-he-f",
+      "text": "חמישים ותשע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-59-f.mp3",
+      "metadata": {
+        "number": 59,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-59-he-m",
+      "text": "חמישים ותשעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-59-m.mp3",
+      "metadata": {
+        "number": 59,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-59-en",
+      "text": "fifty-nine",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-59.mp3",
+      "metadata": {
+        "number": 59
+      }
+    },
+    {
+      "id": "num-60-he-f",
+      "text": "שישים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-60-f.mp3",
+      "metadata": {
+        "number": 60,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-60-en",
+      "text": "sixty",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-60.mp3",
+      "metadata": {
+        "number": 60
+      }
+    },
+    {
+      "id": "num-61-he-f",
+      "text": "שישים ואחת",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-61-f.mp3",
+      "metadata": {
+        "number": 61,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-61-he-m",
+      "text": "שישים ואחד",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-61-m.mp3",
+      "metadata": {
+        "number": 61,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-61-en",
+      "text": "sixty-one",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-61.mp3",
+      "metadata": {
+        "number": 61
+      }
+    },
+    {
+      "id": "num-62-he-f",
+      "text": "שישים ושתיים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-62-f.mp3",
+      "metadata": {
+        "number": 62,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-62-he-m",
+      "text": "שישים ושניים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-62-m.mp3",
+      "metadata": {
+        "number": 62,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-62-en",
+      "text": "sixty-two",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-62.mp3",
+      "metadata": {
+        "number": 62
+      }
+    },
+    {
+      "id": "num-63-he-f",
+      "text": "שישים ושלוש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-63-f.mp3",
+      "metadata": {
+        "number": 63,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-63-he-m",
+      "text": "שישים ושלושה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-63-m.mp3",
+      "metadata": {
+        "number": 63,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-63-en",
+      "text": "sixty-three",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-63.mp3",
+      "metadata": {
+        "number": 63
+      }
+    },
+    {
+      "id": "num-64-he-f",
+      "text": "שישים וארבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-64-f.mp3",
+      "metadata": {
+        "number": 64,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-64-he-m",
+      "text": "שישים וארבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-64-m.mp3",
+      "metadata": {
+        "number": 64,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-64-en",
+      "text": "sixty-four",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-64.mp3",
+      "metadata": {
+        "number": 64
+      }
+    },
+    {
+      "id": "num-65-he-f",
+      "text": "שישים וחמש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-65-f.mp3",
+      "metadata": {
+        "number": 65,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-65-he-m",
+      "text": "שישים וחמישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-65-m.mp3",
+      "metadata": {
+        "number": 65,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-65-en",
+      "text": "sixty-five",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-65.mp3",
+      "metadata": {
+        "number": 65
+      }
+    },
+    {
+      "id": "num-66-he-f",
+      "text": "שישים ושש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-66-f.mp3",
+      "metadata": {
+        "number": 66,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-66-he-m",
+      "text": "שישים ושישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-66-m.mp3",
+      "metadata": {
+        "number": 66,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-66-en",
+      "text": "sixty-six",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-66.mp3",
+      "metadata": {
+        "number": 66
+      }
+    },
+    {
+      "id": "num-67-he-f",
+      "text": "שישים ושבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-67-f.mp3",
+      "metadata": {
+        "number": 67,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-67-he-m",
+      "text": "שישים ושבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-67-m.mp3",
+      "metadata": {
+        "number": 67,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-67-en",
+      "text": "sixty-seven",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-67.mp3",
+      "metadata": {
+        "number": 67
+      }
+    },
+    {
+      "id": "num-68-he-f",
+      "text": "שישים ושמונה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-68-f.mp3",
+      "metadata": {
+        "number": 68,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-68-en",
+      "text": "sixty-eight",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-68.mp3",
+      "metadata": {
+        "number": 68
+      }
+    },
+    {
+      "id": "num-69-he-f",
+      "text": "שישים ותשע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-69-f.mp3",
+      "metadata": {
+        "number": 69,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-69-he-m",
+      "text": "שישים ותשעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-69-m.mp3",
+      "metadata": {
+        "number": 69,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-69-en",
+      "text": "sixty-nine",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-69.mp3",
+      "metadata": {
+        "number": 69
+      }
+    },
+    {
+      "id": "num-70-he-f",
+      "text": "שבעים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-70-f.mp3",
+      "metadata": {
+        "number": 70,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-70-en",
+      "text": "seventy",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-70.mp3",
+      "metadata": {
+        "number": 70
+      }
+    },
+    {
+      "id": "num-71-he-f",
+      "text": "שבעים ואחת",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-71-f.mp3",
+      "metadata": {
+        "number": 71,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-71-he-m",
+      "text": "שבעים ואחד",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-71-m.mp3",
+      "metadata": {
+        "number": 71,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-71-en",
+      "text": "seventy-one",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-71.mp3",
+      "metadata": {
+        "number": 71
+      }
+    },
+    {
+      "id": "num-72-he-f",
+      "text": "שבעים ושתיים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-72-f.mp3",
+      "metadata": {
+        "number": 72,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-72-he-m",
+      "text": "שבעים ושניים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-72-m.mp3",
+      "metadata": {
+        "number": 72,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-72-en",
+      "text": "seventy-two",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-72.mp3",
+      "metadata": {
+        "number": 72
+      }
+    },
+    {
+      "id": "num-73-he-f",
+      "text": "שבעים ושלוש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-73-f.mp3",
+      "metadata": {
+        "number": 73,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-73-he-m",
+      "text": "שבעים ושלושה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-73-m.mp3",
+      "metadata": {
+        "number": 73,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-73-en",
+      "text": "seventy-three",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-73.mp3",
+      "metadata": {
+        "number": 73
+      }
+    },
+    {
+      "id": "num-74-he-f",
+      "text": "שבעים וארבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-74-f.mp3",
+      "metadata": {
+        "number": 74,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-74-he-m",
+      "text": "שבעים וארבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-74-m.mp3",
+      "metadata": {
+        "number": 74,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-74-en",
+      "text": "seventy-four",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-74.mp3",
+      "metadata": {
+        "number": 74
+      }
+    },
+    {
+      "id": "num-75-he-f",
+      "text": "שבעים וחמש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-75-f.mp3",
+      "metadata": {
+        "number": 75,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-75-he-m",
+      "text": "שבעים וחמישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-75-m.mp3",
+      "metadata": {
+        "number": 75,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-75-en",
+      "text": "seventy-five",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-75.mp3",
+      "metadata": {
+        "number": 75
+      }
+    },
+    {
+      "id": "num-76-he-f",
+      "text": "שבעים ושש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-76-f.mp3",
+      "metadata": {
+        "number": 76,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-76-he-m",
+      "text": "שבעים ושישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-76-m.mp3",
+      "metadata": {
+        "number": 76,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-76-en",
+      "text": "seventy-six",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-76.mp3",
+      "metadata": {
+        "number": 76
+      }
+    },
+    {
+      "id": "num-77-he-f",
+      "text": "שבעים ושבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-77-f.mp3",
+      "metadata": {
+        "number": 77,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-77-he-m",
+      "text": "שבעים ושבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-77-m.mp3",
+      "metadata": {
+        "number": 77,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-77-en",
+      "text": "seventy-seven",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-77.mp3",
+      "metadata": {
+        "number": 77
+      }
+    },
+    {
+      "id": "num-78-he-f",
+      "text": "שבעים ושמונה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-78-f.mp3",
+      "metadata": {
+        "number": 78,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-78-en",
+      "text": "seventy-eight",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-78.mp3",
+      "metadata": {
+        "number": 78
+      }
+    },
+    {
+      "id": "num-79-he-f",
+      "text": "שבעים ותשע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-79-f.mp3",
+      "metadata": {
+        "number": 79,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-79-he-m",
+      "text": "שבעים ותשעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-79-m.mp3",
+      "metadata": {
+        "number": 79,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-79-en",
+      "text": "seventy-nine",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-79.mp3",
+      "metadata": {
+        "number": 79
+      }
+    },
+    {
+      "id": "num-80-he-f",
+      "text": "שמונים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-80-f.mp3",
+      "metadata": {
+        "number": 80,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-80-en",
+      "text": "eighty",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-80.mp3",
+      "metadata": {
+        "number": 80
+      }
+    },
+    {
+      "id": "num-81-he-f",
+      "text": "שמונים ואחת",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-81-f.mp3",
+      "metadata": {
+        "number": 81,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-81-he-m",
+      "text": "שמונים ואחד",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-81-m.mp3",
+      "metadata": {
+        "number": 81,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-81-en",
+      "text": "eighty-one",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-81.mp3",
+      "metadata": {
+        "number": 81
+      }
+    },
+    {
+      "id": "num-82-he-f",
+      "text": "שמונים ושתיים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-82-f.mp3",
+      "metadata": {
+        "number": 82,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-82-he-m",
+      "text": "שמונים ושניים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-82-m.mp3",
+      "metadata": {
+        "number": 82,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-82-en",
+      "text": "eighty-two",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-82.mp3",
+      "metadata": {
+        "number": 82
+      }
+    },
+    {
+      "id": "num-83-he-f",
+      "text": "שמונים ושלוש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-83-f.mp3",
+      "metadata": {
+        "number": 83,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-83-he-m",
+      "text": "שמונים ושלושה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-83-m.mp3",
+      "metadata": {
+        "number": 83,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-83-en",
+      "text": "eighty-three",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-83.mp3",
+      "metadata": {
+        "number": 83
+      }
+    },
+    {
+      "id": "num-84-he-f",
+      "text": "שמונים וארבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-84-f.mp3",
+      "metadata": {
+        "number": 84,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-84-he-m",
+      "text": "שמונים וארבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-84-m.mp3",
+      "metadata": {
+        "number": 84,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-84-en",
+      "text": "eighty-four",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-84.mp3",
+      "metadata": {
+        "number": 84
+      }
+    },
+    {
+      "id": "num-85-he-f",
+      "text": "שמונים וחמש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-85-f.mp3",
+      "metadata": {
+        "number": 85,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-85-he-m",
+      "text": "שמונים וחמישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-85-m.mp3",
+      "metadata": {
+        "number": 85,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-85-en",
+      "text": "eighty-five",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-85.mp3",
+      "metadata": {
+        "number": 85
+      }
+    },
+    {
+      "id": "num-86-he-f",
+      "text": "שמונים ושש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-86-f.mp3",
+      "metadata": {
+        "number": 86,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-86-he-m",
+      "text": "שמונים ושישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-86-m.mp3",
+      "metadata": {
+        "number": 86,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-86-en",
+      "text": "eighty-six",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-86.mp3",
+      "metadata": {
+        "number": 86
+      }
+    },
+    {
+      "id": "num-87-he-f",
+      "text": "שמונים ושבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-87-f.mp3",
+      "metadata": {
+        "number": 87,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-87-he-m",
+      "text": "שמונים ושבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-87-m.mp3",
+      "metadata": {
+        "number": 87,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-87-en",
+      "text": "eighty-seven",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-87.mp3",
+      "metadata": {
+        "number": 87
+      }
+    },
+    {
+      "id": "num-88-he-f",
+      "text": "שמונים ושמונה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-88-f.mp3",
+      "metadata": {
+        "number": 88,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-88-en",
+      "text": "eighty-eight",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-88.mp3",
+      "metadata": {
+        "number": 88
+      }
+    },
+    {
+      "id": "num-89-he-f",
+      "text": "שמונים ותשע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-89-f.mp3",
+      "metadata": {
+        "number": 89,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-89-he-m",
+      "text": "שמונים ותשעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-89-m.mp3",
+      "metadata": {
+        "number": 89,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-89-en",
+      "text": "eighty-nine",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-89.mp3",
+      "metadata": {
+        "number": 89
+      }
+    },
+    {
+      "id": "num-90-he-f",
+      "text": "תשעים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-90-f.mp3",
+      "metadata": {
+        "number": 90,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-90-en",
+      "text": "ninety",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-90.mp3",
+      "metadata": {
+        "number": 90
+      }
+    },
+    {
+      "id": "num-91-he-f",
+      "text": "תשעים ואחת",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-91-f.mp3",
+      "metadata": {
+        "number": 91,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-91-he-m",
+      "text": "תשעים ואחד",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-91-m.mp3",
+      "metadata": {
+        "number": 91,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-91-en",
+      "text": "ninety-one",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-91.mp3",
+      "metadata": {
+        "number": 91
+      }
+    },
+    {
+      "id": "num-92-he-f",
+      "text": "תשעים ושתיים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-92-f.mp3",
+      "metadata": {
+        "number": 92,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-92-he-m",
+      "text": "תשעים ושניים",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-92-m.mp3",
+      "metadata": {
+        "number": 92,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-92-en",
+      "text": "ninety-two",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-92.mp3",
+      "metadata": {
+        "number": 92
+      }
+    },
+    {
+      "id": "num-93-he-f",
+      "text": "תשעים ושלוש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-93-f.mp3",
+      "metadata": {
+        "number": 93,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-93-he-m",
+      "text": "תשעים ושלושה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-93-m.mp3",
+      "metadata": {
+        "number": 93,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-93-en",
+      "text": "ninety-three",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-93.mp3",
+      "metadata": {
+        "number": 93
+      }
+    },
+    {
+      "id": "num-94-he-f",
+      "text": "תשעים וארבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-94-f.mp3",
+      "metadata": {
+        "number": 94,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-94-he-m",
+      "text": "תשעים וארבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-94-m.mp3",
+      "metadata": {
+        "number": 94,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-94-en",
+      "text": "ninety-four",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-94.mp3",
+      "metadata": {
+        "number": 94
+      }
+    },
+    {
+      "id": "num-95-he-f",
+      "text": "תשעים וחמש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-95-f.mp3",
+      "metadata": {
+        "number": 95,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-95-he-m",
+      "text": "תשעים וחמישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-95-m.mp3",
+      "metadata": {
+        "number": 95,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-95-en",
+      "text": "ninety-five",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-95.mp3",
+      "metadata": {
+        "number": 95
+      }
+    },
+    {
+      "id": "num-96-he-f",
+      "text": "תשעים ושש",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-96-f.mp3",
+      "metadata": {
+        "number": 96,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-96-he-m",
+      "text": "תשעים ושישה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-96-m.mp3",
+      "metadata": {
+        "number": 96,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-96-en",
+      "text": "ninety-six",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-96.mp3",
+      "metadata": {
+        "number": 96
+      }
+    },
+    {
+      "id": "num-97-he-f",
+      "text": "תשעים ושבע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-97-f.mp3",
+      "metadata": {
+        "number": 97,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-97-he-m",
+      "text": "תשעים ושבעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-97-m.mp3",
+      "metadata": {
+        "number": 97,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-97-en",
+      "text": "ninety-seven",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-97.mp3",
+      "metadata": {
+        "number": 97
+      }
+    },
+    {
+      "id": "num-98-he-f",
+      "text": "תשעים ושמונה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-98-f.mp3",
+      "metadata": {
+        "number": 98,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-98-en",
+      "text": "ninety-eight",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-98.mp3",
+      "metadata": {
+        "number": 98
+      }
+    },
+    {
+      "id": "num-99-he-f",
+      "text": "תשעים ותשע",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-99-f.mp3",
+      "metadata": {
+        "number": 99,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-99-he-m",
+      "text": "תשעים ותשעה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-99-m.mp3",
+      "metadata": {
+        "number": 99,
+        "gender": "masculine"
+      }
+    },
+    {
+      "id": "num-99-en",
+      "text": "ninety-nine",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-99.mp3",
+      "metadata": {
+        "number": 99
+      }
+    },
+    {
+      "id": "num-100-he-f",
+      "text": "מאה",
+      "locale": "he",
+      "category": "number",
+      "filePath": "tts/he/numbers/num-100-f.mp3",
+      "metadata": {
+        "number": 100,
+        "gender": "feminine"
+      }
+    },
+    {
+      "id": "num-100-en",
+      "text": "one hundred",
+      "locale": "en",
+      "category": "number",
+      "filePath": "tts/en/numbers/num-100.mp3",
+      "metadata": {
+        "number": 100
+      }
+    },
+    {
+      "id": "feedback-correct-1-he",
+      "text": "כל הכבוד!",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/correct-1.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-correct-1-en",
+      "text": "Amazing!",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/correct-1.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-correct-2-he",
+      "text": "מצוין!",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/correct-2.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-correct-2-en",
+      "text": "Excellent!",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/correct-2.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-correct-3-he",
+      "text": "יופי!",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/correct-3.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-correct-3-en",
+      "text": "Great job!",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/correct-3.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-correct-4-he",
+      "text": "נכון מאוד!",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/correct-4.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-correct-4-en",
+      "text": "That's right!",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/correct-4.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-correct-5-he",
+      "text": "וואו!",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/correct-5.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-correct-5-en",
+      "text": "Wow!",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/correct-5.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-correct-6-he",
+      "text": "בדיוק!",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/correct-6.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-correct-6-en",
+      "text": "Exactly!",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/correct-6.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-correct-no-hint-he",
+      "text": "לבד! בלי עזרה!",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/correct-no-hint.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-correct-no-hint-en",
+      "text": "All by yourself!",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/correct-no-hint.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-correct-fast-he",
+      "text": "מהר מאוד!",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/correct-fast.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-correct-fast-en",
+      "text": "Super fast!",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/correct-fast.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-wrong-1-he",
+      "text": "לא בדיוק, נסי שוב!",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/wrong-1.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-wrong-1-en",
+      "text": "Not quite, try again!",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/wrong-1.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-wrong-2-he",
+      "text": "כמעט! נסי עוד פעם.",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/wrong-2.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-wrong-2-en",
+      "text": "Almost! Try once more.",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/wrong-2.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-wrong-3-he",
+      "text": "אופס, עוד פעם!",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/wrong-3.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-wrong-3-en",
+      "text": "Oops, one more time!",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/wrong-3.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-wrong-show-he",
+      "text": "התשובה היא",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/wrong-show.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-wrong-show-en",
+      "text": "The answer is",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/wrong-show.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-wrong-lets-see-he",
+      "text": "בוא נראה למה.",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/wrong-lets-see.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-wrong-lets-see-en",
+      "text": "Let's see why.",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/wrong-lets-see.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-hint-available-he",
+      "text": "רוצה עזרה?",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/hint-available.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-hint-available-en",
+      "text": "Need help?",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/hint-available.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-hint-used-he",
+      "text": "יופי שהשתמשת בעזרה!",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/hint-used.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-hint-used-en",
+      "text": "Great job using the blocks!",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/hint-used.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-streak-3-he",
+      "text": "שלוש ברצף!",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/streak-3.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-streak-3-en",
+      "text": "Three in a row!",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/streak-3.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-streak-5-he",
+      "text": "חמש ברצף! אלופה!",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/streak-5.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-streak-5-en",
+      "text": "Five in a row! Champion!",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/streak-5.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-try-again-later-he",
+      "text": "ננסה את זה שוב אחר כך.",
+      "locale": "he",
+      "category": "feedback",
+      "filePath": "tts/he/feedback/try-again-later.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "feedback-try-again-later-en",
+      "text": "We'll try this one again later.",
+      "locale": "en",
+      "category": "feedback",
+      "filePath": "tts/en/feedback/try-again-later.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-drag-blocks-he",
+      "text": "גררי את הקוביות.",
+      "locale": "he",
+      "category": "instruction",
+      "filePath": "tts/he/instructions/drag-blocks.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-drag-blocks-en",
+      "text": "Drag the blocks.",
+      "locale": "en",
+      "category": "instruction",
+      "filePath": "tts/en/instructions/drag-blocks.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-tap-answer-he",
+      "text": "הקישי את התשובה.",
+      "locale": "he",
+      "category": "instruction",
+      "filePath": "tts/he/instructions/tap-answer.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-tap-answer-en",
+      "text": "Tap the answer.",
+      "locale": "en",
+      "category": "instruction",
+      "filePath": "tts/en/instructions/tap-answer.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-tap-hint-he",
+      "text": "אפשר ללחוץ על עזרה.",
+      "locale": "he",
+      "category": "instruction",
+      "filePath": "tts/he/instructions/tap-hint.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-tap-hint-en",
+      "text": "You can tap the help button.",
+      "locale": "en",
+      "category": "instruction",
+      "filePath": "tts/en/instructions/tap-hint.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-count-groups-he",
+      "text": "בואי נספור את הקבוצות.",
+      "locale": "he",
+      "category": "instruction",
+      "filePath": "tts/he/instructions/count-groups.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-count-groups-en",
+      "text": "Let's count the groups.",
+      "locale": "en",
+      "category": "instruction",
+      "filePath": "tts/en/instructions/count-groups.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-count-all-he",
+      "text": "עכשיו נספור את הכל.",
+      "locale": "he",
+      "category": "instruction",
+      "filePath": "tts/he/instructions/count-all.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-count-all-en",
+      "text": "Now let's count them all.",
+      "locale": "en",
+      "category": "instruction",
+      "filePath": "tts/en/instructions/count-all.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-look-blocks-he",
+      "text": "תסתכלי על הקוביות.",
+      "locale": "he",
+      "category": "instruction",
+      "filePath": "tts/he/instructions/look-blocks.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-look-blocks-en",
+      "text": "Look at the blocks.",
+      "locale": "en",
+      "category": "instruction",
+      "filePath": "tts/en/instructions/look-blocks.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-how-many-groups-he",
+      "text": "כמה קבוצות יש?",
+      "locale": "he",
+      "category": "instruction",
+      "filePath": "tts/he/instructions/how-many-groups.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-how-many-groups-en",
+      "text": "How many groups are there?",
+      "locale": "en",
+      "category": "instruction",
+      "filePath": "tts/en/instructions/how-many-groups.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-how-many-each-he",
+      "text": "כמה בכל קבוצה?",
+      "locale": "he",
+      "category": "instruction",
+      "filePath": "tts/he/instructions/how-many-each.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-how-many-each-en",
+      "text": "How many in each group?",
+      "locale": "en",
+      "category": "instruction",
+      "filePath": "tts/en/instructions/how-many-each.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-press-number-he",
+      "text": "לחצי על המספר.",
+      "locale": "he",
+      "category": "instruction",
+      "filePath": "tts/he/instructions/press-number.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-press-number-en",
+      "text": "Press the number.",
+      "locale": "en",
+      "category": "instruction",
+      "filePath": "tts/en/instructions/press-number.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-good-thinking-he",
+      "text": "חשיבה טובה!",
+      "locale": "he",
+      "category": "instruction",
+      "filePath": "tts/he/instructions/good-thinking.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "instruction-good-thinking-en",
+      "text": "Good thinking!",
+      "locale": "en",
+      "category": "instruction",
+      "filePath": "tts/en/instructions/good-thinking.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-1-he",
+      "text": "שלב אחת!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-1.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-1-en",
+      "text": "Level one!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-1.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-2-he",
+      "text": "שלב שתיים!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-2.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-2-en",
+      "text": "Level two!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-2.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-3-he",
+      "text": "שלב שלוש!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-3.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-3-en",
+      "text": "Level three!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-3.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-4-he",
+      "text": "שלב ארבע!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-4.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-4-en",
+      "text": "Level four!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-4.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-5-he",
+      "text": "שלב חמש!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-5.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-5-en",
+      "text": "Level five!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-5.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-6-he",
+      "text": "שלב שש!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-6.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-6-en",
+      "text": "Level six!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-6.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-7-he",
+      "text": "שלב שבע!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-7.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-7-en",
+      "text": "Level seven!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-7.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-8-he",
+      "text": "שלב שמונה!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-8.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-8-en",
+      "text": "Level eight!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-8.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-9-he",
+      "text": "שלב תשע!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-9.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-9-en",
+      "text": "Level nine!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-9.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-10-he",
+      "text": "שלב עשר!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-10.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-10-en",
+      "text": "Level ten!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-10.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-11-he",
+      "text": "שלב אחת עשרה!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-11.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-11-en",
+      "text": "Level eleven!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-11.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-12-he",
+      "text": "שלב שתים עשרה!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-12.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-12-en",
+      "text": "Level twelve!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-12.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-13-he",
+      "text": "שלב שלוש עשרה!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-13.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-13-en",
+      "text": "Level thirteen!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-13.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-14-he",
+      "text": "שלב ארבע עשרה!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-14.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-14-en",
+      "text": "Level fourteen!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-14.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-15-he",
+      "text": "שלב חמש עשרה!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-15.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-15-en",
+      "text": "Level fifteen!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-15.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-complete-he",
+      "text": "הצלחת!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-complete.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-complete-en",
+      "text": "You did it!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-complete.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-perfect-he",
+      "text": "מושלם! בלי טעויות!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/level-perfect.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-level-perfect-en",
+      "text": "Perfect! No mistakes!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/level-perfect.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-session-start-he",
+      "text": "בואי נשחק!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/session-start.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-session-start-en",
+      "text": "Let's play!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/session-start.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-session-end-he",
+      "text": "כל הכבוד! סיימנו להיום!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/session-end.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-session-end-en",
+      "text": "Great job! We're done for today!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/session-end.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-session-continue-he",
+      "text": "רוצה להמשיך?",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/session-continue.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-session-continue-en",
+      "text": "Want to keep going?",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/session-continue.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-welcome-back-he",
+      "text": "שוב פה! בואי נתחיל!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/welcome-back.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-welcome-back-en",
+      "text": "You're back! Let's start!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/welcome-back.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-new-building-he",
+      "text": "בניין חדש!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/new-building.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-new-building-en",
+      "text": "New building!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/new-building.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-building-growing-he",
+      "text": "הבניין גדל!",
+      "locale": "he",
+      "category": "level",
+      "filePath": "tts/he/level/building-growing.mp3",
+      "metadata": {}
+    },
+    {
+      "id": "level-building-growing-en",
+      "text": "The building is growing!",
+      "locale": "en",
+      "category": "level",
+      "filePath": "tts/en/level/building-growing.mp3",
+      "metadata": {}
+    }
+  ]
+}

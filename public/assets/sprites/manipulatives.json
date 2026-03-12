@@ -1,0 +1,136 @@
+{
+  "frames": {
+    "circle-normal": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 48,
+        "h": 48
+      },
+      "sourceSize": {
+        "w": 48,
+        "h": 48
+      }
+    },
+    "circle-highlighted": {
+      "frame": {
+        "x": 48,
+        "y": 0,
+        "w": 48,
+        "h": 48
+      },
+      "sourceSize": {
+        "w": 48,
+        "h": 48
+      }
+    },
+    "circle-ghost": {
+      "frame": {
+        "x": 96,
+        "y": 0,
+        "w": 48,
+        "h": 48
+      },
+      "sourceSize": {
+        "w": 48,
+        "h": 48
+      }
+    },
+    "circle-small": {
+      "frame": {
+        "x": 144,
+        "y": 0,
+        "w": 24,
+        "h": 24
+      },
+      "sourceSize": {
+        "w": 24,
+        "h": 24
+      }
+    },
+    "rect5-normal": {
+      "frame": {
+        "x": 0,
+        "y": 56,
+        "w": 120,
+        "h": 48
+      },
+      "sourceSize": {
+        "w": 120,
+        "h": 48
+      }
+    },
+    "rect5-highlighted": {
+      "frame": {
+        "x": 0,
+        "y": 110,
+        "w": 124,
+        "h": 52
+      },
+      "sourceSize": {
+        "w": 124,
+        "h": 52
+      }
+    },
+    "rect5-ghost": {
+      "frame": {
+        "x": 0,
+        "y": 168,
+        "w": 120,
+        "h": 48
+      },
+      "sourceSize": {
+        "w": 120,
+        "h": 48
+      }
+    },
+    "rect5-small": {
+      "frame": {
+        "x": 0,
+        "y": 220,
+        "w": 60,
+        "h": 24
+      },
+      "sourceSize": {
+        "w": 60,
+        "h": 24
+      }
+    },
+    "bracket": {
+      "frame": {
+        "x": 192,
+        "y": 56,
+        "w": 16,
+        "h": 20
+      },
+      "sourceSize": {
+        "w": 16,
+        "h": 20
+      }
+    },
+    "equals": {
+      "frame": {
+        "x": 192,
+        "y": 80,
+        "w": 16,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 16,
+        "h": 16
+      }
+    },
+    "multiply": {
+      "frame": {
+        "x": 208,
+        "y": 80,
+        "w": 16,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 16,
+        "h": 16
+      }
+    }
+  }
+}

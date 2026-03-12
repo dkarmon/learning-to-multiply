@@ -82,12 +82,13 @@ Research from intelligent tutoring systems (ASSISTments, Cognitive Tutor):
 
 **Recommended escalation for a pre-reader:**
 
-| Level | Trigger | Action |
-|-------|---------|--------|
-| 0 | Initial attempt | No hints visible |
-| 1 | After ~10 seconds | Hint button glows gently |
-| 2 | Child taps hint | Show groups partially formed (visual hint) |
-| 3 | Child taps hint again | Animate the full solution step by step |
+A static hint button is always visible, but no visual hints appear until the child explicitly requests them. No glowing, no auto-prompting. The hint button shows the bonus brick cost upfront so the child makes an informed trade-off.
+
+| Level | Trigger | Hint Button Shows | Action |
+|-------|---------|-------------------|--------|
+| 0 | Initial attempt | "−2 bonus bricks" | Hint button visible but passive |
+| 1 | Child taps hint button | "−1 bonus brick" | Show groups partially formed (visual hint) |
+| 2 | Child taps hint button again | — | Animate the full solution step by step |
 
 Never show just the numeric answer. Always show WHY through visuals.
 
@@ -107,15 +108,25 @@ Never show just the numeric answer. Always show WHY through visuals.
 
 **Within a session:** re-present missed problems 2-3 items later, with added visual scaffolding. Same problem returns, not a different one at the same difficulty.
 
-### 1.6 Hebrew Language Considerations
+### 1.6 Bilingual Support (Hebrew + English)
 
-**Math notation direction:** Israelis write math left-to-right despite Hebrew text being right-to-left. This is established practice. Use `dir="ltr"` for math expressions within RTL Hebrew text.
+The entire app -- UI, feedback messages, voiceover, instructions, parent dashboard -- must support both Hebrew and English.
 
-**The phrasing "כמה זה X פעמים Y"** (how much is X times Y) naturally maps to the "groups of" interpretation, which is pedagogically aligned with Danny's model.
+**Internationalization (i18n) requirements:**
+- All UI text via translation keys (no hardcoded strings)
+- RTL layout for Hebrew, LTR for English (CSS logical properties, `dir` attribute)
+- Language toggle accessible to the parent in settings
+- Two complete sets of TTS audio clips (~400-600 total)
+- Math notation is always LTR in both languages
 
-**Hebrew number gender forms are genuinely tricky.** Numbers 1-10 have masculine and feminine forms, and the agreement rules are counter-intuitive. A native speaker MUST review the audio scripts. Use a lookup table, not a programmatic converter.
+**Hebrew-specific:**
+- Phrasing "כמה זה X פעמים Y" (how much is X times Y) maps to the "groups of" conceptual model
+- Hebrew number gender forms are genuinely tricky (masculine/feminine for 1-10). Danny (native speaker) will review TTS scripts. Use a lookup table, not a programmatic converter.
 
-**TTS recommendation:** Pre-record with a native speaker. For a child-facing product, voice warmth and naturalness matter enormously. TTS APIs (Azure has 2 Hebrew neural voices, ElevenLabs has the best quality) are viable for generating the ~200-300 clips needed, at under $2 total cost. But have a native speaker review every clip.
+**English-specific:**
+- Phrasing "How much is X times Y?" -- straightforward, no gender complications
+
+**TTS recommendation:** Pre-record all audio in both languages. TTS APIs (Azure has 2 Hebrew neural voices; ElevenLabs has best quality) can generate the clips at under $5 total for both languages. Native speaker review required for Hebrew.
 
 ---
 
@@ -188,12 +199,12 @@ Danny's proposal: correct answer adds bricks (3x5=15 adds 15 bricks), wrong answ
 
 Hints should give **fewer bonus bricks, never cost bricks.** Every correct answer always earns bricks.
 
-| Scenario | Bricks Earned | Feedback |
-|----------|--------------|----------|
-| No hint, correct | Answer value + 3 bonus | "Amazing! You figured it out!" |
-| Visual hint used, correct | Answer value + 1 bonus | "Great work using the blocks!" |
-| Scaffolded hint used, correct | Answer value only | "You learned something new!" |
-| Wrong answer | 0 bricks | "Almost! Let's try again!" |
+| Scenario | Bricks Earned | Bonus Forfeited | Feedback |
+|----------|--------------|-----------------|----------|
+| No hint, correct | Answer value + 3 bonus | — | "Amazing! You figured it out!" |
+| Visual hint used, correct | Answer value + 1 bonus | −2 (shown before click) | "Great work using the blocks!" |
+| Both hints used, correct | Answer value only | −3 (shown before clicks) | "You learned something new!" |
+| Wrong answer | 0 bricks | — | "Almost! Let's try again!" |
 
 **Encouraging independence:**
 - Show a "thinking" animation for 3-5 seconds before making hints available
@@ -589,29 +600,24 @@ Vite builds to static files, deployed on Vercel. Supabase handles auth + databas
 
 ---
 
-## 7. Open Questions
+## 7. Resolved Design Decisions
 
-These need Danny's input before implementation:
+All open questions have been resolved:
 
-1. **Destruction mechanic:** Research says don't break bricks for wrong answers. Are you OK with "bricks don't get added" + gentle wobble instead? Or is the breaking animation core to your vision?
-
-2. **Visual model phasing:** Research recommends starting with circles-only before introducing rectangles. This delays the full visual model. Does that work for your timeline?
-
-3. **3x5 vs 5x3:** Should these be the same fact (reduces 121 to 66 unique facts) or separate? Pedagogically, they represent different real-world situations (3 bags of 5 apples vs 5 bags of 3 apples) but have the same answer.
-
-4. **Skip counting prerequisite:** Should the app include a warm-up/assessment for skip counting readiness, or assume the child is ready?
-
-5. **Game engine:** Start simple with React + Framer Motion, or go straight to Phaser.js? The simple approach is faster to build but may need migration later.
-
-6. **Character names and design:** Need original characters. Any preferences for personality/names? The archetypes (big wrecker, small speedster, cheerful fixer) are free to use.
-
-7. **Hebrew number gender:** Need a native Hebrew speaker to confirm the correct masculine/feminine forms for the TTS scripts. Is that you, Danny?
-
-8. **Session limits:** Should the app enforce a max session time, or let the child play as long as they want?
-
-9. **Sound design:** Arcade-style chiptune music would fit the pixel art aesthetic perfectly. Include background music or just sound effects?
-
-10. **Target platform priority:** iPad first? Desktop? Both equally? This affects touch target sizing and layout decisions.
+| # | Question | Decision |
+|---|----------|----------|
+| 1 | Destruction mechanic | Few bricks crumble off the top + funny character animation. Not a full row. |
+| 2 | Visual model phasing | 5-rectangle available from the start. No phased introduction. |
+| 3 | 3x5 vs 5x3 | Same fact (canonical storage as min,max). Both forms presented during play. |
+| 4 | Skip counting prerequisite | Skip it. Assume readiness. |
+| 5 | Game engine | Phaser.js 3. Visual quality is a priority. |
+| 6 | Character names/design | Original characters using the archetypes (big wrecker, small sidekick, cheerful fixer). Names TBD. |
+| 7 | Hebrew number gender | Danny (native Hebrew speaker) will review all TTS scripts. |
+| 8 | Session limits | Soft suggestion to stop after 10-15 min, option to continue. No hard limit. |
+| 9 | Sound design | Background music + sound effects, with parent-accessible mute toggle. |
+| 10 | Target platform | Desktop + Android mobile (Pixel). |
+| 11 | Hint visibility | No auto-prompting. Hint button is always visible but passive. Child must choose to tap it. Button shows bonus brick cost before clicking. |
+| 12 | Language | Full bilingual support (Hebrew + English). All UI, voiceover, and feedback in both languages. |
 
 ---
 
