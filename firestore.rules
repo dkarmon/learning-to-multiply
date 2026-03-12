@@ -13,6 +13,7 @@ service cloud.firestore {
       allow read: if request.auth != null && request.auth.uid == parentId;
       allow create: if request.auth != null && request.auth.uid == parentId;
       allow update: if request.auth != null && request.auth.uid == parentId;
+      allow delete: if false;
     }
 
     // --- kids ---
@@ -36,6 +37,7 @@ service cloud.firestore {
         && isParentOfKid(request.resource.data.kid_id);
       allow update: if request.auth != null
         && isParentOfKid(resource.data.kid_id);
+      allow delete: if false;
     }
 
     // --- attempts ---
@@ -44,6 +46,7 @@ service cloud.firestore {
         && isParentOfKid(resource.data.kid_id);
       allow create: if request.auth != null
         && isParentOfKid(request.resource.data.kid_id);
+      allow delete: if false;
     }
 
     // --- mastery ---
@@ -54,6 +57,7 @@ service cloud.firestore {
         && isParentOfKid(request.resource.data.kid_id);
       allow update: if request.auth != null
         && isParentOfKid(resource.data.kid_id);
+      allow delete: if false;
     }
 
     // --- progress ---
@@ -64,6 +68,7 @@ service cloud.firestore {
         && isParentOfKid(request.resource.data.kid_id);
       allow update: if request.auth != null
         && isParentOfKid(resource.data.kid_id);
+      allow delete: if false;
     }
   }
 }
