@@ -46,6 +46,29 @@ describe('generateLevelQuestions', () => {
     expect(hasHardFact).toBe(true);
   });
 
+  it('generates questions when mastery records have undefined leitnerBox/totalAttempts', () => {
+    const mastery = new Map<string, FactMasteryRecord>();
+    // Simulate records loaded from Firestore where leitner_box/total_attempts were never written
+    for (let a = 0; a <= 2; a++) {
+      for (let b = a; b <= 10; b++) {
+        const key = `${a}x${b}`;
+        mastery.set(key, {
+          kidId: 'kid1',
+          factorA: a,
+          factorB: b,
+          leitnerBox: undefined as unknown as number,
+          totalAttempts: undefined as unknown as number,
+          correctAttempts: undefined as unknown as number,
+          avgResponseTimeMs: null,
+          lastPracticedAt: null,
+          nextReviewAt: null,
+        });
+      }
+    }
+    const questions = generateLevelQuestions(1, mastery);
+    expect(questions).toHaveLength(5);
+  });
+
   it('questions have required shape', () => {
     const mastery = new Map<string, FactMasteryRecord>();
     const questions = generateLevelQuestions(1, mastery);

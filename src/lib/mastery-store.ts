@@ -7,8 +7,10 @@ import {
   where,
   getDocs,
   doc,
+  getDoc,
   setDoc,
   serverTimestamp,
+  increment,
 } from 'firebase/firestore';
 import { db } from './firebase';
 import type { FactMasteryRecord } from '../types/learning';
@@ -33,9 +35,9 @@ export async function loadMasteryRecords(
         kidId: row.kid_id,
         factorA: canonical.factorA,
         factorB: canonical.factorB,
-        leitnerBox: row.leitner_box,
-        totalAttempts: row.total_attempts,
-        correctAttempts: row.correct_attempts,
+        leitnerBox: row.leitner_box ?? 1,
+        totalAttempts: row.total_attempts ?? 1,
+        correctAttempts: row.correct_attempts ?? 0,
         avgResponseTimeMs: row.avg_response_time_ms ?? null,
         lastPracticedAt: row.last_practiced_at?.toDate?.() ?? null,
         nextReviewAt: row.next_review_at?.toDate?.() ?? null,
@@ -61,6 +63,13 @@ export async function persistMasteryResult(
   const docId = `${kidId}_${factKey(canonical.factorA, canonical.factorB)}`;
   const docRef = doc(db, 'mastery', docId);
 
+  const existing = await getDoc(docRef);
+  const data = existing.data();
+  const prevBox = data?.leitner_box ?? 1;
+  const newBox = isCorrect
+    ? Math.min(prevBox + 1, 5)
+    : Math.max(prevBox - 1, 1);
+
   await setDoc(
     docRef,
     {
@@ -69,6 +78,9 @@ export async function persistMasteryResult(
       factor_b: canonical.factorB,
       is_correct: isCorrect,
       response_time_ms: responseTimeMs,
+      leitner_box: newBox,
+      total_attempts: increment(1),
+      correct_attempts: isCorrect ? increment(1) : increment(0),
       last_practiced_at: serverTimestamp(),
     },
     { merge: true },

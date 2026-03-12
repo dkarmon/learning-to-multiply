@@ -119,7 +119,7 @@ export function getLevelPlan(
     const key = factKey(f.factorA, f.factorB);
     const record = masteryRecords.get(key);
     if (!record) return true;
-    return record.leitnerBox < 4;
+    return (record.leitnerBox ?? 1) < 4;
   });
 
   const newFactKeys = new Set(newFacts.map(f => factKey(f.factorA, f.factorB)));
@@ -127,7 +127,7 @@ export function getLevelPlan(
     const key = factKey(f.factorA, f.factorB);
     if (newFactKeys.has(key)) return false;
     const record = masteryRecords.get(key);
-    return record !== undefined && record.totalAttempts > 0;
+    return record !== undefined && (record.totalAttempts ?? 1) > 0;
   });
 
   return { newFacts, reviewFacts, tier: tierDef.tier };

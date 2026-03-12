@@ -9,21 +9,25 @@ vi.mock('../firebase', () => ({
 }));
 
 const mockGetDocs = vi.fn();
+const mockGetDoc = vi.fn();
 const mockCollection = vi.fn();
 const mockQuery = vi.fn();
 const mockWhere = vi.fn();
 const mockDoc = vi.fn();
 const mockSetDoc = vi.fn();
 const mockServerTimestamp = vi.fn(() => 'mock-timestamp');
+const mockIncrement = vi.fn((n: number) => ({ __increment: n }));
 
 vi.mock('firebase/firestore', () => ({
   collection: (...args: unknown[]) => mockCollection(...args),
   query: (...args: unknown[]) => mockQuery(...args),
   where: (...args: unknown[]) => mockWhere(...args),
   getDocs: (...args: unknown[]) => mockGetDocs(...args),
+  getDoc: (...args: unknown[]) => mockGetDoc(...args),
   doc: (...args: unknown[]) => mockDoc(...args),
   setDoc: (...args: unknown[]) => mockSetDoc(...args),
   serverTimestamp: () => mockServerTimestamp(),
+  increment: (n: number) => mockIncrement(n),
 }));
 
 import { loadMasteryRecords, persistMasteryResult } from '../mastery-store';
@@ -108,6 +112,7 @@ describe('persistMasteryResult', () => {
     vi.clearAllMocks();
     mockDoc.mockReturnValue('doc-ref');
     mockSetDoc.mockResolvedValue(undefined);
+    mockGetDoc.mockResolvedValue({ data: () => null });
   });
 
   it('writes mastery result to Firestore with merge', async () => {
@@ -121,9 +126,58 @@ describe('persistMasteryResult', () => {
         factor_a: 3,
         factor_b: 5,
         last_practiced_at: 'mock-timestamp',
+        leitner_box: 2,
       }),
       { merge: true },
     );
+  });
+
+  it('promotes leitner box on correct answer', async () => {
+    mockGetDoc.mockResolvedValue({ data: () => ({ leitner_box: 3 }) });
+    await persistMasteryResult('kid-1', 3, 5, true, 1800);
+
+    const callArgs = mockSetDoc.mock.calls[0][1];
+    expect(callArgs.leitner_box).toBe(4);
+  });
+
+  it('demotes leitner box on wrong answer', async () => {
+    mockGetDoc.mockResolvedValue({ data: () => ({ leitner_box: 3 }) });
+    await persistMasteryResult('kid-1', 3, 5, false, 1800);
+
+    const callArgs = mockSetDoc.mock.calls[0][1];
+    expect(callArgs.leitner_box).toBe(2);
+  });
+
+  it('caps leitner box at 5', async () => {
+    mockGetDoc.mockResolvedValue({ data: () => ({ leitner_box: 5 }) });
+    await persistMasteryResult('kid-1', 3, 5, true, 1800);
+
+    const callArgs = mockSetDoc.mock.calls[0][1];
+    expect(callArgs.leitner_box).toBe(5);
+  });
+
+  it('floors leitner box at 1', async () => {
+    mockGetDoc.mockResolvedValue({ data: () => ({ leitner_box: 1 }) });
+    await persistMasteryResult('kid-1', 3, 5, false, 1800);
+
+    const callArgs = mockSetDoc.mock.calls[0][1];
+    expect(callArgs.leitner_box).toBe(1);
+  });
+
+  it('increments total_attempts and correct_attempts', async () => {
+    await persistMasteryResult('kid-1', 3, 5, true, 1800);
+
+    const callArgs = mockSetDoc.mock.calls[0][1];
+    expect(mockIncrement).toHaveBeenCalledWith(1);
+    expect(callArgs.total_attempts).toEqual({ __increment: 1 });
+    expect(callArgs.correct_attempts).toEqual({ __increment: 1 });
+  });
+
+  it('does not increment correct_attempts on wrong answer', async () => {
+    await persistMasteryResult('kid-1', 3, 5, false, 1800);
+
+    const callArgs = mockSetDoc.mock.calls[0][1];
+    expect(callArgs.correct_attempts).toEqual({ __increment: 0 });
   });
 
   it('does nothing when kidId is empty', async () => {
