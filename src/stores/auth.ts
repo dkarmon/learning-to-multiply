@@ -7,6 +7,9 @@ import type { User } from 'firebase/auth';
 import {
   signInWithPopup,
   signOut as firebaseSignOut,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  updateProfile,
 } from 'firebase/auth';
 import {
   collection,
@@ -20,7 +23,7 @@ import {
   serverTimestamp,
 } from 'firebase/firestore';
 import type { KidProfile } from '../types';
-import { auth, db, googleProvider } from '../lib/firebase';
+import { auth, db, googleProvider, isEmulatorMode } from '../lib/firebase';
 
 interface AuthState {
   user: User | null;
@@ -33,6 +36,7 @@ interface AuthState {
   fetchKids: () => Promise<void>;
   addKid: (name: string) => Promise<KidProfile | null>;
   signInWithGoogle: () => Promise<void>;
+  signInDev: (email: string, password: string, displayName: string) => Promise<void>;
   signOut: () => Promise<void>;
 }
 
@@ -131,6 +135,27 @@ export const useAuthStore = create<AuthState>()(
           }, { merge: true });
         } catch (error) {
           console.error('Google sign-in failed:', error);
+        }
+      },
+
+      signInDev: async (email: string, password: string, displayName: string) => {
+        if (!isEmulatorMode) return;
+        try {
+          let result;
+          try {
+            result = await signInWithEmailAndPassword(auth, email, password);
+          } catch {
+            result = await createUserWithEmailAndPassword(auth, email, password);
+            await updateProfile(result.user, { displayName });
+          }
+          const user = result.user;
+          const parentRef = doc(db, 'parents', user.uid);
+          await setDoc(parentRef, {
+            display_name: displayName,
+            created_at: serverTimestamp(),
+          }, { merge: true });
+        } catch (error) {
+          console.error('Dev sign-in failed:', error);
         }
       },
 

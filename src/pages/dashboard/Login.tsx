@@ -6,11 +6,12 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuthStore } from '../../stores/auth';
 import { LanguageToggle } from '../../components/LanguageToggle';
+import { isEmulatorMode } from '../../lib/firebase';
 
 export function Login() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { user, signInWithGoogle } = useAuthStore();
+  const { user, signInWithGoogle, signInDev } = useAuthStore();
 
   useEffect(() => {
     if (user) {
@@ -51,6 +52,16 @@ export function Login() {
             {t('auth.signIn')}
           </span>
         </button>
+
+        {isEmulatorMode && (
+          <button
+            data-testid="dev-sign-in"
+            onClick={() => signInDev('test@example.com', 'test123456', 'Test Parent')}
+            className="mt-2 px-6 py-3 border-2 border-dashed border-orange-400 rounded-xl text-orange-400 cursor-pointer hover:bg-orange-50 transition-colors"
+          >
+            Dev Sign In (Emulator)
+          </button>
+        )}
       </div>
     </div>
   );

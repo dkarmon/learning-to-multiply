@@ -12,7 +12,8 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:firebase": "vitest run --config vitest.firebase.config.ts",
-    "firebase:emulators": "firebase emulators:start --only auth,firestore --project demo-learning-multiply"
+    "firebase:emulators": "firebase emulators:start --only auth,firestore --project demo-learning-multiply",
+    "dev:emulators": "firebase emulators:start --only auth,firestore --project demo-learning-multiply & vite --mode emulators"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
