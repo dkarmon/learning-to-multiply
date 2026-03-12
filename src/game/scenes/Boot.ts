@@ -44,17 +44,17 @@ export class Boot extends Phaser.Scene {
       fillBar.destroy();
     });
 
-    this.load.atlas('wrecker', 'assets/sprites/wrecker.png', 'assets/sprites/wrecker.json');
-    this.load.atlas('sidekick', 'assets/sprites/sidekick.png', 'assets/sprites/sidekick.json');
-    this.load.atlas('fixer', 'assets/sprites/fixer.png', 'assets/sprites/fixer.json');
-    this.load.atlas('manipulatives', 'assets/sprites/manipulatives.png', 'assets/sprites/manipulatives.json');
-    this.load.atlas('ui', 'assets/sprites/ui.png', 'assets/sprites/ui.json');
-    this.load.atlas('particles', 'assets/sprites/particles.png', 'assets/sprites/particles.json');
+    this.load.atlas('wrecker', '/assets/sprites/wrecker.png', '/assets/sprites/wrecker.json');
+    this.load.atlas('sidekick', '/assets/sprites/sidekick.png', '/assets/sprites/sidekick.json');
+    this.load.atlas('fixer', '/assets/sprites/fixer.png', '/assets/sprites/fixer.json');
+    this.load.atlas('manipulatives', '/assets/sprites/manipulatives.png', '/assets/sprites/manipulatives.json');
+    this.load.atlas('ui', '/assets/sprites/ui.png', '/assets/sprites/ui.json');
+    this.load.atlas('particles', '/assets/sprites/particles.png', '/assets/sprites/particles.json');
 
-    this.load.image('sky', 'assets/sprites/sky.png');
-    this.load.image('ground', 'assets/sprites/ground.png');
+    this.load.image('sky', '/assets/sprites/sky.png');
+    this.load.image('ground', '/assets/sprites/ground.png');
 
-    this.load.spritesheet('bricks', 'assets/tiles/bricks.png', {
+    this.load.spritesheet('bricks', '/assets/tiles/bricks.png', {
       frameWidth: 32,
       frameHeight: 32,
     });
