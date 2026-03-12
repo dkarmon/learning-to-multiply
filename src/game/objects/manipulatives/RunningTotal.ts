@@ -3,6 +3,7 @@
 
 import Phaser from 'phaser';
 import { MANIP } from './ManipulativeConfig';
+import { t } from '../../i18n';
 
 export class RunningTotal {
   private scene: Phaser.Scene;
@@ -13,7 +14,7 @@ export class RunningTotal {
   constructor(scene: Phaser.Scene, x: number, y: number) {
     this.scene = scene;
 
-    this.label = scene.add.text(x - 40, y, 'Total:', {
+    this.label = scene.add.text(x - 40, y, t('game.total'), {
       fontSize: MANIP.TOTAL_FONT_SIZE,
       color: '#666666',
       fontFamily: MANIP.TOTAL_FONT_FAMILY,

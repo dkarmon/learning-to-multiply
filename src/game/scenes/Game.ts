@@ -122,6 +122,7 @@ export class Game extends Phaser.Scene {
     this.numpad.setEnabled(true);
     this.hintButton.reset();
 
+    ManipulativeEvents.emit(MANIP_EVENTS.HIDE);
     ManipulativeEvents.emit(MANIP_EVENTS.RESET);
 
     if (q.isBuildingUp && q.buildUpSequenceIndex > 0) {

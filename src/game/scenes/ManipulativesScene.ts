@@ -31,7 +31,7 @@ export class ManipulativesScene extends Phaser.Scene {
   private currentFactorA = 0;
   private currentFactorB = 0;
   private currentCorrectAnswer = 0;
-  private isVisible = false;
+  private isVisible = true;
 
   constructor() {
     super({ key: 'Manipulatives' });
@@ -179,6 +179,7 @@ export class ManipulativesScene extends Phaser.Scene {
   }
 
   private setVisible(visible: boolean): void {
+    if (this.isVisible === visible) return;
     this.isVisible = visible;
     this.scene.setVisible(visible);
     this.scene.setActive(visible);

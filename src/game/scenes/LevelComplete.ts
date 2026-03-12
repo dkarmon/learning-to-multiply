@@ -120,7 +120,7 @@ export class LevelComplete extends Phaser.Scene {
     nextBg.on('pointerup', async () => {
       const store = useGameStore.getState();
       store.advanceLevel();
-      const nextLevel = store.currentLevel + 1;
+      const nextLevel = useGameStore.getState().currentLevel;
       const kidId = store.kidId ?? '';
       const masteryRecords = await loadMasteryRecords(kidId);
       const questions = generateLevelQuestions(nextLevel, masteryRecords);

@@ -5,6 +5,11 @@ import Phaser from 'phaser';
 
 export const EventBus = new Phaser.Events.EventEmitter();
 
+// Expose for E2E testing in emulator mode
+if (typeof window !== 'undefined') {
+  (window as any).__GAME_EVENT_BUS__ = EventBus;
+}
+
 export const GameEvents = {
   // Phaser -> React
   SCENE_READY: 'current-scene-ready',

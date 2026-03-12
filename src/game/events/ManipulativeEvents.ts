@@ -5,6 +5,11 @@ import Phaser from 'phaser';
 
 export const ManipulativeEvents = new Phaser.Events.EventEmitter();
 
+// Expose for E2E testing
+if (typeof window !== 'undefined') {
+  (window as any).__MANIP_EVENT_BUS__ = ManipulativeEvents;
+}
+
 export const MANIP_EVENTS = {
   // Game scene -> Manipulatives scene
   SHOW: 'manip:show',                     // { factorA, factorB, correctAnswer }

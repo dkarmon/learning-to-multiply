@@ -3,6 +3,7 @@
 
 import Phaser from 'phaser';
 import { EventBus, GameEvents } from '../EventBus';
+import { t } from '../i18n';
 
 const HINT_X = 780;
 const HINT_Y = 260;
@@ -24,7 +25,7 @@ export class HintButton {
     this.bg.setInteractive({ useHandCursor: true });
     this.container.add(this.bg);
 
-    const labelText = scene.add.text(0, -10, 'Hint', {
+    const labelText = scene.add.text(0, -10, t('game.hint'), {
       fontFamily: 'Arial Black',
       fontSize: '20px',
       color: '#ffffff',
@@ -32,7 +33,7 @@ export class HintButton {
     labelText.setOrigin(0.5);
     this.container.add(labelText);
 
-    this.costText = scene.add.text(0, 14, '\u22122 bonus bricks', {
+    this.costText = scene.add.text(0, 14, t('game.hintCost', { cost: 2 }), {
       fontFamily: 'Arial',
       fontSize: '13px',
       color: '#FFF8E1',
@@ -62,11 +63,11 @@ export class HintButton {
     this.hintLevel++;
 
     if (this.hintLevel === 1) {
-      this.costText.setText('\u22121 bonus brick');
+      this.costText.setText(t('game.hintCost', { cost: 1 }));
       this.bg.setFillStyle(0xd4845b);
       EventBus.emit(GameEvents.HINT_REQUESTED, { level: 1 });
     } else if (this.hintLevel === 2) {
-      this.costText.setText('no bonus');
+      this.costText.setText(t('game.hintNoBonus'));
       this.bg.setFillStyle(0x8b4513);
       this.setEnabled(false);
       EventBus.emit(GameEvents.HINT_REQUESTED, { level: 2 });
@@ -77,7 +78,7 @@ export class HintButton {
 
   reset(): void {
     this.hintLevel = 0;
-    this.costText.setText('\u22122 bonus bricks');
+    this.costText.setText(t('game.hintCost', { cost: 2 }));
     this.bg.setFillStyle(0xe46b43);
     this.setEnabled(true);
   }

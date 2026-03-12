@@ -20,8 +20,7 @@ export const useSettingsStore = create<SettingsStore>()(
 
       setLocale: (locale) => {
         set({ locale });
-        document.documentElement.dir = locale === 'he' ? 'rtl' : 'ltr';
-        document.documentElement.lang = locale;
+        applyLocaleToDocument(locale);
       },
 
       setSoundEnabled: (enabled) => {
@@ -34,6 +33,16 @@ export const useSettingsStore = create<SettingsStore>()(
     }),
     {
       name: 'settings-storage',
+      onRehydrateStorage: () => (state) => {
+        if (state?.locale) {
+          applyLocaleToDocument(state.locale);
+        }
+      },
     }
   )
 );
+
+function applyLocaleToDocument(locale: Locale): void {
+  document.documentElement.dir = locale === 'he' ? 'rtl' : 'ltr';
+  document.documentElement.lang = locale;
+}

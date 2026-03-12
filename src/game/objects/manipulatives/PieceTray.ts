@@ -5,6 +5,7 @@ import Phaser from 'phaser';
 import { MANIP } from './ManipulativeConfig';
 import { CirclePiece } from './CirclePiece';
 import { RectanglePiece } from './RectanglePiece';
+import { t } from '../../i18n';
 
 export class PieceTray {
   private scene: Phaser.Scene;
@@ -46,7 +47,7 @@ export class PieceTray {
   private createLabels(): void {
     const centerX = this.x + this.width / 2;
 
-    this.scene.add.text(centerX, this.y + 15, 'Pieces', {
+    this.scene.add.text(centerX, this.y + 15, t('game.pieces'), {
       fontSize: '14px',
       color: '#666666',
       fontFamily: 'Arial',
@@ -66,7 +67,7 @@ export class PieceTray {
       fontStyle: 'bold',
     }).setOrigin(0.5);
 
-    this.scene.add.text(centerX, this.y + this.height - 30, 'Drag to\nworkspace', {
+    this.scene.add.text(centerX, this.y + this.height - 30, t('game.dragToWorkspace'), {
       fontSize: '11px',
       color: '#999999',
       fontFamily: 'Arial',
