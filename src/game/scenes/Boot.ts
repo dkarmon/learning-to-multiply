@@ -3,6 +3,7 @@
 
 import Phaser from 'phaser';
 import { EventBus, GameEvents } from '../EventBus';
+import { t } from '../i18n';
 
 export class Boot extends Phaser.Scene {
   constructor() {
@@ -26,7 +27,7 @@ export class Boot extends Phaser.Scene {
     );
     fillBar.setOrigin(0, 0.5);
 
-    const loadingText = this.add.text(width / 2, barY - 40, 'Loading...', {
+    const loadingText = this.add.text(width / 2, barY - 40, t('common.loading'), {
       fontFamily: 'Arial',
       fontSize: '24px',
       color: '#3c0f0f',

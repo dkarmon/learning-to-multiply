@@ -5,6 +5,7 @@ import Phaser from 'phaser';
 import { ManipulativeEvents, MANIP_EVENTS } from '../events/ManipulativeEvents';
 import type { ManipShowPayload, ManipBuildUpPayload } from '../events/ManipulativeEvents';
 import { MANIP } from '../objects/manipulatives/ManipulativeConfig';
+import { t } from '../i18n';
 import { PieceTray } from '../objects/manipulatives/PieceTray';
 import { WorkspaceGrid } from '../objects/manipulatives/WorkspaceGrid';
 import { RunningTotal } from '../objects/manipulatives/RunningTotal';
@@ -100,7 +101,7 @@ export class ManipulativesScene extends Phaser.Scene {
 
   private createResetButton(x: number, y: number): void {
     const bg = this.add.rectangle(x, y, 50, 28, 0xBDBDBD, 1).setStrokeStyle(1, 0x999999);
-    const label = this.add.text(x, y, 'Reset', {
+    const label = this.add.text(x, y, t('game.reset'), {
       fontSize: '12px',
       color: '#333333',
       fontFamily: 'Arial',

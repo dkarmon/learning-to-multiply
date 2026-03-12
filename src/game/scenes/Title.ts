@@ -3,6 +3,7 @@
 
 import Phaser from 'phaser';
 import { EventBus, GameEvents } from '../EventBus';
+import { t, isRtl } from '../i18n';
 
 export class Title extends Phaser.Scene {
   constructor() {
@@ -18,19 +19,23 @@ export class Title extends Phaser.Scene {
     this.add.image(width / 2, height - 40, 'ground')
       .setDisplaySize(width, 80);
 
-    const titleText = this.add.text(width / 2, height * 0.2, 'Build It Up!', {
+    const rtl = isRtl();
+
+    const titleText = this.add.text(width / 2, height * 0.2, t('game.title'), {
       fontFamily: 'Arial Black',
       fontSize: '64px',
       color: '#3c0f0f',
       stroke: '#e46b43',
       strokeThickness: 6,
+      rtl,
     });
     titleText.setOrigin(0.5);
 
-    this.add.text(width / 2, height * 0.3, 'A Multiplication Adventure', {
+    this.add.text(width / 2, height * 0.3, t('game.subtitle'), {
       fontFamily: 'Arial',
       fontSize: '24px',
       color: '#06628d',
+      rtl,
     }).setOrigin(0.5);
 
     const character = this.add.sprite(width / 2, height * 0.55, 'wrecker');
@@ -43,10 +48,11 @@ export class Title extends Phaser.Scene {
     btnBg.setStrokeStyle(4, 0x388e3c);
     btnBg.setInteractive({ useHandCursor: true });
 
-    const btnText = this.add.text(0, 0, 'PLAY!', {
+    const btnText = this.add.text(0, 0, t('game.play'), {
       fontFamily: 'Arial Black',
       fontSize: '40px',
       color: '#ffffff',
+      rtl,
     });
     btnText.setOrigin(0.5);
 

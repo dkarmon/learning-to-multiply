@@ -11,11 +11,7 @@ import { calculateBonusBricks } from '../scoring/bricks';
 import { ManipulativeEvents, MANIP_EVENTS } from '../events/ManipulativeEvents';
 import type { Question } from '../../types';
 import { useGameStore } from '../../stores/game';
-
-const ENCOURAGEMENT_PHRASES = [
-  'Amazing!', 'Great job!', 'You got it!',
-  'Fantastic!', 'Well done!', 'Awesome!',
-];
+import { t, isRtl, randomEncouragement } from '../i18n';
 
 export class Game extends Phaser.Scene {
   private building!: Building;
@@ -73,19 +69,26 @@ export class Game extends Phaser.Scene {
     });
     this.questionText.setOrigin(0.5);
 
+    const rtl = isRtl();
+
     this.feedbackText = this.add.text(width / 2, 120, '', {
       fontFamily: 'Arial',
       fontSize: '24px',
       color: '#06628d',
+      rtl,
     });
     this.feedbackText.setOrigin(0.5);
     this.feedbackText.setAlpha(0);
 
-    this.questionCountText = this.add.text(20, 20, '', {
+    this.questionCountText = this.add.text(rtl ? width - 20 : 20, 20, '', {
       fontFamily: 'Arial',
       fontSize: '20px',
       color: '#06628d',
+      rtl,
     });
+    if (rtl) {
+      this.questionCountText.setOrigin(1, 0);
+    }
 
     this.numpad = new Numpad(this);
     this.hintButton = new HintButton(this);
@@ -275,7 +278,7 @@ export class Game extends Phaser.Scene {
     icon.fillRect(x - 10, y + 2, 8, 8);
     icon.fillRect(x + 2, y + 2, 8, 8);
 
-    this.add.text(x, y + 32, 'Blocks', {
+    this.add.text(x, y + 32, t('game.blocks'), {
       fontSize: '10px',
       color: '#666666',
       fontFamily: 'Arial',
@@ -301,18 +304,16 @@ export class Game extends Phaser.Scene {
 
     switch (type) {
       case 'correct': {
-        message = ENCOURAGEMENT_PHRASES[
-          Math.floor(Math.random() * ENCOURAGEMENT_PHRASES.length)
-        ];
+        message = randomEncouragement();
         color = '#4CAF50';
         break;
       }
       case 'tryAgain':
-        message = 'Not quite! Try again.';
+        message = t('game.wrong');
         color = '#e46b43';
         break;
       case 'showAnswer':
-        message = `The answer is ${answer}.`;
+        message = t('game.showAnswer', { answer: answer ?? 0 });
         color = '#06628d';
         break;
     }
@@ -333,7 +334,10 @@ export class Game extends Phaser.Scene {
 
   private updateQuestionCounter(): void {
     this.questionCountText.setText(
-      `Question ${this.currentQuestionIndex + 1} of ${this.questions.length}`
+      t('game.questionCounter', {
+        current: this.currentQuestionIndex + 1,
+        total: this.questions.length,
+      })
     );
   }
 

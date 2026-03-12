@@ -4,6 +4,7 @@
 import Phaser from 'phaser';
 import { EventBus, GameEvents } from '../EventBus';
 import { useGameStore } from '../../stores/game';
+import { t, isRtl } from '../i18n';
 
 export class SessionEnd extends Phaser.Scene {
   constructor() {
@@ -18,12 +19,15 @@ export class SessionEnd extends Phaser.Scene {
 
     this.add.rectangle(width / 2, height / 2, width, height, 0xfff8e1);
 
-    this.add.text(width / 2, height * 0.1, 'Great Practice!', {
+    const rtl = isRtl();
+
+    this.add.text(width / 2, height * 0.1, t('game.sessionDone'), {
       fontFamily: 'Arial Black',
       fontSize: '44px',
       color: '#06628d',
       stroke: '#FFF8E1',
       strokeThickness: 3,
+      rtl,
     }).setOrigin(0.5);
 
     const character = this.add.sprite(width / 2, height * 0.3, 'wrecker');
@@ -34,16 +38,16 @@ export class SessionEnd extends Phaser.Scene {
     const lineHeight = 40;
 
     const stats = [
-      { label: 'Questions Answered', value: `${session.totalQuestions}` },
-      { label: 'Correct Answers', value: `${session.correctAnswers}` },
+      { label: t('game.questionsAnswered'), value: `${session.totalQuestions}` },
+      { label: t('game.correctAnswers'), value: `${session.correctAnswers}` },
       {
-        label: 'Accuracy',
+        label: t('game.accuracy'),
         value: session.totalQuestions > 0
           ? `${Math.round((session.correctAnswers / session.totalQuestions) * 100)}%`
           : '\u2014',
       },
-      { label: 'Bricks Earned', value: `${session.totalBricks}` },
-      { label: 'Levels Completed', value: `${session.levelsCompleted}` },
+      { label: t('game.bricksEarnedLabel'), value: `${session.totalBricks}` },
+      { label: t('game.levelsCompleted'), value: `${session.levelsCompleted}` },
     ];
 
     const divTopY = statsY - 16;
@@ -53,17 +57,18 @@ export class SessionEnd extends Phaser.Scene {
       const stat = stats[i];
       const y = statsY + i * lineHeight;
 
-      this.add.text(width / 2 - 140, y, stat.label, {
+      this.add.text(rtl ? width / 2 + 140 : width / 2 - 140, y, stat.label, {
         fontFamily: 'Arial',
         fontSize: '22px',
         color: '#3c0f0f',
-      }).setOrigin(0, 0.5);
+        rtl,
+      }).setOrigin(rtl ? 1 : 0, 0.5);
 
-      this.add.text(width / 2 + 140, y, stat.value, {
+      this.add.text(rtl ? width / 2 - 140 : width / 2 + 140, y, stat.value, {
         fontFamily: 'Arial Black',
         fontSize: '24px',
         color: '#e46b43',
-      }).setOrigin(1, 0.5);
+      }).setOrigin(rtl ? 0 : 1, 0.5);
     }
 
     const divBottomY = statsY + stats.length * lineHeight + 8;
@@ -76,10 +81,11 @@ export class SessionEnd extends Phaser.Scene {
     );
     playAgainBg.setStrokeStyle(3, 0x3c0f0f);
     playAgainBg.setInteractive({ useHandCursor: true });
-    this.add.text(width / 2 - 130, buttonY, 'Play Again', {
+    this.add.text(width / 2 - 130, buttonY, t('game.playAgain'), {
       fontFamily: 'Arial Black',
       fontSize: '22px',
       color: '#ffffff',
+      rtl,
     }).setOrigin(0.5);
 
     playAgainBg.on('pointerdown', () => playAgainBg.setScale(0.95));
@@ -96,10 +102,11 @@ export class SessionEnd extends Phaser.Scene {
     );
     homeBg.setStrokeStyle(3, 0x3c0f0f);
     homeBg.setInteractive({ useHandCursor: true });
-    this.add.text(width / 2 + 130, buttonY, 'Go Home', {
+    this.add.text(width / 2 + 130, buttonY, t('game.goHome'), {
       fontFamily: 'Arial Black',
       fontSize: '22px',
       color: '#ffffff',
+      rtl,
     }).setOrigin(0.5);
 
     homeBg.on('pointerdown', () => homeBg.setScale(0.95));
