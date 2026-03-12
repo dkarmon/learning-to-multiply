@@ -1,0 +1,220 @@
+{
+  "frames": {
+    "confetti-0": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 6
+      },
+      "sourceSize": {
+        "w": 6,
+        "h": 6
+      }
+    },
+    "confetti-1": {
+      "frame": {
+        "x": 8,
+        "y": 0,
+        "w": 6,
+        "h": 6
+      },
+      "sourceSize": {
+        "w": 6,
+        "h": 6
+      }
+    },
+    "confetti-2": {
+      "frame": {
+        "x": 16,
+        "y": 0,
+        "w": 6,
+        "h": 6
+      },
+      "sourceSize": {
+        "w": 6,
+        "h": 6
+      }
+    },
+    "confetti-3": {
+      "frame": {
+        "x": 24,
+        "y": 0,
+        "w": 6,
+        "h": 6
+      },
+      "sourceSize": {
+        "w": 6,
+        "h": 6
+      }
+    },
+    "confetti-rot-0": {
+      "frame": {
+        "x": 0,
+        "y": 8,
+        "w": 8,
+        "h": 8
+      },
+      "sourceSize": {
+        "w": 8,
+        "h": 8
+      }
+    },
+    "confetti-rot-1": {
+      "frame": {
+        "x": 8,
+        "y": 8,
+        "w": 8,
+        "h": 8
+      },
+      "sourceSize": {
+        "w": 8,
+        "h": 8
+      }
+    },
+    "confetti-rot-2": {
+      "frame": {
+        "x": 16,
+        "y": 8,
+        "w": 8,
+        "h": 8
+      },
+      "sourceSize": {
+        "w": 8,
+        "h": 8
+      }
+    },
+    "confetti-rot-3": {
+      "frame": {
+        "x": 24,
+        "y": 8,
+        "w": 8,
+        "h": 8
+      },
+      "sourceSize": {
+        "w": 8,
+        "h": 8
+      }
+    },
+    "debris-0": {
+      "frame": {
+        "x": 0,
+        "y": 18,
+        "w": 5,
+        "h": 7
+      },
+      "sourceSize": {
+        "w": 5,
+        "h": 7
+      }
+    },
+    "debris-1": {
+      "frame": {
+        "x": 10,
+        "y": 18,
+        "w": 7,
+        "h": 9
+      },
+      "sourceSize": {
+        "w": 7,
+        "h": 9
+      }
+    },
+    "debris-2": {
+      "frame": {
+        "x": 20,
+        "y": 18,
+        "w": 9,
+        "h": 5
+      },
+      "sourceSize": {
+        "w": 9,
+        "h": 5
+      }
+    },
+    "debris-3": {
+      "frame": {
+        "x": 30,
+        "y": 18,
+        "w": 5,
+        "h": 7
+      },
+      "sourceSize": {
+        "w": 5,
+        "h": 7
+      }
+    },
+    "debris-4": {
+      "frame": {
+        "x": 40,
+        "y": 18,
+        "w": 7,
+        "h": 9
+      },
+      "sourceSize": {
+        "w": 7,
+        "h": 9
+      }
+    },
+    "sparkle-small": {
+      "frame": {
+        "x": 0,
+        "y": 32,
+        "w": 8,
+        "h": 8
+      },
+      "sourceSize": {
+        "w": 8,
+        "h": 8
+      }
+    },
+    "sparkle-medium": {
+      "frame": {
+        "x": 10,
+        "y": 32,
+        "w": 12,
+        "h": 12
+      },
+      "sourceSize": {
+        "w": 12,
+        "h": 12
+      }
+    },
+    "sparkle-large": {
+      "frame": {
+        "x": 24,
+        "y": 32,
+        "w": 16,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 16,
+        "h": 16
+      }
+    },
+    "dust-small": {
+      "frame": {
+        "x": 0,
+        "y": 52,
+        "w": 16,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 16,
+        "h": 16
+      }
+    },
+    "dust-large": {
+      "frame": {
+        "x": 16,
+        "y": 52,
+        "w": 24,
+        "h": 24
+      },
+      "sourceSize": {
+        "w": 24,
+        "h": 24
+      }
+    }
+  }
+}

@@ -1,0 +1,1167 @@
+<!-- ABOUTME: Interactive viewer for all game pixel art assets. -->
+<!-- ABOUTME: Open at /art-viewer.html during dev to review sprites, tiles, and UI elements. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Art Asset Viewer</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #1a1a2e;
+    --bg-card: #16213e;
+    --bg-card-alt: #0f3460;
+    --text: #e0e0e0;
+    --text-dim: #8899aa;
+    --accent: #e94560;
+    --accent2: #0f3460;
+    --border: #2a2a4a;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    padding: 24px;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    color: var(--text-dim);
+    margin-bottom: 24px;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 32px 0 16px;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 16px 0 8px;
+    color: var(--text-dim);
+  }
+
+  .controls {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .control-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .control-group label {
+    font-size: 13px;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+
+  input[type="range"] {
+    width: 120px;
+    accent-color: var(--accent);
+  }
+
+  .control-value {
+    font-size: 13px;
+    font-weight: 600;
+    min-width: 32px;
+  }
+
+  button, .btn {
+    background: var(--accent2);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 4px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  button:hover, .btn:hover { background: #1a4a8a; }
+  button.active { background: var(--accent); border-color: var(--accent); }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  .card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .sheet-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  .sheet-container img {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    display: block;
+  }
+
+  .grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  canvas {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  .anim-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+    padding: 8px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 4px;
+  }
+
+  .anim-label {
+    min-width: 120px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .anim-fps {
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  .anim-btn {
+    font-size: 18px;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .characters-row {
+    display: flex;
+    gap: 24px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .tile-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  .tile-item {
+    text-align: center;
+  }
+
+  .tile-item span {
+    display: block;
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+
+  .frame-extract {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8px;
+  }
+
+  .frame-extract span {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 4px;
+    text-align: center;
+    max-width: 100px;
+    word-wrap: break-word;
+  }
+
+  .numpad-grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 4px;
+    width: fit-content;
+  }
+
+  .numpad-grid .wide {
+    grid-column: span 2;
+  }
+
+  .submit-states {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .misc-sprites {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .bg-preview {
+    margin-bottom: 12px;
+    overflow: auto;
+    max-width: 100%;
+  }
+
+  .bg-preview img {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    display: block;
+  }
+
+  .section-nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .section-nav a {
+    color: var(--text);
+    text-decoration: none;
+    background: var(--accent2);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+
+  .section-nav a:hover { background: #1a4a8a; }
+
+  .light-bg .card { background: #d0d0d0; }
+  .light-bg { background: #e0e0e0; color: #222; }
+  .light-bg h2 { border-left-color: var(--accent); }
+  .light-bg .anim-row { background: rgba(0,0,0,0.08); }
+  .light-bg .controls { background: #e0e0e0; }
+
+  .tile-row-section {
+    margin-bottom: 16px;
+  }
+
+  .tile-row-label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+</style>
+</head>
+<body>
+
+<h1>Art Asset Viewer</h1>
+<p class="subtitle">Interactive preview of all game pixel art assets</p>
+
+<div class="section-nav">
+  <a href="#characters">Characters</a>
+  <a href="#tiles">Tiles</a>
+  <a href="#manipulatives">Manipulatives</a>
+  <a href="#ui">UI Elements</a>
+  <a href="#backgrounds">Backgrounds &amp; Particles</a>
+</div>
+
+<div class="controls">
+  <div class="control-group">
+    <label>Zoom:</label>
+    <input type="range" id="zoomSlider" min="1" max="5" step="0.5" value="3">
+    <span class="control-value" id="zoomValue">3x</span>
+  </div>
+  <div class="control-group">
+    <label>Anim Speed:</label>
+    <input type="range" id="speedSlider" min="0.25" max="2" step="0.25" value="1">
+    <span class="control-value" id="speedValue">1x</span>
+  </div>
+  <div class="control-group">
+    <button id="gridToggle" class="active">Grid Overlay</button>
+  </div>
+  <div class="control-group">
+    <button id="bgToggle">Light Background</button>
+  </div>
+</div>
+
+<!-- Characters -->
+<h2 id="characters">Characters</h2>
+
+<div class="card">
+  <div class="card-title">Scale Comparison</div>
+  <div class="characters-row" id="scaleComparison"></div>
+</div>
+
+<div id="characterCards"></div>
+
+<!-- Tiles -->
+<h2 id="tiles">Tileset</h2>
+<div id="tileCards"></div>
+
+<!-- Manipulatives -->
+<h2 id="manipulatives">Manipulatives</h2>
+<div id="manipCards"></div>
+
+<!-- UI -->
+<h2 id="ui">UI Elements</h2>
+<div id="uiCards"></div>
+
+<!-- Backgrounds & Particles -->
+<h2 id="backgrounds">Backgrounds &amp; Particles</h2>
+<div id="bgCards"></div>
+
+<script>
+// --- Asset definitions ---
+const ASSET_BASE = 'assets/';
+
+const CHARACTERS = [
+  {
+    name: 'Grux (Wrecker)',
+    file: 'sprites/wrecker.png',
+    sheetW: 384, sheetH: 320,
+    frameW: 64, frameH: 64,
+    cols: 6, rows: 5,
+    anims: [
+      { name: 'idle', row: 0, frames: 4, fps: 4 },
+      { name: 'happy', row: 1, frames: 6, fps: 8 },
+      { name: 'frustrated', row: 2, frames: 6, fps: 6 },
+      { name: 'climbing', row: 3, frames: 6, fps: 6 },
+      { name: 'waving', row: 4, frames: 4, fps: 5 },
+    ]
+  },
+  {
+    name: 'Zippy (Sidekick)',
+    file: 'sprites/sidekick.png',
+    sheetW: 384, sheetH: 256,
+    frameW: 64, frameH: 64,
+    cols: 6, rows: 4,
+    anims: [
+      { name: 'idle', row: 0, frames: 4, fps: 6 },
+      { name: 'cheering', row: 1, frames: 4, fps: 8 },
+      { name: 'peeking', row: 2, frames: 4, fps: 4 },
+      { name: 'running', row: 3, frames: 6, fps: 10 },
+    ]
+  },
+  {
+    name: 'Bella (Fixer)',
+    file: 'sprites/fixer.png',
+    sheetW: 256, sheetH: 256,
+    frameW: 64, frameH: 64,
+    cols: 4, rows: 4,
+    anims: [
+      { name: 'idle', row: 0, frames: 4, fps: 3 },
+      { name: 'waving', row: 1, frames: 4, fps: 5 },
+      { name: 'thumbsUp', row: 2, frames: 4, fps: 4 },
+      { name: 'hammering', row: 3, frames: 4, fps: 6 },
+    ]
+  }
+];
+
+const TILE_ROWS = [
+  'Brick Types',
+  'Windows',
+  'Doors & Ground',
+  'Roof & Decorations',
+  'Building Details',
+  'Row 5',
+  'Row 6',
+  'Row 7'
+];
+
+const MANIP_FRAMES = [
+  { name: 'circle-normal', label: 'Blue Circle' },
+  { name: 'circle-highlighted', label: 'Circle (highlighted)' },
+  { name: 'circle-ghost', label: 'Circle (ghost)' },
+  { name: 'circle-small', label: 'Circle (small)' },
+  { name: 'rect5-normal', label: 'Rectangle' },
+  { name: 'rect5-highlighted', label: 'Rect (highlighted)' },
+  { name: 'rect5-ghost', label: 'Rect (ghost)' },
+  { name: 'rect5-small', label: 'Rect (small)' },
+  { name: 'bracket', label: 'Bracket' },
+  { name: 'equals', label: 'Equals' },
+  { name: 'multiply', label: 'Multiply' },
+];
+
+const UI_NUMPAD = [
+  '1','2','3','4','5','6','7','8','9','0'
+];
+
+const UI_SUBMIT = [
+  { name: 'submit-normal', label: 'Normal' },
+  { name: 'submit-pressed', label: 'Pressed' },
+  { name: 'submit-disabled', label: 'Disabled' },
+];
+
+const UI_MISC = [
+  { name: 'backspace', label: 'Backspace' },
+  { name: 'hint', label: 'Hint' },
+  { name: 'dot-filled', label: 'Dot (filled)' },
+  { name: 'dot-empty', label: 'Dot (empty)' },
+  { name: 'dot-current', label: 'Dot (current)' },
+  { name: 'heart', label: 'Heart' },
+  { name: 'star', label: 'Star' },
+  { name: 'speech-bubble', label: 'Speech Bubble' },
+];
+
+// --- Atlas data (from JSON files) ---
+const MANIP_ATLAS = {
+  "circle-normal": { x: 0, y: 0, w: 48, h: 48 },
+  "circle-highlighted": { x: 48, y: 0, w: 48, h: 48 },
+  "circle-ghost": { x: 96, y: 0, w: 48, h: 48 },
+  "circle-small": { x: 144, y: 0, w: 24, h: 24 },
+  "rect5-normal": { x: 0, y: 56, w: 120, h: 48 },
+  "rect5-highlighted": { x: 0, y: 110, w: 124, h: 52 },
+  "rect5-ghost": { x: 0, y: 168, w: 120, h: 48 },
+  "rect5-small": { x: 0, y: 220, w: 60, h: 24 },
+  "bracket": { x: 192, y: 56, w: 16, h: 20 },
+  "equals": { x: 192, y: 80, w: 16, h: 16 },
+  "multiply": { x: 208, y: 80, w: 16, h: 16 },
+};
+
+const UI_ATLAS = {
+  "numpad-0-normal": { x: 0, y: 0, w: 46, h: 46 },
+  "numpad-1-normal": { x: 48, y: 0, w: 46, h: 46 },
+  "numpad-2-normal": { x: 96, y: 0, w: 46, h: 46 },
+  "numpad-3-normal": { x: 144, y: 0, w: 46, h: 46 },
+  "numpad-4-normal": { x: 192, y: 0, w: 46, h: 46 },
+  "numpad-5-normal": { x: 240, y: 0, w: 46, h: 46 },
+  "numpad-6-normal": { x: 288, y: 0, w: 46, h: 46 },
+  "numpad-7-normal": { x: 336, y: 0, w: 46, h: 46 },
+  "numpad-8-normal": { x: 384, y: 0, w: 46, h: 46 },
+  "numpad-9-normal": { x: 432, y: 0, w: 46, h: 46 },
+  "backspace": { x: 0, y: 144, w: 62, h: 62 },
+  "submit-normal": { x: 64, y: 144, w: 126, h: 62 },
+  "submit-pressed": { x: 64, y: 208, w: 126, h: 62 },
+  "submit-disabled": { x: 64, y: 272, w: 126, h: 62 },
+  "hint": { x: 192, y: 144, w: 80, h: 80 },
+  "dot-filled": { x: 0, y: 400, w: 16, h: 16 },
+  "dot-empty": { x: 16, y: 400, w: 16, h: 16 },
+  "dot-current": { x: 32, y: 400, w: 16, h: 16 },
+  "heart": { x: 64, y: 400, w: 24, h: 24 },
+  "star": { x: 96, y: 400, w: 24, h: 24 },
+  "speech-bubble": { x: 128, y: 400, w: 48, h: 48 },
+};
+
+const PARTICLE_ATLAS = {
+  "confetti-0": { x: 0, y: 0, w: 6, h: 6 },
+  "confetti-1": { x: 8, y: 0, w: 6, h: 6 },
+  "confetti-2": { x: 16, y: 0, w: 6, h: 6 },
+  "confetti-3": { x: 24, y: 0, w: 6, h: 6 },
+  "confetti-rot-0": { x: 0, y: 8, w: 8, h: 8 },
+  "confetti-rot-1": { x: 8, y: 8, w: 8, h: 8 },
+  "confetti-rot-2": { x: 16, y: 8, w: 8, h: 8 },
+  "confetti-rot-3": { x: 24, y: 8, w: 8, h: 8 },
+  "debris-0": { x: 0, y: 18, w: 5, h: 7 },
+  "debris-1": { x: 10, y: 18, w: 7, h: 9 },
+  "debris-2": { x: 20, y: 18, w: 9, h: 5 },
+  "debris-3": { x: 30, y: 18, w: 5, h: 7 },
+  "debris-4": { x: 40, y: 18, w: 7, h: 9 },
+  "sparkle-small": { x: 0, y: 32, w: 8, h: 8 },
+  "sparkle-medium": { x: 10, y: 32, w: 12, h: 12 },
+  "sparkle-large": { x: 24, y: 32, w: 16, h: 16 },
+  "dust-small": { x: 0, y: 52, w: 16, h: 16 },
+  "dust-large": { x: 16, y: 52, w: 24, h: 24 },
+};
+
+// --- State ---
+let globalZoom = 3;
+let speedMultiplier = 1;
+let showGrid = true;
+let lightBg = false;
+const animations = []; // track running animations for speed changes
+const loadedImages = {};
+
+// --- Helpers ---
+function loadImage(src) {
+  if (loadedImages[src]) return Promise.resolve(loadedImages[src]);
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => { loadedImages[src] = img; resolve(img); };
+    img.onerror = reject;
+    img.src = ASSET_BASE + src;
+  });
+}
+
+function drawSpriteSheet(container, imgSrc, sheetW, sheetH, frameW, frameH, cols, rows) {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'sheet-container';
+
+  const img = document.createElement('img');
+  img.src = ASSET_BASE + imgSrc;
+  img.style.width = (sheetW * globalZoom) + 'px';
+  img.style.height = (sheetH * globalZoom) + 'px';
+  wrapper.appendChild(img);
+
+  const gridCanvas = document.createElement('canvas');
+  gridCanvas.className = 'grid-overlay';
+  gridCanvas.width = sheetW * globalZoom;
+  gridCanvas.height = sheetH * globalZoom;
+  wrapper.appendChild(gridCanvas);
+
+  function drawGrid() {
+    const ctx = gridCanvas.getContext('2d');
+    ctx.clearRect(0, 0, gridCanvas.width, gridCanvas.height);
+    if (!showGrid) return;
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.25)';
+    ctx.lineWidth = 1;
+    for (let c = 0; c <= cols; c++) {
+      const x = c * frameW * globalZoom;
+      ctx.beginPath(); ctx.moveTo(x + 0.5, 0); ctx.lineTo(x + 0.5, gridCanvas.height); ctx.stroke();
+    }
+    for (let r = 0; r <= rows; r++) {
+      const y = r * frameH * globalZoom;
+      ctx.beginPath(); ctx.moveTo(0, y + 0.5); ctx.lineTo(gridCanvas.width, y + 0.5); ctx.stroke();
+    }
+  }
+
+  drawGrid();
+  wrapper._updateZoom = () => {
+    img.style.width = (sheetW * globalZoom) + 'px';
+    img.style.height = (sheetH * globalZoom) + 'px';
+    gridCanvas.width = sheetW * globalZoom;
+    gridCanvas.height = sheetH * globalZoom;
+    drawGrid();
+  };
+  wrapper._updateGrid = drawGrid;
+
+  container.appendChild(wrapper);
+  return wrapper;
+}
+
+function createAnimPreview(container, imgSrc, char, anim) {
+  const row = document.createElement('div');
+  row.className = 'anim-row';
+
+  const label = document.createElement('div');
+  label.className = 'anim-label';
+  label.textContent = anim.name;
+
+  const fpsLabel = document.createElement('div');
+  fpsLabel.className = 'anim-fps';
+  fpsLabel.textContent = anim.fps + ' fps';
+
+  const btn = document.createElement('button');
+  btn.className = 'anim-btn';
+  btn.textContent = '\u23F8';
+  btn.title = 'Pause';
+
+  const canvas = document.createElement('canvas');
+  const displaySize = char.frameW * globalZoom;
+  canvas.width = displaySize;
+  canvas.height = displaySize;
+  canvas.style.width = displaySize + 'px';
+  canvas.style.height = displaySize + 'px';
+  canvas.style.background = 'rgba(0,0,0,0.3)';
+  canvas.style.borderRadius = '4px';
+
+  row.appendChild(label);
+  row.appendChild(fpsLabel);
+  row.appendChild(btn);
+  row.appendChild(canvas);
+  container.appendChild(row);
+
+  let playing = true;
+  let currentFrame = 0;
+  let lastTime = 0;
+
+  const animState = {
+    baseFps: anim.fps,
+    playing: true,
+    canvas,
+    char,
+    anim,
+    imgSrc,
+    updateZoom() {
+      const size = char.frameW * globalZoom;
+      canvas.width = size;
+      canvas.height = size;
+      canvas.style.width = size + 'px';
+      canvas.style.height = size + 'px';
+    }
+  };
+
+  btn.addEventListener('click', () => {
+    animState.playing = !animState.playing;
+    btn.textContent = animState.playing ? '\u23F8' : '\u25B6';
+    btn.title = animState.playing ? 'Pause' : 'Play';
+  });
+
+  function tick(timestamp) {
+    if (!lastTime) lastTime = timestamp;
+    const effectiveFps = anim.fps * speedMultiplier;
+    const interval = 1000 / effectiveFps;
+
+    if (animState.playing && timestamp - lastTime >= interval) {
+      lastTime = timestamp;
+      currentFrame = (currentFrame + 1) % anim.frames;
+
+      const img = loadedImages[imgSrc];
+      if (img) {
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.imageSmoothingEnabled = false;
+        const sx = currentFrame * char.frameW;
+        const sy = anim.row * char.frameH;
+        ctx.drawImage(img, sx, sy, char.frameW, char.frameH, 0, 0, canvas.width, canvas.height);
+      }
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  loadImage(imgSrc).then(() => requestAnimationFrame(tick));
+  animations.push(animState);
+}
+
+function extractFrame(sheetImg, frame, scale) {
+  const canvas = document.createElement('canvas');
+  canvas.width = frame.w * scale;
+  canvas.height = frame.h * scale;
+  canvas.style.width = canvas.width + 'px';
+  canvas.style.height = canvas.height + 'px';
+  canvas.style.background = 'rgba(0,0,0,0.3)';
+  canvas.style.borderRadius = '4px';
+
+  const ctx = canvas.getContext('2d');
+  ctx.imageSmoothingEnabled = false;
+  ctx.drawImage(sheetImg, frame.x, frame.y, frame.w, frame.h, 0, 0, canvas.width, canvas.height);
+
+  canvas._frame = frame;
+  canvas._scale = scale;
+  canvas._sheetImg = sheetImg;
+  canvas._updateZoom = (newScale) => {
+    canvas.width = frame.w * newScale;
+    canvas.height = frame.h * newScale;
+    canvas.style.width = canvas.width + 'px';
+    canvas.style.height = canvas.height + 'px';
+    const c = canvas.getContext('2d');
+    c.imageSmoothingEnabled = false;
+    c.drawImage(sheetImg, frame.x, frame.y, frame.w, frame.h, 0, 0, canvas.width, canvas.height);
+  };
+
+  return canvas;
+}
+
+// Track all elements that need zoom updates
+const zoomUpdaters = [];
+
+// --- Build Character Section ---
+async function buildCharacters() {
+  const container = document.getElementById('characterCards');
+  const scaleRow = document.getElementById('scaleComparison');
+
+  for (const char of CHARACTERS) {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    const title = document.createElement('div');
+    title.className = 'card-title';
+    title.textContent = char.name;
+    card.appendChild(title);
+
+    const sheetLabel = document.createElement('h3');
+    sheetLabel.textContent = 'Sprite Sheet (' + char.sheetW + 'x' + char.sheetH + ')';
+    card.appendChild(sheetLabel);
+
+    const wrapper = drawSpriteSheet(card, char.file, char.sheetW, char.sheetH, char.frameW, char.frameH, char.cols, char.rows);
+    zoomUpdaters.push(() => wrapper._updateZoom());
+
+    const animLabel = document.createElement('h3');
+    animLabel.textContent = 'Animations';
+    card.appendChild(animLabel);
+
+    for (const anim of char.anims) {
+      createAnimPreview(card, char.file, char, anim);
+    }
+
+    container.appendChild(card);
+
+    // Scale comparison: show idle frame 0
+    const img = await loadImage(char.file);
+    const compDiv = document.createElement('div');
+    compDiv.style.textAlign = 'center';
+
+    const compCanvas = document.createElement('canvas');
+    const compSize = char.frameW * globalZoom;
+    compCanvas.width = compSize;
+    compCanvas.height = compSize;
+    compCanvas.style.width = compSize + 'px';
+    compCanvas.style.height = compSize + 'px';
+    compCanvas.style.background = 'rgba(0,0,0,0.3)';
+    compCanvas.style.borderRadius = '4px';
+    const ctx = compCanvas.getContext('2d');
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(img, 0, 0, char.frameW, char.frameH, 0, 0, compSize, compSize);
+
+    const compLabel = document.createElement('div');
+    compLabel.style.fontSize = '13px';
+    compLabel.style.marginTop = '4px';
+    compLabel.textContent = char.name.split(' (')[0];
+
+    compDiv.appendChild(compCanvas);
+    compDiv.appendChild(compLabel);
+    scaleRow.appendChild(compDiv);
+
+    zoomUpdaters.push(() => {
+      const s = char.frameW * globalZoom;
+      compCanvas.width = s;
+      compCanvas.height = s;
+      compCanvas.style.width = s + 'px';
+      compCanvas.style.height = s + 'px';
+      const c = compCanvas.getContext('2d');
+      c.imageSmoothingEnabled = false;
+      c.drawImage(img, 0, 0, char.frameW, char.frameH, 0, 0, s, s);
+    });
+  }
+}
+
+// --- Build Tileset Section ---
+async function buildTiles() {
+  const container = document.getElementById('tileCards');
+  const tileFile = 'tiles/bricks.png';
+  const tileW = 32, tileH = 32, cols = 8, rows = 8;
+  const sheetW = 256, sheetH = 256;
+
+  const card = document.createElement('div');
+  card.className = 'card';
+
+  const title = document.createElement('div');
+  title.className = 'card-title';
+  title.textContent = 'Bricks Tileset (256x256)';
+  card.appendChild(title);
+
+  const wrapper = drawSpriteSheet(card, tileFile, sheetW, sheetH, tileW, tileH, cols, rows);
+  zoomUpdaters.push(() => wrapper._updateZoom());
+
+  const img = await loadImage(tileFile);
+
+  const rowLabel = document.createElement('h3');
+  rowLabel.textContent = 'Individual Tiles by Row';
+  card.appendChild(rowLabel);
+
+  for (let r = 0; r < rows; r++) {
+    const section = document.createElement('div');
+    section.className = 'tile-row-section';
+
+    const label = document.createElement('div');
+    label.className = 'tile-row-label';
+    label.textContent = TILE_ROWS[r] || ('Row ' + r);
+    section.appendChild(label);
+
+    const grid = document.createElement('div');
+    grid.className = 'tile-grid';
+
+    const tileCanvases = [];
+    for (let c = 0; c < cols; c++) {
+      const item = document.createElement('div');
+      item.className = 'tile-item';
+
+      const frame = { x: c * tileW, y: r * tileH, w: tileW, h: tileH };
+      const canvas = extractFrame(img, frame, globalZoom);
+      tileCanvases.push(canvas);
+      item.appendChild(canvas);
+
+      const tileLabel = document.createElement('span');
+      tileLabel.textContent = r + ',' + c;
+      item.appendChild(tileLabel);
+
+      grid.appendChild(item);
+    }
+
+    zoomUpdaters.push(() => {
+      tileCanvases.forEach(cv => cv._updateZoom(globalZoom));
+    });
+
+    section.appendChild(grid);
+    card.appendChild(section);
+  }
+
+  container.appendChild(card);
+}
+
+// --- Build Manipulatives Section ---
+async function buildManipulatives() {
+  const container = document.getElementById('manipCards');
+  const file = 'sprites/manipulatives.png';
+
+  const card = document.createElement('div');
+  card.className = 'card';
+
+  const title = document.createElement('div');
+  title.className = 'card-title';
+  title.textContent = 'Math Manipulatives (256x256)';
+  card.appendChild(title);
+
+  // Full sheet
+  const sheetContainer = document.createElement('div');
+  sheetContainer.className = 'sheet-container';
+  const sheetImg = document.createElement('img');
+  sheetImg.src = ASSET_BASE + file;
+  sheetImg.style.width = (256 * globalZoom) + 'px';
+  sheetImg.style.height = (256 * globalZoom) + 'px';
+  sheetContainer.appendChild(sheetImg);
+  card.appendChild(sheetContainer);
+
+  zoomUpdaters.push(() => {
+    sheetImg.style.width = (256 * globalZoom) + 'px';
+    sheetImg.style.height = (256 * globalZoom) + 'px';
+  });
+
+  const elemLabel = document.createElement('h3');
+  elemLabel.textContent = 'Individual Elements';
+  card.appendChild(elemLabel);
+
+  const img = await loadImage(file);
+  const elemRow = document.createElement('div');
+  elemRow.style.display = 'flex';
+  elemRow.style.flexWrap = 'wrap';
+  elemRow.style.gap = '8px';
+
+  const extractedCanvases = [];
+  for (const mf of MANIP_FRAMES) {
+    const frame = MANIP_ATLAS[mf.name];
+    const div = document.createElement('div');
+    div.className = 'frame-extract';
+
+    const canvas = extractFrame(img, frame, globalZoom);
+    extractedCanvases.push(canvas);
+    div.appendChild(canvas);
+
+    const label = document.createElement('span');
+    label.textContent = mf.label;
+    div.appendChild(label);
+
+    elemRow.appendChild(div);
+  }
+
+  zoomUpdaters.push(() => {
+    extractedCanvases.forEach(cv => cv._updateZoom(globalZoom));
+  });
+
+  card.appendChild(elemRow);
+  container.appendChild(card);
+}
+
+// --- Build UI Section ---
+async function buildUI() {
+  const container = document.getElementById('uiCards');
+  const file = 'sprites/ui.png';
+
+  // Full sheet card
+  const sheetCard = document.createElement('div');
+  sheetCard.className = 'card';
+  const sheetTitle = document.createElement('div');
+  sheetTitle.className = 'card-title';
+  sheetTitle.textContent = 'UI Sprite Sheet (512x512)';
+  sheetCard.appendChild(sheetTitle);
+
+  const sheetContainer = document.createElement('div');
+  sheetContainer.className = 'sheet-container';
+  const sheetImg = document.createElement('img');
+  sheetImg.src = ASSET_BASE + file;
+  sheetImg.style.width = (512 * globalZoom) + 'px';
+  sheetImg.style.height = (512 * globalZoom) + 'px';
+  sheetContainer.appendChild(sheetImg);
+  sheetCard.appendChild(sheetContainer);
+  container.appendChild(sheetCard);
+
+  zoomUpdaters.push(() => {
+    sheetImg.style.width = (512 * globalZoom) + 'px';
+    sheetImg.style.height = (512 * globalZoom) + 'px';
+  });
+
+  const img = await loadImage(file);
+
+  // Numpad card
+  const numpadCard = document.createElement('div');
+  numpadCard.className = 'card';
+  const numpadTitle = document.createElement('div');
+  numpadTitle.className = 'card-title';
+  numpadTitle.textContent = 'Numpad Buttons';
+  numpadCard.appendChild(numpadTitle);
+
+  const numpadGrid = document.createElement('div');
+  numpadGrid.className = 'numpad-grid';
+
+  // Layout: 1-9 in 3x3, then 0 spanning the bottom
+  const numpadOrder = ['1','2','3','4','5','6','7','8','9','0'];
+  const numpadCanvases = [];
+
+  for (const digit of numpadOrder) {
+    const frameName = 'numpad-' + digit + '-normal';
+    const frame = UI_ATLAS[frameName];
+    const div = document.createElement('div');
+    div.className = 'frame-extract';
+    if (digit === '0') div.classList.add('wide');
+
+    const canvas = extractFrame(img, frame, globalZoom);
+    numpadCanvases.push(canvas);
+    div.appendChild(canvas);
+
+    const label = document.createElement('span');
+    label.textContent = digit;
+    div.appendChild(label);
+
+    numpadGrid.appendChild(div);
+  }
+
+  zoomUpdaters.push(() => numpadCanvases.forEach(cv => cv._updateZoom(globalZoom)));
+  numpadCard.appendChild(numpadGrid);
+  container.appendChild(numpadCard);
+
+  // Submit button card
+  const submitCard = document.createElement('div');
+  submitCard.className = 'card';
+  const submitTitle = document.createElement('div');
+  submitTitle.className = 'card-title';
+  submitTitle.textContent = 'Submit Button States';
+  submitCard.appendChild(submitTitle);
+
+  const submitRow = document.createElement('div');
+  submitRow.className = 'submit-states';
+  const submitCanvases = [];
+
+  for (const sf of UI_SUBMIT) {
+    const frame = UI_ATLAS[sf.name];
+    const div = document.createElement('div');
+    div.className = 'frame-extract';
+
+    const canvas = extractFrame(img, frame, globalZoom);
+    submitCanvases.push(canvas);
+    div.appendChild(canvas);
+
+    const label = document.createElement('span');
+    label.textContent = sf.label;
+    div.appendChild(label);
+
+    submitRow.appendChild(div);
+  }
+
+  zoomUpdaters.push(() => submitCanvases.forEach(cv => cv._updateZoom(globalZoom)));
+  submitCard.appendChild(submitRow);
+  container.appendChild(submitCard);
+
+  // Misc UI elements card
+  const miscCard = document.createElement('div');
+  miscCard.className = 'card';
+  const miscTitle = document.createElement('div');
+  miscTitle.className = 'card-title';
+  miscTitle.textContent = 'Icons & UI Elements';
+  miscCard.appendChild(miscTitle);
+
+  const miscRow = document.createElement('div');
+  miscRow.className = 'misc-sprites';
+  const miscCanvases = [];
+
+  for (const mf of UI_MISC) {
+    const frame = UI_ATLAS[mf.name];
+    const div = document.createElement('div');
+    div.className = 'frame-extract';
+
+    const canvas = extractFrame(img, frame, globalZoom);
+    miscCanvases.push(canvas);
+    div.appendChild(canvas);
+
+    const label = document.createElement('span');
+    label.textContent = mf.label;
+    div.appendChild(label);
+
+    miscRow.appendChild(div);
+  }
+
+  zoomUpdaters.push(() => miscCanvases.forEach(cv => cv._updateZoom(globalZoom)));
+  miscCard.appendChild(miscRow);
+  container.appendChild(miscCard);
+}
+
+// --- Build Backgrounds & Particles ---
+async function buildBackgrounds() {
+  const container = document.getElementById('bgCards');
+
+  // Sky
+  const skyCard = document.createElement('div');
+  skyCard.className = 'card';
+  const skyTitle = document.createElement('div');
+  skyTitle.className = 'card-title';
+  skyTitle.textContent = 'Sky Background (1024x768)';
+  skyCard.appendChild(skyTitle);
+
+  const skyDiv = document.createElement('div');
+  skyDiv.className = 'bg-preview';
+  const skyImg = document.createElement('img');
+  skyImg.src = ASSET_BASE + 'sprites/sky.png';
+  skyImg.style.width = (1024 * 0.5) + 'px';
+  skyImg.style.height = (768 * 0.5) + 'px';
+  skyDiv.appendChild(skyImg);
+  skyCard.appendChild(skyDiv);
+  container.appendChild(skyCard);
+
+  // Ground
+  const groundCard = document.createElement('div');
+  groundCard.className = 'card';
+  const groundTitle = document.createElement('div');
+  groundTitle.className = 'card-title';
+  groundTitle.textContent = 'Ground (1024x80)';
+  groundCard.appendChild(groundTitle);
+
+  const groundDiv = document.createElement('div');
+  groundDiv.className = 'bg-preview';
+  const groundImg = document.createElement('img');
+  groundImg.src = ASSET_BASE + 'sprites/ground.png';
+  groundImg.style.width = (1024 * 0.5) + 'px';
+  groundImg.style.height = (80 * 0.5) + 'px';
+  groundDiv.appendChild(groundImg);
+  groundCard.appendChild(groundDiv);
+  container.appendChild(groundCard);
+
+  // Particles
+  const partCard = document.createElement('div');
+  partCard.className = 'card';
+  const partTitle = document.createElement('div');
+  partTitle.className = 'card-title';
+  partTitle.textContent = 'Particle Effects (128x128)';
+  partCard.appendChild(partTitle);
+
+  // Full sheet
+  const partSheetContainer = document.createElement('div');
+  partSheetContainer.className = 'sheet-container';
+  const partSheetImg = document.createElement('img');
+  partSheetImg.src = ASSET_BASE + 'sprites/particles.png';
+  const partScale = 4;
+  partSheetImg.style.width = (128 * partScale) + 'px';
+  partSheetImg.style.height = (128 * partScale) + 'px';
+  partSheetContainer.appendChild(partSheetImg);
+  partCard.appendChild(partSheetContainer);
+
+  const partLabel = document.createElement('h3');
+  partLabel.textContent = 'Individual Particles';
+  partCard.appendChild(partLabel);
+
+  const partImg = await loadImage('sprites/particles.png');
+  const partRow = document.createElement('div');
+  partRow.style.display = 'flex';
+  partRow.style.flexWrap = 'wrap';
+  partRow.style.gap = '8px';
+
+  const partCanvases = [];
+  for (const [name, frame] of Object.entries(PARTICLE_ATLAS)) {
+    const div = document.createElement('div');
+    div.className = 'frame-extract';
+
+    // Particles are tiny, use a larger scale
+    const pScale = globalZoom * 2;
+    const canvas = extractFrame(partImg, frame, pScale);
+    partCanvases.push({ canvas, baseMultiplier: 2 });
+    div.appendChild(canvas);
+
+    const label = document.createElement('span');
+    label.textContent = name;
+    div.appendChild(label);
+
+    partRow.appendChild(div);
+  }
+
+  zoomUpdaters.push(() => {
+    partCanvases.forEach(({ canvas, baseMultiplier }) => canvas._updateZoom(globalZoom * baseMultiplier));
+  });
+
+  partCard.appendChild(partRow);
+  container.appendChild(partCard);
+}
+
+// --- Controls ---
+function setupControls() {
+  const zoomSlider = document.getElementById('zoomSlider');
+  const zoomValue = document.getElementById('zoomValue');
+  const speedSlider = document.getElementById('speedSlider');
+  const speedValue = document.getElementById('speedValue');
+  const gridToggle = document.getElementById('gridToggle');
+  const bgToggle = document.getElementById('bgToggle');
+
+  zoomSlider.addEventListener('input', () => {
+    globalZoom = parseFloat(zoomSlider.value);
+    zoomValue.textContent = globalZoom + 'x';
+    zoomUpdaters.forEach(fn => fn());
+    animations.forEach(a => a.updateZoom());
+  });
+
+  speedSlider.addEventListener('input', () => {
+    speedMultiplier = parseFloat(speedSlider.value);
+    speedValue.textContent = speedMultiplier + 'x';
+  });
+
+  gridToggle.addEventListener('click', () => {
+    showGrid = !showGrid;
+    gridToggle.classList.toggle('active', showGrid);
+    document.querySelectorAll('.grid-overlay').forEach(c => {
+      // Redraw grids
+      const wrapper = c.parentElement;
+      if (wrapper._updateGrid) wrapper._updateGrid();
+    });
+  });
+
+  bgToggle.addEventListener('click', () => {
+    lightBg = !lightBg;
+    document.body.classList.toggle('light-bg', lightBg);
+    bgToggle.classList.toggle('active', lightBg);
+  });
+}
+
+// --- Init ---
+async function init() {
+  setupControls();
+  await Promise.all([
+    buildCharacters(),
+    buildTiles(),
+    buildManipulatives(),
+    buildUI(),
+    buildBackgrounds(),
+  ]);
+}
+
+init();
+</script>
+</body>
+</html>
