@@ -6,6 +6,7 @@ import Phaser from 'phaser';
 import { gameConfig } from '../game/config';
 import { EventBus, GameEvents } from '../game/EventBus';
 import { useGameStore } from '../stores/game';
+import { persistMasteryResult } from '../lib/mastery-store';
 
 export function GameWrapper() {
   const gameRef = useRef<Phaser.Game | null>(null);
@@ -22,12 +23,20 @@ export function GameWrapper() {
     gameRef.current = new Phaser.Game(config);
 
     const handleAnswerResult = (data: {
+      factorA: number;
+      factorB: number;
       isCorrect: boolean;
+      responseTimeMs: number;
       bricksEarned: number;
       bonusBricks: number;
     }) => {
       const store = useGameStore.getState();
       store.recordResult(data);
+
+      const kidId = store.kidId;
+      if (kidId) {
+        persistMasteryResult(kidId, data.factorA, data.factorB, data.isCorrect, data.responseTimeMs);
+      }
     };
 
     const handleLevelComplete = (data: {

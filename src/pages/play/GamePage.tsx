@@ -7,7 +7,7 @@ import { useAuthStore } from '../../stores/auth';
 import { useGameStore } from '../../stores/game';
 import { GameWrapper } from '../../components/GameWrapper';
 import { generateLevelQuestions } from '../../lib/question-generator';
-import type { FactMasteryRecord } from '../../types/learning';
+import { loadMasteryRecords } from '../../lib/mastery-store';
 
 export function GamePage() {
   const navigate = useNavigate();
@@ -22,9 +22,12 @@ export function GamePage() {
     }
 
     if (!isActive) {
-      const masteryRecords = new Map<string, FactMasteryRecord>();
-      const questions = generateLevelQuestions(currentLevel, masteryRecords);
-      startSession(activeKid.id, currentLevel, questions);
+      loadMasteryRecords(activeKid.id).then((masteryRecords) => {
+        const questions = generateLevelQuestions(currentLevel, masteryRecords);
+        startSession(activeKid.id, currentLevel, questions);
+        setReady(true);
+      });
+      return;
     }
 
     setReady(true);

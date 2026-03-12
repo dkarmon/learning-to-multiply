@@ -6,7 +6,8 @@ import { EventBus, GameEvents } from '../EventBus';
 import { emitConfetti } from '../effects/Confetti';
 import { useGameStore } from '../../stores/game';
 import { generateLevelQuestions } from '../../lib/question-generator';
-import type { FactMasteryRecord } from '../../types/learning';
+import { loadMasteryRecords } from '../../lib/mastery-store';
+import { t, isRtl } from '../i18n';
 
 interface LevelCompleteData {
   levelNumber: number;
@@ -28,12 +29,15 @@ export class LevelComplete extends Phaser.Scene {
 
     emitConfetti(this);
 
-    const title = this.add.text(width / 2, height * 0.15, 'Level Complete!', {
+    const rtl = isRtl();
+
+    const title = this.add.text(width / 2, height * 0.15, t('game.levelComplete'), {
       fontFamily: 'Arial Black',
       fontSize: '52px',
       color: '#4CAF50',
       stroke: '#388e3c',
       strokeThickness: 4,
+      rtl,
     });
     title.setOrigin(0.5);
 
@@ -55,29 +59,33 @@ export class LevelComplete extends Phaser.Scene {
     const summaryY = height * 0.58;
     const lineHeight = 36;
 
-    this.add.text(width / 2, summaryY, `Level ${data.levelNumber}`, {
+    this.add.text(width / 2, summaryY, t('game.level', { number: data.levelNumber }), {
       fontFamily: 'Arial',
       fontSize: '28px',
       color: '#3c0f0f',
+      rtl,
     }).setOrigin(0.5);
 
-    this.add.text(width / 2, summaryY + lineHeight, `${data.correctCount} of ${data.totalQuestions} correct`, {
+    this.add.text(width / 2, summaryY + lineHeight, t('game.correctCount', { correct: data.correctCount, total: data.totalQuestions }), {
       fontFamily: 'Arial',
       fontSize: '24px',
       color: '#06628d',
+      rtl,
     }).setOrigin(0.5);
 
-    this.add.text(width / 2, summaryY + lineHeight * 2, `${data.totalBricks} bricks earned!`, {
+    this.add.text(width / 2, summaryY + lineHeight * 2, t('game.bricksEarned', { count: data.totalBricks }), {
       fontFamily: 'Arial Black',
       fontSize: '28px',
       color: '#e46b43',
+      rtl,
     }).setOrigin(0.5);
 
     const accuracyPercent = Math.round(data.accuracy * 100);
-    this.add.text(width / 2, summaryY + lineHeight * 3, `${accuracyPercent}% accuracy`, {
+    this.add.text(width / 2, summaryY + lineHeight * 3, t('game.accuracyPercent', { percent: accuracyPercent }), {
       fontFamily: 'Arial',
       fontSize: '22px',
       color: '#06628d',
+      rtl,
     }).setOrigin(0.5);
 
     this.time.delayedCall(1500, () => {
@@ -92,12 +100,12 @@ export class LevelComplete extends Phaser.Scene {
 
     const nextBtn = this.createButton(
       width / 2 - 130, buttonY,
-      'Next Level', 0x4caf50,
+      t('game.nextLevel'), 0x4caf50,
     );
 
     const breakBtn = this.createButton(
       width / 2 + 130, buttonY,
-      'Take a Break', 0x06628d,
+      t('game.takeABreak'), 0x06628d,
     );
 
     nextBtn.setAlpha(0);
@@ -109,11 +117,12 @@ export class LevelComplete extends Phaser.Scene {
     });
 
     const nextBg = nextBtn.getAt(0) as Phaser.GameObjects.Rectangle;
-    nextBg.on('pointerup', () => {
+    nextBg.on('pointerup', async () => {
       const store = useGameStore.getState();
       store.advanceLevel();
       const nextLevel = store.currentLevel + 1;
-      const masteryRecords = new Map<string, FactMasteryRecord>();
+      const kidId = store.kidId ?? '';
+      const masteryRecords = await loadMasteryRecords(kidId);
       const questions = generateLevelQuestions(nextLevel, masteryRecords);
       useGameStore.setState({ currentQuestions: questions, currentQuestionIndex: 0 });
       this.scene.start('Game');
