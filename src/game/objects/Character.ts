@@ -5,8 +5,8 @@ import Phaser from 'phaser';
 
 export type CharacterState = 'idle' | 'happy' | 'sad' | 'climbing' | 'waving';
 
-const CHARACTER_X = 140;
-const CHARACTER_BASE_Y = 580;
+const CHARACTER_X = 100;
+const CHARACTER_BASE_Y = 690;
 
 export class Character {
   private scene: Phaser.Scene;
@@ -40,7 +40,7 @@ export class Character {
   }
 
   climbTo(buildingTopY: number): void {
-    const newY = Math.min(CHARACTER_BASE_Y, buildingTopY + 40);
+    const newY = Math.min(CHARACTER_BASE_Y, buildingTopY);
 
     if (Math.abs(newY - this.targetY) < 5) return;
 

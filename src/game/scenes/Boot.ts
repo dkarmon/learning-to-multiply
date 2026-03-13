@@ -52,12 +52,14 @@ export class Boot extends Phaser.Scene {
     this.load.atlas('particles', '/assets/sprites/particles.png', '/assets/sprites/particles.json');
 
     this.load.image('sky', '/assets/sprites/sky.png');
-    this.load.image('ground', '/assets/sprites/ground.png');
+    this.load.image('ground-street', '/assets/sprites/ground-street.png');
 
     this.load.spritesheet('bricks', '/assets/tiles/bricks.png', {
-      frameWidth: 32,
-      frameHeight: 32,
+      frameWidth: 48,
+      frameHeight: 48,
     });
+
+    this.load.atlas('building', '/assets/tiles/building.png', '/assets/tiles/building.json');
   }
 
   create(): void {
@@ -70,10 +72,7 @@ export class Boot extends Phaser.Scene {
 
   private generateBuildingTextures(): void {
     this.generateRect('clouds', 1024, 120, 0xeceff1);
-    this.generateRect('door', 24, 32, 0x5d4037);
-    this.generateRect('window-empty', 32, 32, 0x90caf9);
     this.generateRect('flag', 32, 32, 0xff5722);
-    this.generateRect('roof', 200, 16, 0x795548);
   }
 
   private generateRect(

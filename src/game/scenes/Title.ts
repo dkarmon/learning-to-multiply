@@ -16,8 +16,7 @@ export class Title extends Phaser.Scene {
     this.add.image(width / 2, height / 2, 'sky')
       .setDisplaySize(width, height);
 
-    this.add.image(width / 2, height - 40, 'ground')
-      .setDisplaySize(width, 80);
+    this.add.tileSprite(width / 2, height - 60, width, 120, 'ground-street');
 
     const rtl = isRtl();
 

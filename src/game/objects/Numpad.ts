@@ -1,22 +1,44 @@
 // ABOUTME: On-screen calculator-style numpad for answer input.
-// ABOUTME: Renders a 3x4 grid (1-9, backspace, 0, submit) with touch-friendly buttons.
+// ABOUTME: Renders a 3x4 grid (1-9, backspace, 0, submit) with sprite-based buttons from the ui atlas.
 
 import Phaser from 'phaser';
 import { EventBus, GameEvents } from '../EventBus';
 
-const BUTTON_SIZE = 64;
+const BUTTON_SIZE = 48;
 const BUTTON_GAP = 8;
 const GRID_COLS = 3;
 
-const BUTTON_LABELS = [
-  '1', '2', '3',
-  '4', '5', '6',
-  '7', '8', '9',
-  '\u232B', '0', '\u2713',
-];
-
 const NUMPAD_X = 780;
 const NUMPAD_Y = 380;
+
+type ButtonAction = { type: 'digit'; digit: number } | { type: 'backspace' } | { type: 'submit' };
+
+interface ButtonDef {
+  action: ButtonAction;
+  normalFrame: string;
+  pressedFrame: string;
+  disabledFrame: string;
+}
+
+const BUTTON_GRID: ButtonDef[] = [
+  { action: { type: 'digit', digit: 1 }, normalFrame: 'numpad-1-normal', pressedFrame: 'numpad-1-pressed', disabledFrame: 'numpad-1-disabled' },
+  { action: { type: 'digit', digit: 2 }, normalFrame: 'numpad-2-normal', pressedFrame: 'numpad-2-pressed', disabledFrame: 'numpad-2-disabled' },
+  { action: { type: 'digit', digit: 3 }, normalFrame: 'numpad-3-normal', pressedFrame: 'numpad-3-pressed', disabledFrame: 'numpad-3-disabled' },
+  { action: { type: 'digit', digit: 4 }, normalFrame: 'numpad-4-normal', pressedFrame: 'numpad-4-pressed', disabledFrame: 'numpad-4-disabled' },
+  { action: { type: 'digit', digit: 5 }, normalFrame: 'numpad-5-normal', pressedFrame: 'numpad-5-pressed', disabledFrame: 'numpad-5-disabled' },
+  { action: { type: 'digit', digit: 6 }, normalFrame: 'numpad-6-normal', pressedFrame: 'numpad-6-pressed', disabledFrame: 'numpad-6-disabled' },
+  { action: { type: 'digit', digit: 7 }, normalFrame: 'numpad-7-normal', pressedFrame: 'numpad-7-pressed', disabledFrame: 'numpad-7-disabled' },
+  { action: { type: 'digit', digit: 8 }, normalFrame: 'numpad-8-normal', pressedFrame: 'numpad-8-pressed', disabledFrame: 'numpad-8-disabled' },
+  { action: { type: 'digit', digit: 9 }, normalFrame: 'numpad-9-normal', pressedFrame: 'numpad-9-pressed', disabledFrame: 'numpad-9-disabled' },
+  { action: { type: 'backspace' }, normalFrame: 'backspace', pressedFrame: 'backspace', disabledFrame: 'backspace' },
+  { action: { type: 'digit', digit: 0 }, normalFrame: 'numpad-0-normal', pressedFrame: 'numpad-0-pressed', disabledFrame: 'numpad-0-disabled' },
+  { action: { type: 'submit' }, normalFrame: 'submit-normal', pressedFrame: 'submit-pressed', disabledFrame: 'submit-disabled' },
+];
+
+interface ButtonRef {
+  image: Phaser.GameObjects.Image;
+  def: ButtonDef;
+}
 
 export class Numpad {
   private scene: Phaser.Scene;
@@ -25,6 +47,7 @@ export class Numpad {
   private displayBg: Phaser.GameObjects.Rectangle;
   private currentValue: string = '';
   private enabled: boolean = true;
+  private buttons: ButtonRef[] = [];
 
   constructor(scene: Phaser.Scene) {
     this.scene = scene;
@@ -48,81 +71,54 @@ export class Numpad {
     this.displayText.setOrigin(0.5);
     this.container.add(this.displayText);
 
-    for (let i = 0; i < BUTTON_LABELS.length; i++) {
+    for (let i = 0; i < BUTTON_GRID.length; i++) {
       const col = i % GRID_COLS;
       const row = Math.floor(i / GRID_COLS);
-      const label = BUTTON_LABELS[i];
+      const def = BUTTON_GRID[i];
 
-      const x = col * (BUTTON_SIZE + BUTTON_GAP);
-      const y = row * (BUTTON_SIZE + BUTTON_GAP);
+      const x = col * (BUTTON_SIZE + BUTTON_GAP) + BUTTON_SIZE / 2;
+      const y = row * (BUTTON_SIZE + BUTTON_GAP) + BUTTON_SIZE / 2;
 
-      this.createButton(x, y, label);
+      this.createButton(x, y, def);
     }
   }
 
-  private createButton(x: number, y: number, label: string): void {
-    let bgColor: number;
-    if (label === '\u2713') {
-      bgColor = 0x4caf50;
-    } else if (label === '\u232B') {
-      bgColor = 0xef5350;
-    } else {
-      bgColor = 0x06628d;
-    }
+  private createButton(x: number, y: number, def: ButtonDef): void {
+    const image = this.scene.add.image(x, y, 'ui', def.normalFrame);
+    image.setDisplaySize(BUTTON_SIZE, BUTTON_SIZE);
+    image.setInteractive({ useHandCursor: true });
+    this.container.add(image);
 
-    const bg = this.scene.add.rectangle(
-      x + BUTTON_SIZE / 2,
-      y + BUTTON_SIZE / 2,
-      BUTTON_SIZE,
-      BUTTON_SIZE,
-      bgColor,
-    );
-    bg.setStrokeStyle(2, 0x3c0f0f);
-    bg.setInteractive({ useHandCursor: true });
-    this.container.add(bg);
+    const ref: ButtonRef = { image, def };
+    this.buttons.push(ref);
 
-    const text = this.scene.add.text(
-      x + BUTTON_SIZE / 2,
-      y + BUTTON_SIZE / 2,
-      label,
-      {
-        fontFamily: 'Arial Black',
-        fontSize: '28px',
-        color: '#ffffff',
-      },
-    );
-    text.setOrigin(0.5);
-    this.container.add(text);
-
-    bg.on('pointerdown', () => {
+    image.on('pointerdown', () => {
       if (!this.enabled) return;
-      bg.setScale(0.9);
-      text.setScale(0.9);
+      image.setFrame(def.pressedFrame);
       EventBus.emit(GameEvents.BUTTON_TAP);
     });
 
-    bg.on('pointerup', () => {
+    image.on('pointerup', () => {
       if (!this.enabled) return;
-      bg.setScale(1);
-      text.setScale(1);
-      this.handleInput(label);
+      image.setFrame(def.normalFrame);
+      this.handleAction(def.action);
     });
 
-    bg.on('pointerout', () => {
-      bg.setScale(1);
-      text.setScale(1);
+    image.on('pointerout', () => {
+      if (!this.enabled) return;
+      image.setFrame(def.normalFrame);
     });
   }
 
-  private handleInput(label: string): void {
-    if (label === '\u232B') {
+  private handleAction(action: ButtonAction): void {
+    if (action.type === 'backspace') {
       this.currentValue = this.currentValue.slice(0, -1);
-    } else if (label === '\u2713') {
+    } else if (action.type === 'submit') {
       this.submit();
       return;
     } else {
       if (this.currentValue.length < 3) {
-        this.currentValue += label;
+        this.currentValue += action.digit.toString();
       }
     }
 
@@ -156,7 +152,9 @@ export class Numpad {
 
   setEnabled(enabled: boolean): void {
     this.enabled = enabled;
-    this.container.setAlpha(enabled ? 1 : 0.5);
+    for (const btn of this.buttons) {
+      btn.image.setFrame(enabled ? btn.def.normalFrame : btn.def.disabledFrame);
+    }
   }
 
   showCorrectFlash(): void {

@@ -18,8 +18,8 @@ const WINDOW_CHARACTERS: WindowCharacterConfig[] = [
 ];
 
 const BUILDING_X = 280;
-const BUILDING_BASE_Y = 620;
-const FOUNDATION_HEIGHT = 40;
+const BUILDING_BASE_Y = 690;
+const FOUNDATION_HEIGHT = 80;
 const ROW_GAP = 2;
 
 export class Building {
@@ -35,15 +35,15 @@ export class Building {
 
     const foundation = scene.add.rectangle(
       0, 0,
-      200, FOUNDATION_HEIGHT,
+      384, FOUNDATION_HEIGHT,
       0x8b4513,
     );
     foundation.setOrigin(0.5, 1);
     foundation.setStrokeStyle(2, 0x3c0f0f);
     this.container.add(foundation);
 
-    const door = scene.add.image(0, -4, 'door');
-    door.setDisplaySize(24, 32);
+    const door = scene.add.image(0, -4, 'building', 'door-ornate');
+    door.setDisplaySize(60, 72);
     door.setOrigin(0.5, 1);
     this.container.add(door);
 
@@ -115,10 +115,10 @@ export class Building {
     const row = this.rows[rowIndex];
     const rowContainer = row.getContainer();
 
-    const windowX = 70;
+    const windowX = 140;
     const windowY = rowContainer.y;
 
-    const windowBg = this.scene.add.image(windowX, windowY, 'window-empty');
+    const windowBg = this.scene.add.image(windowX, windowY, 'building', 'window-lit');
     windowBg.setDisplaySize(32, 32);
     this.container.add(windowBg);
 
@@ -163,6 +163,12 @@ export class Building {
   }
 
   addRoofDecoration(): void {
+    const roofY = -(this.totalHeight + 8);
+    const roof = this.scene.add.image(0, roofY, 'building', 'roof');
+    roof.setDisplaySize(384, 16);
+    roof.setOrigin(0.5, 1);
+    this.container.add(roof);
+
     const flagY = -(this.totalHeight + 20);
     const flag = this.scene.add.image(0, flagY, 'flag');
     flag.setDisplaySize(32, 32);

@@ -4,9 +4,9 @@
 import Phaser from 'phaser';
 import { EventBus, GameEvents } from '../EventBus';
 
-export const BRICK_WIDTH = 16;
-export const BRICK_HEIGHT = 12;
-const MAX_VISUAL_BRICKS = 20;
+export const BRICK_WIDTH = 48;
+export const BRICK_HEIGHT = 48;
+const BRICKS_PER_ROW = 8;
 
 export class BrickRow {
   private scene: Phaser.Scene;
@@ -26,11 +26,10 @@ export class BrickRow {
   }
 
   async animateStacking(): Promise<void> {
-    const visualCount = Math.min(this.brickCount, MAX_VISUAL_BRICKS);
-    const totalWidth = visualCount * BRICK_WIDTH;
+    const totalWidth = BRICKS_PER_ROW * BRICK_WIDTH;
     const startX = -totalWidth / 2;
 
-    for (let i = 0; i < visualCount; i++) {
+    for (let i = 0; i < BRICKS_PER_ROW; i++) {
       const frameIndex = i % 3 === 0 ? 1 : 0;
       const brick = this.scene.add.image(
         startX + i * BRICK_WIDTH + BRICK_WIDTH / 2,
@@ -38,7 +37,6 @@ export class BrickRow {
         'bricks',
         frameIndex,
       );
-      brick.setDisplaySize(BRICK_WIDTH, BRICK_HEIGHT);
       brick.setAlpha(0);
 
       this.container.add(brick);
@@ -58,16 +56,6 @@ export class BrickRow {
           },
         });
       });
-    }
-
-    if (this.brickCount > MAX_VISUAL_BRICKS) {
-      const label = this.scene.add.text(0, 0, `${this.brickCount}`, {
-        fontFamily: 'Arial Black',
-        fontSize: '10px',
-        color: '#ffffff',
-      });
-      label.setOrigin(0.5);
-      this.container.add(label);
     }
   }
 
