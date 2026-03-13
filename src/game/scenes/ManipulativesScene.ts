@@ -183,6 +183,7 @@ export class ManipulativesScene extends Phaser.Scene {
     this.isVisible = visible;
     this.scene.setVisible(visible);
     this.scene.setActive(visible);
+    this.input.enabled = visible;
   }
 
   private setupDragAndDrop(): void {
