@@ -38,6 +38,8 @@ export class ManipulativesScene extends Phaser.Scene {
   }
 
   create(): void {
+    this.isVisible = true;
+
     this.backdrop = this.add.rectangle(
       this.scale.width / 2,
       this.scale.height / 2,
@@ -155,8 +157,8 @@ export class ManipulativesScene extends Phaser.Scene {
   }
 
   private onShowAnswer(payload: { answer: number }): void {
+    if (!this.isVisible) return;
     this.resetWorkspace();
-    this.setVisible(true);
     this.answerVisualizer.show(payload.answer, () => {
       ManipulativeEvents.emit(MANIP_EVENTS.ANSWER_ANIMATION_DONE);
     });

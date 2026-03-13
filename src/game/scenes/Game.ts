@@ -47,7 +47,7 @@ export class Game extends Phaser.Scene {
     this.correctCount = 0;
 
     this.add.image(width / 2, height / 2, 'sky').setDisplaySize(width, height);
-    this.add.image(width / 2, height - 40, 'ground').setDisplaySize(width, 80);
+    this.add.tileSprite(width / 2, height - 60, width, 120, 'ground-street');
 
     const clouds = this.add.tileSprite(width / 2, 80, width, 120, 'clouds');
     clouds.setAlpha(0.6);
@@ -343,6 +343,7 @@ export class Game extends Phaser.Scene {
   }
 
   private endLevel(): void {
+    ManipulativeEvents.emit(MANIP_EVENTS.HIDE);
     this.building.addRoofDecoration();
     this.character.celebrate();
 
@@ -371,6 +372,8 @@ export class Game extends Phaser.Scene {
     EventBus.off(GameEvents.ANSWER_SUBMITTED, this.handleAnswer, this);
     EventBus.off(GameEvents.HINT_REQUESTED, this.handleHint, this);
     ManipulativeEvents.off(MANIP_EVENTS.CORRECT_TOTAL, this.onManipCorrectTotal, this);
+
+    this.scene.stop('Manipulatives');
 
     this.building.destroy();
     this.character.destroy();
